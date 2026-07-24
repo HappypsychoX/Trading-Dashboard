@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trading Dashboard — Agentic</title>
+<link rel="stylesheet" href="assets/css/nocturne.css" />
+<link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-brand"><span id="account-label">Agentic</span> — Trading Dashboard</span>
+  <span class="as-of" id="as-of"></span>
+</nav>
+
+<div class="page">
+
+<div class="banner" id="demo-banner" style="display:none;">
+  <svg class="icon" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></svg>
+  <span>Showing sample data. Wire up a real <code>data/data.json</code> (see the contract at the top of <code>assets/js/dashboard.js</code>) to replace it.</span>
+</div>
+
+<div class="banner warn" id="stale-banner" style="display:none;">
+  <svg class="icon" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></svg>
+  <span id="stale-banner-text"></span>
+</div>
+
+<section class="stat-grid" id="stat-grid" aria-label="Account summary"></section>
+
+<!-- Today's trades -->
+<section class="card">
+  <div class="card-section-header"><h2 class="card-title">Today's trades</h2></div>
+  <div class="table-scroll">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Symbol</th><th>Side</th><th>Qty</th><th>Fill price</th><th>Value</th><th>Fees</th><th>Source</th><th>Realized</th>
+        </tr>
+      </thead>
+      <tbody id="trades-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Open / unfilled orders -->
+<section class="card" id="open-orders-section" style="display:none;">
+  <div class="card-section-header">
+    <h2 class="card-title">Open / unfilled orders</h2>
+    <span class="card-note">Must be addressed at session start</span>
+  </div>
+  <div class="table-scroll">
+    <table class="table">
+      <thead>
+        <tr><th>Symbol</th><th>Side</th><th>Qty</th><th>State</th><th>Placed</th><th></th></tr>
+      </thead>
+      <tbody id="open-orders-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Positions -->
+<section class="card">
+  <div class="card-section-header"><h2 class="card-title">Current positions</h2></div>
+  <div class="table-scroll">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Symbol</th><th>Qty</th><th>Avg cost</th><th>Cost basis</th><th>Price</th><th>Market value</th>
+          <th>Unrealized P/L</th><th>Today's chg</th><th>% of portfolio</th><th>Days held</th><th>Protection</th>
+        </tr>
+      </thead>
+      <tbody id="positions-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Guardrail compliance -->
+<section class="card">
+  <div class="card-section-header">
+    <h2 class="card-title">Guardrail compliance</h2>
+    <span class="card-note">Is the agent behaving — not is it winning</span>
+  </div>
+  <div class="guardrail-list" id="guardrail-list"></div>
+</section>
+
+<!-- Trade quality -->
+<section class="card">
+  <div class="card-section-header"><h2 class="card-title">Trade quality</h2></div>
+  <p class="sample-size-note" id="trade-quality-note"></p>
+  <div class="stat-grid" id="trade-quality-grid"></div>
+  <div class="table-scroll">
+    <table class="table">
+      <thead><tr><th>Symbol</th><th>Realized gain</th></tr></thead>
+      <tbody id="per-symbol-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Charts -->
+<div class="chart-filters">
+  <div class="seg" role="radiogroup" aria-label="Chart range" id="chart-range-filter">
+    <label class="seg-opt"><input type="radio" name="range" value="7" /><span>7 days</span></label>
+    <label class="seg-opt"><input type="radio" name="range" value="30" checked /><span>30 days</span></label>
+  </div>
+</div>
+
+<section class="card">
+  <div class="card-section-header">
+    <h2 class="card-title">Cumulative P/L</h2>
+    <span class="card-note" id="chart-a-note"></span>
+  </div>
+  <div class="chart-legend" id="chart-a-legend"></div>
+  <div class="chart-wrap">
+    <div id="chart-a-wrap"></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="card-section-header">
+    <h2 class="card-title">Account vs. SPY</h2>
+    <span class="card-note" id="chart-b-note"></span>
+  </div>
+  <div class="chart-legend" id="chart-b-legend"></div>
+  <div class="chart-wrap">
+    <div id="chart-b-wrap"></div>
+  </div>
+</section>
+
+<footer class="dash-footer">
+  Agentic account only · nickname shown, account number never rendered · data refreshed once per trading session
+</footer>
+
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>
