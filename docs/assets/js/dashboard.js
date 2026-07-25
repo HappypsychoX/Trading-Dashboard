@@ -19,7 +19,13 @@
  *                 unrealized_pl_dollars, unrealized_pl_percent, today_change_dollars,
  *                 pct_of_portfolio, days_held, protective_order ({type, trigger_price} | null),
  *                 earnings_within_7d, sellable_quantity }],
- *   guardrails: { cash_reserve_floor, buying_power_deployed, position_size, new_positions_today, unprotected_positions },
+ *   guardrails: {
+ *     cash_reserve_floor: { floor_pct, current_pct, status, note },
+ *     buying_power_deployed: { max_pct, current_pct, status, note },
+ *     position_size: { max_pct, largest_position, largest_position_pct, over_limit, status, note },
+ *     new_positions_today: { count, max_per_day (nullable), status, note },
+ *     unprotected_positions: { count, symbols, status, note },
+ *   },
  *   trade_quality: { scope, closed_trades, win_rate, avg_win, avg_loss, profit_factor, largest_win,
  *                    largest_loss, total_realized, realized_vs_unrealized, avg_holding_period_days,
  *                    per_symbol, sample_size_warning, sample_size_floor },
@@ -226,10 +232,18 @@ function renderPositions(data) {
 
 /* ---------------- Guardrails ---------------- */
 
-function statusFromRatio(ratio) {
-  if (ratio >= 1) return "critical";
-  if (ratio >= 0.9) return "warning";
+function guardrailStatusClass(status) {
+  const s = String(status).toLowerCase();
+  if (s === "red" || s === "critical") return "critical";
+  if (s === "yellow" || s === "warning") return "warning";
   return "green";
+}
+
+function guardrailStatusFillRatio(status) {
+  const s = String(status).toLowerCase();
+  if (s === "red" || s === "critical") return 1;
+  if (s === "yellow" || s === "warning") return 0.65;
+  return 0.2;
 }
 
 function renderGuardrails(data) {
@@ -237,51 +251,60 @@ function renderGuardrails(data) {
   const list = document.getElementById("guardrail-list");
   list.innerHTML = "";
 
-  const cashPct = Math.min(1, g.cash_reserve_floor.floor / Math.max(g.cash_reserve_floor.value, 1));
+  const c = g.cash_reserve_floor;
   list.appendChild(
     guardrailRow(
       "Cash reserve floor",
-      `${fmtMoney(g.cash_reserve_floor.value)} / ${fmtMoney(g.cash_reserve_floor.floor)} floor · ${fmtMoney(g.cash_reserve_floor.headroom)} headroom`,
-      1 - cashPct,
-      g.cash_reserve_floor.status
+      `${fmtPercent(c.current_pct)} cash · ${fmtPercent(c.floor_pct)} floor`,
+      1 - Math.min(1, c.floor_pct / Math.max(c.current_pct, 0.0001)),
+      guardrailStatusClass(c.status),
+      c.note
     )
   );
 
+  const b = g.buying_power_deployed;
   list.appendChild(
     guardrailRow(
       "Buying power deployed",
-      `${fmtPercent(g.buying_power_deployed.value_pct)} of ${fmtPercent(g.buying_power_deployed.max_pct)} max`,
-      g.buying_power_deployed.value_pct / g.buying_power_deployed.max_pct,
-      g.buying_power_deployed.status
+      `${fmtPercent(b.current_pct)} of ${fmtPercent(b.max_pct)} max`,
+      b.current_pct / b.max_pct,
+      guardrailStatusClass(b.status),
+      b.note
     )
   );
 
-  const posFlags = g.position_size.flags;
+  const ps = g.position_size;
   list.appendChild(
     guardrailRow(
       "Position size",
-      posFlags.length ? `${posFlags.length} position(s) over ${fmtPercent(g.position_size.max_pct)} max` : `All positions under ${fmtPercent(g.position_size.max_pct)} max`,
-      posFlags.length ? 1 : 0.3,
-      posFlags.length ? "critical" : "green",
-      posFlags.length ? posFlags.map((f) => `${f.symbol} at ${fmtPercent(f.pct_of_portfolio)}`).join(", ") : null
+      ps.over_limit.length
+        ? `${ps.over_limit.length} position(s) over ${fmtPercent(ps.max_pct)} max`
+        : `Largest: ${ps.largest_position} at ${fmtPercent(ps.largest_position_pct)} (max ${fmtPercent(ps.max_pct)})`,
+      ps.largest_position_pct / ps.max_pct,
+      guardrailStatusClass(ps.status),
+      ps.over_limit.length ? ps.over_limit.map((f) => `${f.symbol} at ${fmtPercent(f.pct_of_portfolio)}`).join(", ") : ps.note
     )
   );
 
+  const np = g.new_positions_today;
   list.appendChild(
     guardrailRow(
       "New positions today",
-      `${g.new_positions_today.count} of ${g.new_positions_today.max} max`,
-      g.new_positions_today.count / Math.max(g.new_positions_today.max, 1),
-      statusFromRatio(g.new_positions_today.count / Math.max(g.new_positions_today.max, 1))
+      np.max_per_day != null ? `${np.count} of ${np.max_per_day} max` : `${np.count} today`,
+      np.max_per_day ? np.count / np.max_per_day : guardrailStatusFillRatio(np.status),
+      guardrailStatusClass(np.status),
+      np.note
     )
   );
 
+  const up = g.unprotected_positions;
   list.appendChild(
     guardrailRow(
       "Unprotected positions",
-      g.unprotected_positions.count ? `${g.unprotected_positions.count}: ${g.unprotected_positions.symbols.join(", ")}` : "None",
-      g.unprotected_positions.count ? 1 : 0,
-      g.unprotected_positions.count ? "warning" : "green"
+      up.count ? `${up.count}: ${up.symbols.join(", ")}` : "None",
+      guardrailStatusFillRatio(up.status),
+      guardrailStatusClass(up.status),
+      up.note
     )
   );
 }
