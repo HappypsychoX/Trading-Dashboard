@@ -656,8 +656,10 @@ function renderCharts() {
     : "Equity curve has no data in this range yet — the daily snapshot log started recently and cannot be backfilled.";
 
   // Chart B: account (indexed) vs SPY (indexed) — one axis, index value
-  const eqIndexed = indexToZero(equityFull, "total_value");
-  const spyIndexed = indexToZero(spyFull, "close");
+  const equityWindowed = filterByDateWindow(equityFull, chartRangeDays, data.as_of);
+  const spyWindowed = filterByDateWindow(spyFull, chartRangeDays, data.as_of);
+  const eqIndexed = indexToZero(equityWindowed, "total_value");
+  const spyIndexed = padSeries(eqIndexed, indexToZero(spyWindowed, "close"));
   const chartBWrap = document.getElementById("chart-b-wrap");
   if (eqIndexed.length >= 2) {
     new LineChart(chartBWrap, {
