@@ -1,0 +1,188 @@
+/* Trading Dashboard — Agentic Account
+   Extension layer on top of ../nocturne.css (the Nocturne design system —
+   see that file + the project's readme.md for the token source of truth).
+   Only additive classes live here: nothing in this file hard-codes a
+   Nocturne role color that nocturne.css already names as a variable.
+
+   Nocturne is a mono scheme (one accent, no semantic red/green/amber).
+   A P/L dashboard needs gain/loss/warning at a glance, so three status
+   colors are added below, derived at the same lightness/chroma family as
+   the system's own ramps and used the same way the system uses its
+   accent: as text, small marks and thin lines — never a flood fill. */
+
+:root {
+  --color-gain: #5fb37c;
+  --color-loss: #e2776e;
+  --color-warn: #d9a354;
+
+  --color-gain-tint: color-mix(in srgb, var(--color-gain) 16%, transparent);
+  --color-loss-tint: color-mix(in srgb, var(--color-loss) 16%, transparent);
+  --color-warn-tint: color-mix(in srgb, var(--color-warn) 16%, transparent);
+
+  /* the second chart voice — a neutral line beside the accent line, so a
+     two-series chart still reads as "your account" vs "everything else"
+     rather than introducing a hue the system doesn't have. */
+  --color-chart-compare: var(--color-neutral-400);
+}
+
+body { background: var(--color-bg); }
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--space-4) var(--space-8);
+}
+
+.icon { display: inline-block; vertical-align: -2px; flex: none; }
+
+.as-of { font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+
+.banner {
+  display: flex; align-items: center; gap: var(--space-2);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  font-size: 13px;
+  margin: 0 0 var(--space-4);
+}
+.banner.warn { color: var(--color-warn); }
+.banner code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.92em;
+  color: var(--color-text);
+}
+
+/* ---------- Stat tiles ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+  margin: 0 0 var(--space-6);
+}
+
+.stat-tile {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.stat-tile .label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-2); }
+
+.stat-tile .value {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 24px;
+}
+
+.stat-tile.hero .value { font-size: 32px; }
+
+.stat-tile .delta {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px;
+  margin-top: var(--space-2);
+}
+
+.gain { color: var(--color-gain); }
+.loss { color: var(--color-loss); }
+.warn-text { color: var(--color-warn); }
+.null-val { color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+
+/* ---------- Section cards ---------- */
+
+section.card { margin: 0 0 var(--space-6); }
+
+.card-section-header {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.card-section-header .card-title { margin: 0; }
+
+.card-note { font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+
+.table-scroll { overflow-x: auto; }
+
+.table td { font-variant-numeric: tabular-nums; }
+.table th:not(:first-child), .table td:not(:first-child) { text-align: right; }
+
+.empty-state { text-align: center; padding: var(--space-4); color: color-mix(in srgb, var(--color-text) 50%, transparent); font-size: 13px; }
+
+tr.stale-row { box-shadow: inset 2px 0 0 var(--color-warn); }
+
+/* ---------- Guardrail meters ---------- */
+
+.guardrail-list { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.guardrail-row .g-top {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+  font-size: 13px; margin-bottom: var(--space-2);
+}
+
+.guardrail-row .g-label { display: flex; align-items: center; gap: 6px; font-weight: 500; }
+
+.guardrail-row .g-value { color: color-mix(in srgb, var(--color-text) 65%, transparent); font-variant-numeric: tabular-nums; font-size: 12px; }
+
+.meter-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-neutral-800);
+  overflow: hidden;
+}
+
+.meter-fill { height: 100%; border-radius: 999px; background: var(--color-gain); }
+.meter-fill.warn { background: var(--color-warn); }
+.meter-fill.loss { background: var(--color-loss); }
+
+.flag-list { margin-top: var(--space-2); font-size: 12px; color: var(--color-loss); }
+
+/* ---------- Charts ---------- */
+
+.chart-filters { margin: 0 0 var(--space-4); }
+
+.chart-legend {
+  display: flex; gap: var(--space-4); font-size: 12px;
+  color: color-mix(in srgb, var(--color-text) 65%, transparent);
+  margin-bottom: var(--space-2); flex-wrap: wrap;
+}
+.chart-legend .key { display: inline-flex; align-items: center; gap: 6px; }
+.chart-legend .swatch { width: 14px; height: 2px; border-radius: 2px; }
+
+.chart-wrap { position: relative; }
+.chart-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+.chart-tooltip {
+  position: absolute; pointer-events: none;
+  background: var(--color-neutral-900);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-3);
+  font-size: 12px;
+  min-width: 150px;
+  opacity: 0;
+  transition: opacity 0.08s ease;
+  z-index: 5;
+}
+.chart-tooltip.visible { opacity: 1; }
+.chart-tooltip .tt-date { color: color-mix(in srgb, var(--color-text) 55%, transparent); margin-bottom: var(--space-2); }
+.chart-tooltip .tt-row { display: flex; justify-content: space-between; gap: 12px; }
+.chart-tooltip .tt-row .tt-name { display: flex; align-items: center; gap: 6px; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.chart-tooltip .tt-row .tt-key { width: 10px; height: 2px; display: inline-block; }
+.chart-tooltip .tt-row .tt-value { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.freshness-note { font-size: 12px; color: color-mix(in srgb, var(--color-text) 50%, transparent); margin-top: var(--space-3); }
+.freshness-note.stale { color: var(--color-warn); }
+
+.sample-size-note { font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 var(--space-3); }
+
+[data-grey-below-sample="true"] { opacity: 0.5; }
+
+footer.dash-footer {
+  text-align: center; font-size: 12px;
+  color: color-mix(in srgb, var(--color-text) 40%, transparent);
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .table th, .table td { padding: var(--space-1) var(--space-2); font-size: 12px; }
+}
