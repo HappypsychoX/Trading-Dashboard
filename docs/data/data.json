@@ -1,184 +1,233 @@
 {
-  "_demo_data": true,
-  "as_of": "2026-07-24T16:00:00-04:00",
+  "_demo_data": false,
+  "as_of": "2026-07-24T20:00:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 1050.00,
-    "equity_value": 738.95,
-    "cash": 311.05,
-    "buying_power": 311.05,
+    "total_value": 53.3798524703,
+    "equity_value": 39.8098524703,
+    "cash": 13.57,
+    "buying_power": 13.57,
     "open_positions_count": 3
   },
   "daily_pl": {
-    "unrealized": 0.90,
+    "unrealized": -0.49,
     "realized": null,
-    "dollars": 0.90,
-    "percent": 0.000858,
-    "same_day_open_note": "No positions opened today, so intraday moves are measured from yesterday's close for all held symbols."
+    "dollars": -0.49,
+    "percent": -0.00913,
+    "same_day_open_note": "ORCL was opened during the 2026-07-24 session, so its change is measured from its fill price of $117.3523. PLTR and NVDA are measured from the 2026-07-23 close."
   },
   "todays_trades": [
     {
-      "symbol": "SOFI",
+      "symbol": "ORCL",
       "side": "buy",
-      "quantity": 5,
-      "dollar_based_amount": null,
-      "fill_price": 11.35,
-      "value": 56.75,
-      "fees": 0.00,
+      "quantity": 0.102256,
+      "dollar_based_amount": 12.0,
+      "fill_price": 117.3523,
+      "value": 12.0,
+      "fees": 0.0,
       "source": "agentic",
       "realized_gain": null,
       "state": "filled"
     }
   ],
-  "open_orders": [
-    {
-      "symbol": "NVDA",
-      "side": "sell",
-      "quantity": 1,
-      "state": "queued",
-      "created_at": "2026-07-23T15:47:00-04:00",
-      "stale": true
-    }
-  ],
+  "open_orders": [],
   "positions": [
     {
-      "symbol": "AAPL",
-      "quantity": 2,
-      "avg_cost": 210.50,
-      "cost_basis": 421.00,
-      "current_price": 213.10,
-      "market_value": 426.20,
-      "unrealized_pl_dollars": 5.20,
-      "unrealized_pl_percent": 0.01235,
-      "today_change_dollars": 1.80,
-      "pct_of_portfolio": 0.4059,
-      "days_held": 12,
-      "protective_order": { "type": "stop_loss", "trigger_price": 199.00 },
+      "symbol": "PLTR",
+      "quantity": 0.106899,
+      "avg_cost": 121.61,
+      "cost_basis": 13.0,
+      "current_price": 122.49,
+      "market_value": 13.09,
+      "unrealized_pl_dollars": 0.09,
+      "unrealized_pl_percent": 0.00724,
+      "today_change_dollars": -0.09,
+      "pct_of_portfolio": 0.2453,
+      "days_held": 23,
+      "protective_order": null,
       "earnings_within_7d": false,
-      "sellable_quantity": 2
+      "sellable_quantity": 0.106899
     },
     {
       "symbol": "NVDA",
-      "quantity": 1,
-      "avg_cost": 138.20,
-      "cost_basis": 138.20,
-      "current_price": 141.75,
-      "market_value": 141.75,
-      "unrealized_pl_dollars": 3.55,
-      "unrealized_pl_percent": 0.02568,
-      "today_change_dollars": 2.10,
-      "pct_of_portfolio": 0.1350,
-      "days_held": 5,
+      "quantity": 0.072397,
+      "avg_cost": 207.19,
+      "cost_basis": 15.0,
+      "current_price": 206.7999,
+      "market_value": 14.97,
+      "unrealized_pl_dollars": -0.03,
+      "unrealized_pl_percent": -0.00188,
+      "today_change_dollars": -0.14,
+      "pct_of_portfolio": 0.28047,
+      "days_held": 4,
       "protective_order": null,
-      "earnings_within_7d": true,
-      "sellable_quantity": 0
+      "earnings_within_7d": false,
+      "sellable_quantity": 0.072397
     },
     {
-      "symbol": "SOFI",
-      "quantity": 15,
-      "avg_cost": 10.85,
-      "cost_basis": 162.75,
-      "current_price": 11.40,
-      "market_value": 171.00,
-      "unrealized_pl_dollars": 8.25,
-      "unrealized_pl_percent": 0.05069,
-      "today_change_dollars": -3.00,
-      "pct_of_portfolio": 0.1629,
-      "days_held": 20,
-      "protective_order": { "type": "take_profit", "trigger_price": 12.50 },
+      "symbol": "ORCL",
+      "quantity": 0.102256,
+      "avg_cost": 117.35,
+      "cost_basis": 12.0,
+      "current_price": 114.85,
+      "market_value": 11.74,
+      "unrealized_pl_dollars": -0.26,
+      "unrealized_pl_percent": -0.0213,
+      "today_change_dollars": -0.26,
+      "pct_of_portfolio": 0.22001,
+      "days_held": 0,
+      "protective_order": null,
       "earnings_within_7d": false,
-      "sellable_quantity": 10
+      "sellable_quantity": 0.102256
     }
   ],
   "guardrails": {
-    "cash_reserve_floor": { "value": 311.05, "floor": 200.00, "headroom": 111.05, "status": "green" },
-    "buying_power_deployed": { "value_pct": 0.7038, "max_pct": 0.80, "status": "green" },
-    "position_size": { "max_pct": 0.35, "flags": [ { "symbol": "AAPL", "pct_of_portfolio": 0.4059 } ] },
-    "new_positions_today": { "count": 0, "max": 2 },
-    "unprotected_positions": { "count": 1, "symbols": ["NVDA"] }
+    "cash_reserve_floor": {
+      "floor_pct": 0.05,
+      "current_pct": 0.25422,
+      "status": "green",
+      "note": "Cash is 25.4% of account value, well above the 5% floor."
+    },
+    "buying_power_deployed": {
+      "max_pct": 0.5,
+      "current_pct": 0.4693,
+      "status": "yellow",
+      "note": "$12.00 deployed against $25.57 of buying power available at the start of the 2026-07-24 session (46.9%) \u2014 under the 50% per-session cap but close to it."
+    },
+    "position_size": {
+      "max_pct": 0.3,
+      "largest_position": "NVDA",
+      "largest_position_pct": 0.28047,
+      "over_limit": [],
+      "status": "yellow",
+      "note": "NVDA is 28.0% of account value, approaching the 30% single-position cap."
+    },
+    "new_positions_today": {
+      "count": 1,
+      "max_per_day": null,
+      "status": "green",
+      "note": "1 new position opened during the 2026-07-24 session (ORCL)."
+    },
+    "unprotected_positions": {
+      "count": 3,
+      "symbols": [
+        "PLTR",
+        "NVDA",
+        "ORCL"
+      ],
+      "status": "red",
+      "note": "No standing stop-loss or take-profit orders exist on any position."
+    }
   },
   "trade_quality": {
-    "scope": "agent_trades_only",
-    "closed_trades": 4,
-    "win_rate": 0.50,
-    "avg_win": 14.20,
-    "avg_loss": -9.80,
-    "profit_factor": 1.449,
-    "largest_win": 22.10,
-    "largest_loss": -15.40,
-    "total_realized": 8.80,
-    "realized_vs_unrealized": { "realized": 8.80, "unrealized": 17.00 },
-    "avg_holding_period_days": 9,
+    "closed_trades": 8,
+    "win_rate": 0.5,
+    "avg_win": 1.54,
+    "avg_loss": -0.64,
+    "profit_factor": 2.38,
+    "largest_win": 2.51,
+    "largest_loss": -1.46,
+    "total_realized": 3.56,
+    "realized_vs_unrealized": {
+      "realized": 3.56,
+      "unrealized": -0.19
+    },
+    "avg_holding_period_days": 6.875,
     "per_symbol": [
-      { "symbol": "TSLA", "realized_gain": 22.10 },
-      { "symbol": "SOFI", "realized_gain": 6.30 },
-      { "symbol": "PLTR", "realized_gain": -4.20 },
-      { "symbol": "AMD", "realized_gain": -15.40 }
+      {
+        "symbol": "LCID",
+        "realized_gain": 2.51,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "AMD",
+        "realized_gain": 1.71,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "KVUE",
+        "realized_gain": 1.55,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "MARA",
+        "realized_gain": 0.37,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "TQQQ",
+        "realized_gain": -0.1,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "SNAP",
+        "realized_gain": -0.18,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "IONQ",
+        "realized_gain": -0.84,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "SOFI",
+        "realized_gain": -1.46,
+        "closed_trades": 1
+      }
     ],
     "sample_size_warning": true,
     "sample_size_floor": 20
   },
   "charts": {
-    "realized_pnl_daily": [
-      { "date": "2026-06-11", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-12", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-15", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-16", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-17", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-18", "realized_gain": -15.40, "number_of_trades": 1 },
-      { "date": "2026-06-19", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-22", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-23", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-24", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-25", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-26", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-29", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-06-30", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-01", "realized_gain": 22.10, "number_of_trades": 1 },
-      { "date": "2026-07-02", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-03", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-06", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-07", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-08", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-09", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-10", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-13", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-14", "realized_gain": -4.20, "number_of_trades": 1 },
-      { "date": "2026-07-15", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-16", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-17", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-20", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-21", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-22", "realized_gain": 6.30, "number_of_trades": 1 },
-      { "date": "2026-07-23", "realized_gain": null, "number_of_trades": 0 },
-      { "date": "2026-07-24", "realized_gain": null, "number_of_trades": 0 }
-    ],
     "equity_curve": [
-      { "date": "2026-07-10", "total_value": 1018.40, "net_external_flow": 0 },
-      { "date": "2026-07-13", "total_value": 1015.90, "net_external_flow": 0 },
-      { "date": "2026-07-14", "total_value": 1011.70, "net_external_flow": 0 },
-      { "date": "2026-07-15", "total_value": 1014.30, "net_external_flow": 0 },
-      { "date": "2026-07-16", "total_value": 1019.85, "net_external_flow": 0 },
-      { "date": "2026-07-17", "total_value": 1023.10, "net_external_flow": 0 },
-      { "date": "2026-07-20", "total_value": 1027.55, "net_external_flow": 0 },
-      { "date": "2026-07-21", "total_value": 1031.20, "net_external_flow": 0 },
-      { "date": "2026-07-22", "total_value": 1037.50, "net_external_flow": 0 },
-      { "date": "2026-07-23", "total_value": 1044.10, "net_external_flow": 0 },
-      { "date": "2026-07-24", "total_value": 1050.00, "net_external_flow": 0 }
+      {
+        "date": "2026-07-24",
+        "total_value": 53.3798524703,
+        "net_external_flow": 0
+      }
+    ],
+    "realized_pnl_daily": [
+      {
+        "date": "2026-06-16",
+        "realized_gain": 1.61,
+        "number_of_trades": 2
+      },
+      {
+        "date": "2026-06-22",
+        "realized_gain": -1.09,
+        "number_of_trades": 2
+      },
+      {
+        "date": "2026-06-25",
+        "realized_gain": -0.18,
+        "number_of_trades": 1
+      },
+      {
+        "date": "2026-06-30",
+        "realized_gain": 2.51,
+        "number_of_trades": 1
+      },
+      {
+        "date": "2026-07-14",
+        "realized_gain": 0.71,
+        "number_of_trades": 2
+      },
+      {
+        "date": "2026-07-24",
+        "realized_gain": null,
+        "number_of_trades": 0
+      }
     ],
     "benchmark_spy_close": [
-      { "date": "2026-07-10", "close": 612.40 },
-      { "date": "2026-07-13", "close": 614.10 },
-      { "date": "2026-07-14", "close": 611.80 },
-      { "date": "2026-07-15", "close": 615.20 },
-      { "date": "2026-07-16", "close": 617.90 },
-      { "date": "2026-07-17", "close": 616.30 },
-      { "date": "2026-07-20", "close": 619.75 },
-      { "date": "2026-07-21", "close": 621.40 },
-      { "date": "2026-07-22", "close": 623.10 },
-      { "date": "2026-07-23", "close": 622.65 },
-      { "date": "2026-07-24", "close": 624.90 }
+      {
+        "date": "2026-07-23",
+        "close": 738.18
+      },
+      {
+        "date": "2026-07-24",
+        "close": 738.85
+      }
     ]
   },
   "snapshot_log": {
