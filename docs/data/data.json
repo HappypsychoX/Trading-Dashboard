@@ -182,6 +182,146 @@
   "charts": {
     "equity_curve": [
       {
+        "date": "2026-06-12",
+        "total_value": 51.23,
+        "net_external_flow": 50.0
+      },
+      {
+        "date": "2026-06-15",
+        "total_value": 54.45,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-16",
+        "total_value": 51.62,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-17",
+        "total_value": 49.82,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-18",
+        "total_value": 51.10,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-22",
+        "total_value": 50.53,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-23",
+        "total_value": 51.25,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-24",
+        "total_value": 52.09,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-25",
+        "total_value": 52.17,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-26",
+        "total_value": 53.91,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-29",
+        "total_value": 55.10,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-06-30",
+        "total_value": 55.06,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-01",
+        "total_value": 55.82,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-02",
+        "total_value": 57.05,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-06",
+        "total_value": 56.84,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-07",
+        "total_value": 57.24,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-08",
+        "total_value": 56.01,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-09",
+        "total_value": 55.43,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-10",
+        "total_value": 55.66,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-13",
+        "total_value": 55.24,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-14",
+        "total_value": 54.86,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-15",
+        "total_value": 54.86,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-16",
+        "total_value": 54.94,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-17",
+        "total_value": 54.72,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-20",
+        "total_value": 54.70,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-21",
+        "total_value": 54.75,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-22",
+        "total_value": 54.23,
+        "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-23",
+        "total_value": 53.87,
+        "net_external_flow": 0
+      },
+      {
         "date": "2026-07-24",
         "total_value": 53.3798524703,
         "net_external_flow": 0

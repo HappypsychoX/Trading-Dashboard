@@ -383,7 +383,7 @@ class LineChart {
   scales() {
     const dates = this.allDates();
     const values = this.series.flatMap((s) => s.points.map((p) => p.value).filter((v) => v !== null && v !== undefined));
-    const zeroFloor = this.indexed ? [] : [0];
+    const zeroFloor = [0];
     let min = Math.min(...values, ...zeroFloor);
     let max = Math.max(...values, ...zeroFloor);
     if (min === max) { min -= 1; max += 1; }
@@ -428,12 +428,12 @@ class LineChart {
       label.setAttribute("text-anchor", "end");
       label.setAttribute("font-size", "11");
       label.setAttribute("fill", mutedColor);
-      label.textContent = this.indexed ? v.toFixed(1) : fmtMoney(v);
+      label.textContent = this.indexed ? `${v.toFixed(1)}%` : fmtMoney(v);
       svg.appendChild(label);
     }
 
     // baseline zero
-    if (!this.indexed && min < 0 && max > 0) {
+    if (min < 0 && max > 0) {
       const zy = y(0);
       const zline = document.createElementNS(svgNS, "line");
       zline.setAttribute("x1", this.padding.left);
@@ -582,10 +582,10 @@ function equityDelta(equityCurve) {
   return equityCurve.map((p) => ({ date: p.date, value: p.total_value - start - (p.net_external_flow || 0) }));
 }
 
-function indexTo100(points, field) {
+function indexToZero(points, field) {
   if (!points.length) return [];
   const start = points[0][field];
-  return points.map((p) => ({ date: p.date, value: (p[field] / start) * 100 }));
+  return points.map((p) => ({ date: p.date, value: ((p[field] / start) - 1) * 100 }));
 }
 
 function padSeries(referenceDated, points) {
@@ -656,8 +656,8 @@ function renderCharts() {
     : "Equity curve has no data in this range yet — the daily snapshot log started recently and cannot be backfilled.";
 
   // Chart B: account (indexed) vs SPY (indexed) — one axis, index value
-  const eqIndexed = indexTo100(equityFull, "total_value");
-  const spyIndexed = indexTo100(spyFull, "close");
+  const eqIndexed = indexToZero(equityFull, "total_value");
+  const spyIndexed = indexToZero(spyFull, "close");
   const chartBWrap = document.getElementById("chart-b-wrap");
   if (eqIndexed.length >= 2) {
     new LineChart(chartBWrap, {
@@ -665,10 +665,10 @@ function renderCharts() {
         { name: "Account", color: accentColor, points: eqIndexed },
         { name: "SPY", color: compareColor, dashed: true, points: spyIndexed },
       ],
-      valueFormatter: (v) => v.toFixed(2),
+      valueFormatter: (v) => `${v.toFixed(1)}%`,
       indexed: true,
     });
-    document.getElementById("chart-b-note").textContent = `Indexed to 100 at ${fmtDate(eqIndexed[0].date)} (start of the snapshot log).`;
+    document.getElementById("chart-b-note").textContent = `Indexed to 0 at ${fmtDate(eqIndexed[0].date)} (start of the snapshot log).`;
   } else {
     chartBWrap.innerHTML = '<div class="empty-state">Not enough snapshot-log history yet to compare against SPY.</div>';
     document.getElementById("chart-b-note").textContent = "";
