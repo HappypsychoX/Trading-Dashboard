@@ -461,13 +461,16 @@ class LineChart {
     // series lines
     for (const s of this.series) {
       const pts = s.points.filter((p) => p.value !== null && p.value !== undefined);
-      if (pts.length < 2) continue;
-      const d = pts
-        .map((p, idx) => {
-          const i = s.points.indexOf(p);
-          return `${idx === 0 ? "M" : "L"} ${x(i)} ${y(p.value)}`;
-        })
-        .join(" ");
+      if (pts.length === 0) continue;
+      const d =
+        pts.length === 1
+          ? `M ${this.padding.left} ${y(pts[0].value)} L ${this.width - this.padding.right} ${y(pts[0].value)}`
+          : pts
+              .map((p, idx) => {
+                const i = s.points.indexOf(p);
+                return `${idx === 0 ? "M" : "L"} ${x(i)} ${y(p.value)}`;
+              })
+              .join(" ");
       const path = document.createElementNS(svgNS, "path");
       path.setAttribute("d", d);
       path.setAttribute("fill", "none");
@@ -590,6 +593,13 @@ function padSeries(referenceDated, points) {
   return referenceDated.map((r) => ({ date: r.date, value: byDate[r.date] ?? null }));
 }
 
+function filterByDateWindow(points, days, referenceDateStr) {
+  const cutoff = new Date(referenceDateStr);
+  cutoff.setDate(cutoff.getDate() - (days - 1));
+  const cutoffStr = cutoff.toISOString().slice(0, 10);
+  return points.filter((p) => p.date >= cutoffStr);
+}
+
 function cssVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
@@ -615,7 +625,7 @@ let currentData = null;
 
 function renderCharts() {
   const data = currentData;
-  const daily = data.charts.realized_pnl_daily.slice(-chartRangeDays);
+  const daily = filterByDateWindow(data.charts.realized_pnl_daily, chartRangeDays, data.as_of);
   const equityFull = data.charts.equity_curve;
   const spyFull = data.charts.benchmark_spy_close;
 
