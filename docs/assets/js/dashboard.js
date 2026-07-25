@@ -310,19 +310,16 @@ function renderGuardrails(data) {
 }
 
 function guardrailRow(label, valueText, fillRatio, status, flagText) {
-  const fillClass = status === "critical" ? "loss" : status === "warning" ? "warn" : "";
-  const iconName = status === "critical" ? "xCircle" : status === "warning" ? "warningCircle" : "checkCircle";
-  const iconColorVar = status === "critical" ? "var(--color-loss)" : status === "warning" ? "var(--color-warn)" : "var(--color-gain)";
-  return el("div", { class: "guardrail-row" }, [
+  const badgeText = status === "critical" ? "Breach" : status === "warning" ? "Watch" : "OK";
+  return el("div", { class: "guardrail-row status-" + status }, [
     el("div", { class: "g-top" }, [
-      el("span", { class: "g-label", html: iconSvg(iconName, { size: 14, color: iconColorVar }) + " " + escapeHtml(label) }),
-      el("span", { class: "g-value" }, valueText),
+      el("span", { class: "g-label" }, label),
+      el("span", { class: "g-badge " + status }, badgeText),
     ]),
-    el("div", { class: "meter-track" }, el("div", {
-      class: "meter-fill " + fillClass,
-      style: `width:${Math.max(0, Math.min(1, fillRatio)) * 100}%`,
-    })),
-    flagText ? el("div", { class: "flag-list" }, flagText) : null,
+    el("div", { class: "g-bottom" }, [
+      el("span", { class: "g-value" }, valueText),
+      flagText ? el("span", { class: "g-note" }, flagText) : null,
+    ]),
   ]);
 }
 
