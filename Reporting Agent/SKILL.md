@@ -19,15 +19,15 @@ The **only** writes this skill performs are: (1) writing the JSON file at the pa
 
 ## File & Repo Locations
 
-- Repo root: `C:\Users\Jeramey\Trading-Agent`
-- Data file: `C:\Users\Jeramey\Trading-Agent\docs\data\data.json` (i.e. `docs\data\data.json` relative to the repo root)
+- Repo root: `C:\Users\<username>\Trading-Agent`
+- Data file: `C:\Users\<username>\Trading-Agent\docs\data\data.json` (i.e. `docs\data\data.json` relative to the repo root)
 - Auth: assume git is already configured on this machine with working push credentials for this repo (same as the user's manual pushes). Just run the git commands — don't try to set up credentials. If push fails for an auth reason, stop and report the exact git error; don't attempt to fix credentials yourself.
 
 ## Workflow
 
 ### 1. Sync the repo first
 ```
-cd "C:\Users\Jeramey\Trading-Agent"
+cd "C:\Users\<username>\Trading-Agent"
 git pull --ff-only
 ```
 If this fails (diverged history, local uncommitted changes, conflicts), stop and report the exact error to the user rather than forcing anything.
