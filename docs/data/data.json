@@ -1,6 +1,6 @@
 {
   "_demo_data": false,
-  "as_of": "2026-07-28T06:18:06.600630-04:00",
+  "as_of": "2026-07-27T08:00:00.600630-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
@@ -317,7 +317,7 @@
         "net_external_flow": 0
       },
       {
-        "date": "2026-07-28",
+        "date": "2026-07-27",
         "total_value": 53.90844936,
         "net_external_flow": 0
       }
@@ -354,7 +354,7 @@
         "number_of_trades": 0
       },
       {
-        "date": "2026-07-28",
+        "date": "2026-07-27",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -505,14 +505,14 @@
         "close": 738.85
       },
       {
-        "date": "2026-07-28",
+        "date": "2026-07-27",
         "close": 738.35
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-07-28",
-    "last_trading_day": "2026-07-28",
+    "latest_date": "2026-07-27",
+    "last_trading_day": "2026-07-27",
     "is_stale": false
   }
 }
