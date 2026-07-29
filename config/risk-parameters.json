@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "description": "Default risk parameters for trading-skill-v4. Fetched fresh by the skill at the start of every session; hardcoded values in the skill are the fallback if this fetch fails.",
+    "schema_version": 1,
+    "last_updated": "2026-07-29T00:00:00-04:00",
+    "updated_via": "risk-parameters dashboard artifact"
+  },
+  "MAX_NEW_POSITIONS_PER_SESSION": 3,
+  "MAX_POSITION_SIZE_PCT": 30,
+  "MAX_BUYING_POWER_DEPLOYED_PER_SESSION_PCT": 50,
+  "CASH_RESERVE_FLOOR_PCT": 5,
+  "INSTRUMENTS": "equities_only",
+  "DEFAULT_ORDER_TYPE": "limit_day",
+  "LIQUIDITY_RULE_MAX_PCT_ADV": 1,
+  "HORIZON_BIAS": 3,
+  "LEVERAGED_INSTRUMENTS_BLOCKED": true
+}
