@@ -1,23 +1,36 @@
 {
   "_demo_data": false,
-  "as_of": "2026-07-28T06:18:06.600630-04:00",
+  "as_of": "2026-07-28T20:08:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 53.91,
-    "equity_value": 40.34,
-    "cash": 13.57,
+    "total_value": 53.02,
+    "equity_value": 25.41,
+    "cash": 27.61,
     "buying_power": 13.57,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "daily_pl": {
-    "unrealized": -0.21,
-    "realized": null,
-    "dollars": -0.21,
-    "percent": -0.00512,
-    "same_day_open_note": "All positions measured from 2026-07-27 close."
+    "unrealized": 0.47,
+    "realized": -0.96,
+    "dollars": -0.49,
+    "percent": -0.00924,
+    "same_day_open_note": "Positions measured from 2026-07-27 close. NVDA position closed with -0.96 realized loss."
   },
-  "todays_trades": [],
+  "todays_trades": [
+    {
+      "symbol": "NVDA",
+      "side": "sell",
+      "quantity": 0.072397,
+      "dollar_based_amount": null,
+      "fill_price": 193.96,
+      "value": 14.04,
+      "fees": 0.0,
+      "source": "agentic",
+      "realized_gain": -0.96,
+      "state": "filled"
+    }
+  ],
   "open_orders": [],
   "positions": [
     {
@@ -25,48 +38,31 @@
       "quantity": 0.106899,
       "avg_cost": 121.61,
       "cost_basis": 13.0,
-      "current_price": 132.0,
-      "market_value": 14.11,
-      "unrealized_pl_dollars": 1.11,
-      "unrealized_pl_percent": 0.08544,
-      "today_change_dollars": 0.05,
-      "today_change_percent": 0.00357,
-      "pct_of_portfolio": 0.26175,
-      "days_held": 24,
+      "current_price": 123.57,
+      "market_value": 13.21,
+      "unrealized_pl_dollars": 0.21,
+      "unrealized_pl_percent": 0.01615,
+      "today_change_dollars": -0.851,
+      "today_change_percent": -0.0605,
+      "pct_of_portfolio": 0.2491,
+      "days_held": 25,
       "protective_order": null,
       "earnings_within_7d": false,
       "sellable_quantity": 0.106899
-    },
-    {
-      "symbol": "NVDA",
-      "quantity": 0.072397,
-      "avg_cost": 207.19,
-      "cost_basis": 15.0,
-      "current_price": 194.5,
-      "market_value": 14.08,
-      "unrealized_pl_dollars": -0.92,
-      "unrealized_pl_percent": -0.06125,
-      "today_change_dollars": -0.15,
-      "today_change_percent": -0.01023,
-      "pct_of_portfolio": 0.26121,
-      "days_held": 5,
-      "protective_order": null,
-      "earnings_within_7d": false,
-      "sellable_quantity": 0.072397
     },
     {
       "symbol": "ORCL",
       "quantity": 0.102256,
       "avg_cost": 117.35,
       "cost_basis": 12.0,
-      "current_price": 118.8,
-      "market_value": 12.15,
-      "unrealized_pl_dollars": 0.15,
-      "unrealized_pl_percent": 0.01236,
-      "today_change_dollars": -0.11,
-      "today_change_percent": -0.00917,
-      "pct_of_portfolio": 0.22535,
-      "days_held": 4,
+      "current_price": 119.94,
+      "market_value": 12.26,
+      "unrealized_pl_dollars": 0.26,
+      "unrealized_pl_percent": 0.02167,
+      "today_change_dollars": 0.004,
+      "today_change_percent": 0.000334,
+      "pct_of_portfolio": 0.2313,
+      "days_held": 5,
       "protective_order": null,
       "earnings_within_7d": false,
       "sellable_quantity": 0.102256
@@ -75,23 +71,23 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.25172,
+      "current_pct": 0.5208,
       "status": "green",
-      "note": "Cash is 25.2% of account value, well above the 5% floor."
+      "note": "Cash is 52.1% of account value, well above the 5% floor."
     },
     "buying_power_deployed": {
       "max_pct": 0.5,
-      "current_pct": 0.74828,
-      "status": "yellow",
-      "note": "Equity deployed is 74.8% of account."
+      "current_pct": 0.4792,
+      "status": "green",
+      "note": "Equity deployed is 47.9% of account."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "PLTR",
-      "largest_position_pct": 0.26175,
+      "largest_position_pct": 0.2491,
       "over_limit": [],
       "status": "green",
-      "note": "Largest position is 26.2% of portfolio."
+      "note": "Largest position is 24.9% of portfolio."
     },
     "new_positions_today": {
       "count": 0,
@@ -100,10 +96,9 @@
       "note": "No new positions opened today."
     },
     "unprotected_positions": {
-      "count": 3,
+      "count": 2,
       "symbols": [
         "PLTR",
-        "NVDA",
         "ORCL"
       ],
       "status": "red",
@@ -111,20 +106,25 @@
     }
   },
   "trade_quality": {
-    "closed_trades": 8,
-    "win_rate": 0.5,
-    "avg_win": 1.53,
-    "avg_loss": -0.65,
-    "profit_factor": 2.38,
+    "closed_trades": 9,
+    "win_rate": 0.444,
+    "avg_win": 1.535,
+    "avg_loss": -0.708,
+    "profit_factor": 1.734,
     "largest_win": 2.51,
     "largest_loss": -1.46,
-    "total_realized": 3.56,
+    "total_realized": 3.6,
     "realized_vs_unrealized": {
-      "realized": 3.56,
-      "unrealized": 0.34
+      "realized": 3.6,
+      "unrealized": 0.47
     },
-    "avg_holding_period_days": 6.875,
+    "avg_holding_period_days": 6.778,
     "per_symbol": [
+      {
+        "symbol": "NVDA",
+        "realized_gain": -0.96,
+        "closed_trades": 1
+      },
       {
         "symbol": "LCID",
         "realized_gain": 2.51,
@@ -318,7 +318,7 @@
       },
       {
         "date": "2026-07-28",
-        "total_value": 53.90844936,
+        "total_value": 53.02,
         "net_external_flow": 0
       }
     ],
@@ -355,8 +355,8 @@
       },
       {
         "date": "2026-07-28",
-        "realized_gain": null,
-        "number_of_trades": 0
+        "realized_gain": -0.96,
+        "number_of_trades": 1
       }
     ],
     "benchmark_spy_close": [
@@ -506,7 +506,7 @@
       },
       {
         "date": "2026-07-28",
-        "close": 738.35
+        "close": 740.76
       }
     ]
   },
