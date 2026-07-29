@@ -1,36 +1,23 @@
 {
   "_demo_data": false,
-  "as_of": "2026-07-28T20:08:00-04:00",
+  "as_of": "2026-07-29T18:18:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 53.02,
-    "equity_value": 25.41,
+    "total_value": 52.6,
+    "equity_value": 24.99,
     "cash": 27.61,
-    "buying_power": 13.57,
+    "buying_power": 27.61,
     "open_positions_count": 2
   },
   "daily_pl": {
-    "unrealized": 0.47,
-    "realized": -0.96,
-    "dollars": -0.49,
-    "percent": -0.00924,
-    "same_day_open_note": "Positions measured from 2026-07-27 close. NVDA position closed with -0.96 realized loss."
+    "unrealized": -0.47,
+    "realized": null,
+    "dollars": -0.47,
+    "percent": -0.00893,
+    "same_day_open_note": "No new positions opened today; PLTR and ORCL are both measured from yesterday's (2026-07-28) close."
   },
-  "todays_trades": [
-    {
-      "symbol": "NVDA",
-      "side": "sell",
-      "quantity": 0.072397,
-      "dollar_based_amount": null,
-      "fill_price": 193.96,
-      "value": 14.04,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": -0.96,
-      "state": "filled"
-    }
-  ],
+  "todays_trades": [],
   "open_orders": [],
   "positions": [
     {
@@ -38,16 +25,16 @@
       "quantity": 0.106899,
       "avg_cost": 121.61,
       "cost_basis": 13.0,
-      "current_price": 123.57,
-      "market_value": 13.21,
-      "unrealized_pl_dollars": 0.21,
-      "unrealized_pl_percent": 0.01615,
-      "today_change_dollars": -0.851,
-      "today_change_percent": -0.0605,
-      "pct_of_portfolio": 0.2491,
-      "days_held": 25,
+      "current_price": 122.0,
+      "market_value": 13.04,
+      "unrealized_pl_dollars": 0.04,
+      "unrealized_pl_percent": 0.00321,
+      "today_change_dollars": -0.16,
+      "today_change_percent": -0.01239,
+      "pct_of_portfolio": 0.24792,
+      "days_held": 26,
       "protective_order": null,
-      "earnings_within_7d": false,
+      "earnings_within_7d": true,
       "sellable_quantity": 0.106899
     },
     {
@@ -55,14 +42,14 @@
       "quantity": 0.102256,
       "avg_cost": 117.35,
       "cost_basis": 12.0,
-      "current_price": 119.94,
-      "market_value": 12.26,
-      "unrealized_pl_dollars": 0.26,
-      "unrealized_pl_percent": 0.02167,
-      "today_change_dollars": 0.004,
-      "today_change_percent": 0.000334,
-      "pct_of_portfolio": 0.2313,
-      "days_held": 5,
+      "current_price": 116.89,
+      "market_value": 11.95,
+      "unrealized_pl_dollars": -0.05,
+      "unrealized_pl_percent": -0.00392,
+      "today_change_dollars": -0.31,
+      "today_change_percent": -0.02559,
+      "pct_of_portfolio": 0.22722,
+      "days_held": 6,
       "protective_order": null,
       "earnings_within_7d": false,
       "sellable_quantity": 0.102256
@@ -71,23 +58,23 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.5208,
+      "current_pct": 0.52486,
       "status": "green",
-      "note": "Cash is 52.1% of account value, well above the 5% floor."
+      "note": "Cash is 52.5% of account value, well above the 5% floor."
     },
     "buying_power_deployed": {
       "max_pct": 0.5,
-      "current_pct": 0.4792,
+      "current_pct": 0.47514,
       "status": "green",
-      "note": "Equity deployed is 47.9% of account."
+      "note": "Equity deployed is 47.5% of account, within the 50% ceiling."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "PLTR",
-      "largest_position_pct": 0.2491,
+      "largest_position_pct": 0.24792,
       "over_limit": [],
       "status": "green",
-      "note": "Largest position is 24.9% of portfolio."
+      "note": "Largest position (PLTR) is 24.8% of portfolio, within the 30% cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -101,58 +88,28 @@
         "PLTR",
         "ORCL"
       ],
-      "status": "red",
-      "note": "No standing stop-loss or take-profit orders exist on any position."
+      "status": "yellow",
+      "note": "Both open positions (PLTR, ORCL) have no standing stop-loss or take-profit order."
     }
   },
   "trade_quality": {
     "closed_trades": 9,
-    "win_rate": 0.444,
+    "win_rate": 0.44444,
     "avg_win": 1.535,
     "avg_loss": -0.708,
     "profit_factor": 1.734,
     "largest_win": 2.51,
     "largest_loss": -1.46,
-    "total_realized": 3.6,
+    "total_realized": 2.6,
     "realized_vs_unrealized": {
-      "realized": 3.6,
-      "unrealized": 0.47
+      "realized": 2.6,
+      "unrealized": -0.01
     },
-    "avg_holding_period_days": 6.778,
+    "avg_holding_period_days": 7.0,
     "per_symbol": [
       {
         "symbol": "NVDA",
         "realized_gain": -0.96,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "LCID",
-        "realized_gain": 2.51,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "AMD",
-        "realized_gain": 1.71,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "KVUE",
-        "realized_gain": 1.55,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "MARA",
-        "realized_gain": 0.37,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "TQQQ",
-        "realized_gain": -0.1,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "SNAP",
-        "realized_gain": -0.18,
         "closed_trades": 1
       },
       {
@@ -161,8 +118,38 @@
         "closed_trades": 1
       },
       {
+        "symbol": "KVUE",
+        "realized_gain": 1.55,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "LCID",
+        "realized_gain": 2.51,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "SNAP",
+        "realized_gain": -0.18,
+        "closed_trades": 1
+      },
+      {
         "symbol": "SOFI",
         "realized_gain": -1.46,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "MARA",
+        "realized_gain": 0.37,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "AMD",
+        "realized_gain": 1.71,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "TQQQ",
+        "realized_gain": -0.1,
         "closed_trades": 1
       }
     ],
@@ -325,6 +312,11 @@
         "date": "2026-07-28",
         "total_value": 53.02,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-29",
+        "total_value": 52.6,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -367,6 +359,11 @@
         "date": "2026-07-28",
         "realized_gain": -0.96,
         "number_of_trades": 1
+      },
+      {
+        "date": "2026-07-29",
+        "realized_gain": null,
+        "number_of_trades": 0
       }
     ],
     "benchmark_spy_close": [
@@ -521,12 +518,16 @@
       {
         "date": "2026-07-28",
         "close": 740.76
+      },
+      {
+        "date": "2026-07-29",
+        "close": 729.54
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-07-28",
-    "last_trading_day": "2026-07-28",
+    "latest_date": "2026-07-29",
+    "last_trading_day": "2026-07-29",
     "is_stale": false
   }
 }
