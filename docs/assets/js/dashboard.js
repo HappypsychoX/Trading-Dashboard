@@ -5,9 +5,9 @@
  * DATA CONTRACT
  * -------------
  * This page renders whatever is in ./data/data.json. It never calls the
- * Robinhood MCP directly (GitHub Pages is static). A trading/report session
- * with MCP access is responsible for regenerating data.json in this shape,
- * then committing + pushing it:
+ * Robinhood MCP directly (GitHub Pages is static). A reporting session with
+ * MCP access is responsible for regenerating data.json in this shape, then
+ * publishing it to this repo via the GitHub Contents API:
  *
  * {
  *   as_of: ISO8601 string (ET offset),
