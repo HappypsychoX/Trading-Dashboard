@@ -11,7 +11,9 @@ This is **not** a conventional software project — there's no build, lint, or t
 ## Repo layout
 
 ```
-Trading Agent/SKILL.md          trading-skill-v3 — executes trades, manages protective orders
+Trading Agent/
+  Trading Agent v3/SKILL.md      trading-skill-v3 — superseded, kept for reference
+  Trading Agent v4/SKILL.md      trading-skill-v4 — the version that runs live sessions
 Reporting Agent/SKILL.md        trading-report — publishes account state to the dashboard
 config/risk-parameters.json     live default risk parameters, fetched by trading-skill-v4 each session
 docs/                            static dashboard (GitHub Pages root)
@@ -23,7 +25,7 @@ docs/                            static dashboard (GitHub Pages root)
 reporting/agent/                 scratch space for reporting-related work in progress (not the skill itself)
 ```
 
-There is no `Trading Agent/SKILL.md` v4 in this repo yet — v4 is a newer skill (see below) that reads its risk defaults from `config/risk-parameters.json` in this repo over the network, falling back to hardcoded values if the fetch fails. The in-repo skill file is still v3.
+Both skill files under `Trading Agent/` are **backup copies** of skills that are installed and executed elsewhere (the Cowork/Claude Code skills directory). Editing them here does not change what runs in a live session — it only updates the archived copy. v4 reads its risk defaults from `config/risk-parameters.json` in this repo over the network, falling back to hardcoded values if the fetch fails.
 
 ## Running the dashboard locally
 
@@ -37,7 +39,7 @@ The dashboard is pure static HTML/CSS/JS with no build step — edit `docs/asset
 
 ## The two skills
 
-- **`Trading Agent/SKILL.md`** (`trading-skill-v3`, superseded operationally by `trading-skill-v4`, a skill that lives outside this repo but reads `config/risk-parameters.json` from it) — has full discretion to trade the "Agentic Account" within fixed risk guardrails, manages standing stop-loss/take-profit orders (never both on one position), and writes `position-notes.md` in a connected notes folder as memory for the next session.
+- **`Trading Agent/Trading Agent v4/SKILL.md`** (`trading-skill-v4`, the version that runs live sessions; `Trading Agent v3/SKILL.md` is its superseded predecessor) — has full discretion to trade the "Agentic Account" within risk guardrails, manages standing stop-loss/take-profit orders (never both on one position), and writes `position-notes.md` in a connected notes folder as memory for the next session. v4 pulls its guardrail values from `config/risk-parameters.json` at session start; v3's are fixed in its own file.
 - **`Reporting Agent/SKILL.md`** (`trading-report`) — strictly **read-only** against Robinhood. Reconstructs the day's activity from the API (never from the trading session's own narrative), rebuilds `docs/data/data.json` per the schema reference inlined at the bottom of its own SKILL.md, and publishes it through the GitHub REST Contents API so GitHub Pages picks it up. It runs no git commands and needs no local clone — only network access and a PAT read from disk.
 
 The two skills never share state directly: the trading agent's memory is `position-notes.md`; the reporting agent's memory is the history already published in `data.json`. Don't have one skill write the other's file.
@@ -55,7 +57,7 @@ The two skills never share state directly: the trading agent's memory is `positi
 
 `config/risk-parameters.json` is fetched live by trading-skill-v4 at the start of every session (hardcoded values in the skill are only the fallback). Current defaults: max 3 new positions/session, max 30% of equity per position, max 50% of buying power deployed per session, 5% cash reserve floor, equities only, limit/day orders, order size capped at 1% of average daily volume, `HORIZON_BIAS` 2 (the dial between short-term trading and longer-term holding), leveraged/inverse ETFs blocked. Changing this file changes real trading behavior on the next live session — treat edits here with the same care as changing the skill logic itself.
 
-The in-repo `Trading Agent/SKILL.md` is v3, whose risk table is fixed in the skill file and is *not* read from `config/`. Don't assume an edit to `config/risk-parameters.json` changes v3's behavior, or that editing the v3 table changes what actually runs.
+`Trading Agent/Trading Agent v3/SKILL.md` has its risk table fixed in the skill file, *not* read from `config/`. Don't assume an edit to `config/risk-parameters.json` changes v3's behavior. And because both in-repo skill files are backups of skills installed elsewhere, editing either table here does not change what actually runs — only `config/risk-parameters.json` is read live.
 
 ## Git conventions in this repo
 

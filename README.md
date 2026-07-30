@@ -4,7 +4,7 @@ An autonomous Claude trading agent that manages a real Robinhood brokerage accou
 
 The system is built as two [Claude Code / Cowork skills](https://docs.claude.com/en/docs/claude-code) that share one account and one repo:
 
-- **[Trading Agent](Trading%20Agent/SKILL.md)** ([`trading-skill-v3`](Trading%20Agent/SKILL.md)) — runs trading sessions: reads yesterday's reasoning, rebuilds live account state via the Robinhood MCP connector, decides whether to trade, executes within fixed risk guardrails, manages standing stop-loss/take-profit orders, and writes a note for the next session. Superseded operationally by `trading-skill-v4` — see [Skill versions](#skill-versions).
+- **[Trading Agent](Trading%20Agent/Trading%20Agent%20v4/SKILL.md)** ([`trading-skill-v4`](Trading%20Agent/Trading%20Agent%20v4/SKILL.md)) — runs trading sessions: reads yesterday's reasoning, rebuilds live account state via the Robinhood MCP connector, decides whether to trade, executes within risk guardrails, manages standing stop-loss/take-profit orders, and writes a note for the next session. The superseded [`trading-skill-v3`](Trading%20Agent/Trading%20Agent%20v3/SKILL.md) is kept alongside it — see [Skill versions](#skill-versions).
 - **[Reporting Agent](Reporting%20Agent/SKILL.md)** ([`trading-report`](Reporting%20Agent/SKILL.md)) — pulls the current state of the Agentic Account (read-only), assembles it into [`docs/data/data.json`](docs/data/data.json), and publishes it to this repo through the GitHub REST Contents API so the GitHub Pages dashboard picks it up.
 
 > **This trades real money.** The agent has full discretion over strategy within the risk parameters below; there is no human in the loop approving individual trades. Nothing here is investment advice.
@@ -29,7 +29,9 @@ If `data.json` is marked `_demo_data: true`, the page renders it normally but sh
 ## Repo layout
 
 ```
-Trading Agent/SKILL.md          trading-skill-v3 — executes trades, manages protective orders
+Trading Agent/
+  Trading Agent v3/SKILL.md     trading-skill-v3 — superseded, kept for reference
+  Trading Agent v4/SKILL.md     trading-skill-v4 — the version that runs live sessions
 Reporting Agent/SKILL.md        trading-report — publishes account state to the dashboard
 config/risk-parameters.json     live default risk parameters, fetched by trading-skill-v4 each session
 docs/                           static dashboard (GitHub Pages root)
@@ -52,13 +54,13 @@ The two skills never write to each other's state — the trading agent's memory 
 
 ## Skill versions
 
-The trading skill checked into this repo is **v3**. The version actually running sessions is **`trading-skill-v4`**, which lives outside this repo but depends on it. V4 adds:
+Both trading skill versions are checked into this repo under `Trading Agent/` as **backup copies** — the skills that actually run sessions are installed in the Claude Code / Cowork skills directory, so editing the copies here does not change live behaviour. The version running sessions is **`trading-skill-v4`**. Over v3 it adds:
 
 - **Live risk parameters.** V4 fetches [`config/risk-parameters.json`](config/risk-parameters.json) from this repo at the start of every session. Its own hardcoded values are only a fallback for when that fetch fails. **Editing that file changes real trading behaviour on the next live session** — treat it with the same care as changing skill logic.
 - **`HORIZON_BIAS`** — a tunable dial between short-term trading and longer-term holding.
 - **A leveraged/inverse ETF screen** — blocks new positions in instruments such as TQQQ, SQQQ, and SOXL.
 
-V3's risk parameters are fixed in [`Trading Agent/SKILL.md`](Trading%20Agent/SKILL.md) and are not read from `config/`.
+V3's risk parameters are fixed in [`Trading Agent v3/SKILL.md`](Trading%20Agent/Trading%20Agent%20v3/SKILL.md) and are not read from `config/`.
 
 ## Default risk parameters
 
@@ -78,7 +80,7 @@ Current contents of [`config/risk-parameters.json`](config/risk-parameters.json)
 
 Separately, both v3 and v4 allow **at most one standing protective order per position** — a stop-loss *or* a take-profit, never both at once.
 
-These are circuit breakers, not the strategy — see [`Trading Agent/SKILL.md`](Trading%20Agent/SKILL.md) for the full decision framework.
+These are circuit breakers, not the strategy — see [`Trading Agent v4/SKILL.md`](Trading%20Agent/Trading%20Agent%20v4/SKILL.md) for the full decision framework.
 
 ## Requirements
 
