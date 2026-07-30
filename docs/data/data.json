@@ -29,30 +29,6 @@
       "source": "agentic",
       "realized_gain": null,
       "state": "filled"
-    },
-    {
-      "symbol": "PLTR",
-      "side": "sell",
-      "quantity": 0.106899,
-      "dollar_based_amount": null,
-      "fill_price": null,
-      "value": 0.0,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": null,
-      "state": "cancelled"
-    },
-    {
-      "symbol": "ORCL",
-      "side": "sell",
-      "quantity": 0.102256,
-      "dollar_based_amount": null,
-      "fill_price": null,
-      "value": 0.0,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": null,
-      "state": "cancelled"
     }
   ],
   "open_orders": [],
