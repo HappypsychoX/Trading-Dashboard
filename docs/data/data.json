@@ -89,11 +89,13 @@
       "status": "green",
       "note": "Cash is 32.6% of account value, well above the 5% floor."
     },
-    "buying_power_deployed": {
+    "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.67363,
-      "status": "yellow",
-      "note": "Total equity is 67.4% of account value. The configured 50% cap is a per-session deployment limit (MAX_BUYING_POWER_DEPLOYED_PER_SESSION_PCT); today's session deployed $10.00 of $27.61 starting buying power (36.2%), within the cap. Flagged yellow because cumulative deployment now exceeds 50% of account value."
+      "current_pct": 0.36219,
+      "deployed_dollars": 10.0,
+      "buying_power_at_session_start": 27.61,
+      "status": "green",
+      "note": "Spent $10.00 of the $27.61 buying power available at session start (36.2%), within the 50% per-session ceiling."
     },
     "position_size": {
       "max_pct": 0.3,
