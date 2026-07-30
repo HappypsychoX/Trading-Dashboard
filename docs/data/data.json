@@ -1,11 +1,11 @@
 {
   "_demo_data": false,
-  "as_of": "2026-07-30T17:20:00-04:00",
+  "as_of": "2026-07-30T18:35:11-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 53.96,
-    "equity_value": 36.35,
+    "total_value": 53.98,
+    "equity_value": 36.37,
     "cash": 17.61,
     "buying_power": 17.61,
     "open_positions_count": 3
@@ -31,7 +31,36 @@
       "state": "filled"
     }
   ],
-  "open_orders": [],
+  "open_orders": [
+    {
+      "symbol": "PLTR",
+      "side": "sell",
+      "type": "market",
+      "quantity": 0.106899,
+      "dollar_based_amount": null,
+      "price": null,
+      "stop_price": null,
+      "state": "queued",
+      "source": "agentic",
+      "created_at": "2026-07-30T17:21:11-04:00",
+      "stale": false,
+      "note": "Placed after the close; queued for the next regular session open. Holds all 0.106899 PLTR shares."
+    },
+    {
+      "symbol": "ORCL",
+      "side": "sell",
+      "type": "market",
+      "quantity": 0.102256,
+      "dollar_based_amount": null,
+      "price": null,
+      "stop_price": null,
+      "state": "queued",
+      "source": "agentic",
+      "created_at": "2026-07-30T17:21:04-04:00",
+      "stale": false,
+      "note": "Placed after the close; queued for the next regular session open. Holds all 0.102256 ORCL shares."
+    }
+  ],
   "positions": [
     {
       "symbol": "PLTR",
@@ -41,13 +70,13 @@
       "current_price": 122.215,
       "market_value": 13.06,
       "unrealized_pl_dollars": 0.06,
-      "unrealized_pl_percent": 0.00497,
+      "unrealized_pl_percent": 0.00462,
       "today_change_dollars": -0.08,
-      "pct_of_portfolio": 0.24205,
+      "pct_of_portfolio": 0.24194,
       "days_held": 27,
       "protective_order": null,
       "earnings_within_7d": true,
-      "sellable_quantity": 0.106899
+      "sellable_quantity": 0.0
     },
     {
       "symbol": "ORCL",
@@ -57,13 +86,13 @@
       "current_price": 127.575,
       "market_value": 13.05,
       "unrealized_pl_dollars": 1.05,
-      "unrealized_pl_percent": 0.08713,
+      "unrealized_pl_percent": 0.0875,
       "today_change_dollars": 1.01,
-      "pct_of_portfolio": 0.24186,
+      "pct_of_portfolio": 0.24176,
       "days_held": 6,
       "protective_order": null,
       "earnings_within_7d": false,
-      "sellable_quantity": 0.102256
+      "sellable_quantity": 0.0
     },
     {
       "symbol": "HAL",
@@ -73,9 +102,9 @@
       "current_price": 31.64,
       "market_value": 10.08,
       "unrealized_pl_dollars": 0.08,
-      "unrealized_pl_percent": 0.00764,
+      "unrealized_pl_percent": 0.008,
       "today_change_dollars": 0.08,
-      "pct_of_portfolio": 0.18682,
+      "pct_of_portfolio": 0.18674,
       "days_held": 0,
       "protective_order": null,
       "earnings_within_7d": false,
@@ -85,7 +114,7 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.32637,
+      "current_pct": 0.32623,
       "status": "green",
       "note": "Cash is 32.6% of account value, well above the 5% floor."
     },
@@ -100,7 +129,7 @@
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "PLTR",
-      "largest_position_pct": 0.24205,
+      "largest_position_pct": 0.24194,
       "over_limit": [],
       "status": "green",
       "note": "Largest position (PLTR) is 24.2% of portfolio, within the 30% cap."
@@ -119,7 +148,7 @@
         "HAL"
       ],
       "status": "yellow",
-      "note": "All three open positions (PLTR, ORCL, HAL) have no standing stop-loss or take-profit order."
+      "note": "No position carries a standing stop-loss or take-profit order. PLTR and ORCL do have queued market SELL orders that will execute at the next open, but those are exits, not protective orders; HAL is fully unprotected."
     }
   },
   "trade_quality": {
@@ -350,7 +379,7 @@
       },
       {
         "date": "2026-07-30",
-        "total_value": 53.96,
+        "total_value": 53.98,
         "net_external_flow": 0
       }
     ],
