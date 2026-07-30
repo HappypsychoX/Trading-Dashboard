@@ -35,6 +35,29 @@ body { background: var(--color-bg); }
 
 .icon { display: inline-block; vertical-align: -2px; flex: none; }
 
+/* ---------- Nav brand ----------
+   The logo carries the product name, so the nav's remaining job is to say
+   *which* account is on screen. The logo art is authored for this dark
+   ground (its wordmark is painted at --color-text); it has no light-mode
+   variant, and Nocturne has no light mode to need one. */
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  flex: none;
+}
+
+.nav-account {
+  margin-right: auto; /* holds .as-of against the right edge */
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--color-divider);
+}
+
 .as-of { font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 
 .banner {
@@ -217,6 +240,13 @@ footer.dash-footer {
 
 @media (max-width: 640px) {
   .table th, .table td { padding: var(--space-1) var(--space-2); font-size: 12px; }
+
+  /* Logo + account on one row, the timestamp on its own, rather than three
+     columns each wrapping to two or three lines. */
+  .nav { flex-wrap: wrap; row-gap: var(--space-2); }
+  .nav-logo { height: 32px; }
+  .nav-account { margin-right: 0; }
+  .as-of { flex-basis: 100%; }
 
   .guardrail-row .g-bottom {
     flex-direction: column;
