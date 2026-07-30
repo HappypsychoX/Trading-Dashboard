@@ -21,7 +21,8 @@
  *                 earnings_within_7d, sellable_quantity }],
  *   guardrails: {
  *     cash_reserve_floor: { floor_pct, current_pct, status, note },
- *     buying_power_deployed: { max_pct, current_pct, status, note },
+ *     buying_power_deployed_today: { max_pct, current_pct (nullable), deployed_dollars,
+ *                                    buying_power_at_session_start, status, note },
  *     position_size: { max_pct, largest_position, largest_position_pct, over_limit, status, note },
  *     new_positions_today: { count, max_per_day (nullable), status, note },
  *     unprotected_positions: { count, symbols, status, note },
@@ -262,16 +263,23 @@ function renderGuardrails(data) {
     )
   );
 
-  const b = g.buying_power_deployed;
-  list.appendChild(
-    guardrailRow(
-      "Buying power deployed",
-      `${fmtPercent(b.current_pct)} of ${fmtPercent(b.max_pct)} max`,
-      b.current_pct / b.max_pct,
-      guardrailStatusClass(b.status),
-      b.note
-    )
-  );
+  /* Per-session flow, not standing exposure: what share of the buying power
+     available at session start this session actually spent on buys. Guarded
+     because a data.json written before the rename carries the old key, and
+     an exception here would blank the whole page (see boot()). */
+  const b = g.buying_power_deployed_today;
+  if (b) {
+    const unknown = b.current_pct == null;
+    list.appendChild(
+      guardrailRow(
+        "Buying power deployed today",
+        unknown ? "Not available" : `${fmtPercent(b.current_pct)} of ${fmtPercent(b.max_pct)} max`,
+        unknown ? 0 : b.current_pct / b.max_pct,
+        guardrailStatusClass(b.status),
+        b.note
+      )
+    );
+  }
 
   const ps = g.position_size;
   list.appendChild(

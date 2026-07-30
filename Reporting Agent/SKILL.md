@@ -61,7 +61,18 @@ Follow `references/schema_example.json` exactly — same keys, same nesting, sam
 - `todays_trades`: one entry per order touched today, with `symbol`, `side`, `quantity`, `dollar_based_amount`, `fill_price`, `value`, `fees`, `source` (`"agentic"`), `realized_gain` (null if position still open), `state`
 - `open_orders`: still-open/queued orders, with `stale: true` if `created_at` is before today
 - `positions`: one entry per open position — `quantity`, `avg_cost`, `cost_basis`, `current_price`, `market_value`, `unrealized_pl_dollars`, `unrealized_pl_percent`, `today_change_dollars`, `pct_of_portfolio`, `days_held`, `protective_order` (object or null), `earnings_within_7d`, `sellable_quantity` (quantity minus any shares reserved by open sell orders)
-- `guardrails`: report against the trading skill's parameter framework — `cash_reserve_floor`, `buying_power_deployed`, `position_size` (flag anything over max_pct), `new_positions_today`, `unprotected_positions` (positions with no protective_order). Each with a `status` of `"green"`/`"yellow"`/`"red"` as appropriate.
+- `guardrails`: report against the trading skill's parameter framework — `cash_reserve_floor`, `buying_power_deployed_today`, `position_size` (flag anything over max_pct), `new_positions_today`, `unprotected_positions` (positions with no protective_order). Each with a `status` of `"green"`/`"yellow"`/`"red"` as appropriate.
+
+  `buying_power_deployed_today` measures **this session's spending**, against the trading skill's `MAX_BUYING_POWER_DEPLOYED_PER_SESSION` — it is a per-day flow, not standing exposure. Do **not** report equity as a share of account value here; that is cumulative, it is just the inverse of `cash_reserve_floor`, and it will read green on a day the agent overspent. Compute it from today's filled orders:
+
+  ```
+  deployed_dollars              = Σ today's filled BUY notional (incl. fees)
+  proceeds_today                = Σ today's filled SELL proceeds
+  buying_power_at_session_start = buying_power_now + deployed_dollars - proceeds_today
+  current_pct                   = deployed_dollars / buying_power_at_session_start
+  ```
+
+  Emit `deployed_dollars` and `buying_power_at_session_start` alongside `current_pct` so the percentage can be checked without re-deriving it from the order list. A day with no buys is `current_pct: 0` — that is a real, green result, not missing data. If `buying_power_at_session_start` works out to zero or negative (nothing was available to deploy), set `current_pct: null` and say so in the `note` rather than dividing by zero or reporting `0`.
 - `trade_quality`: computed over all-time closed Agentic trades — `closed_trades`, `win_rate`, `avg_win`, `avg_loss`, `profit_factor`, `largest_win`, `largest_loss`, `total_realized`, `realized_vs_unrealized`, `avg_holding_period_days`, `per_symbol` (realized gain per symbol, summed if a symbol closed multiple times), `sample_size_warning` (true if `closed_trades < sample_size_floor`), `sample_size_floor: 20`
 - `charts`: see step 5
 - `snapshot_log`: `latest_date` (today, YYYY-MM-DD), `last_trading_day`, `is_stale` (true only if you couldn't get fresh data and are re-publishing stale numbers — flag this loudly in the chat confirmation if so)
