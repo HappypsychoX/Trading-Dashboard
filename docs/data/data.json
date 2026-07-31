@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-07-31T10:29:00-04:00",
+  "as_of": "2026-07-31T16:07:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 53.51,
-    "equity_value": 10.07,
+    "total_value": 53.63,
+    "equity_value": 10.19,
     "cash": 43.44,
     "buying_power": 17.61,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.0,
+    "unrealized": 0.19,
     "realized": 0.83,
-    "dollars": 0.83,
-    "percent": 0.01536,
-    "same_day_open_note": "PLTR and ORCL were both fully sold today (realized gains of -$0.15 and +$0.98 respectively), leaving HAL as the only position. HAL's price is unchanged from yesterday's close ($31.64), so today's P&L is entirely the realized gains from closing PLTR and ORCL."
+    "dollars": 1.02,
+    "percent": 0.01893,
+    "same_day_open_note": "PLTR and ORCL were both fully sold this morning (realized gains of -$0.15 and +$0.98 respectively), leaving HAL as the only position. By market close HAL was up from yesterday's close of $31.64 to $32.245, adding $0.19 of unrealized gain on top of the $0.83 realized from this morning's sales."
   },
   "todays_trades": [
     {
@@ -50,12 +50,12 @@
       "quantity": 0.318471,
       "avg_cost": 31.4,
       "cost_basis": 10.0,
-      "current_price": 31.64,
-      "market_value": 10.08,
-      "unrealized_pl_dollars": 0.08,
-      "unrealized_pl_percent": 0.008,
-      "today_change_dollars": 0.0,
-      "pct_of_portfolio": 0.18837,
+      "current_price": 32.245,
+      "market_value": 10.27,
+      "unrealized_pl_dollars": 0.27,
+      "unrealized_pl_percent": 0.02691,
+      "today_change_dollars": 0.19,
+      "pct_of_portfolio": 0.19147,
       "days_held": 1,
       "protective_order": null,
       "earnings_within_7d": false,
@@ -65,9 +65,9 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.8118,
+      "current_pct": 0.80993,
       "status": "green",
-      "note": "Cash is 81.2% of account value, well above the 5% floor. Elevated because today's PLTR and ORCL sale proceeds ($25.83) haven't settled yet (T+1) and are sitting in cash, not yet reflected in buying power."
+      "note": "Cash is 81.0% of account value, well above the 5% floor. Elevated because this morning's PLTR and ORCL sale proceeds ($25.83) haven't settled yet (T+1) and aren't reflected in buying power."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
@@ -75,15 +75,15 @@
       "deployed_dollars": 0.0,
       "buying_power_at_session_start": 17.61,
       "status": "green",
-      "note": "No buy orders today \u2014 only PLTR and ORCL were sold. Buying power is unchanged at $17.61 from yesterday since the sale proceeds haven't settled yet. $0 deployed of $17.61 available (0%)."
+      "note": "No buy orders today \u2014 only PLTR and ORCL were sold. Buying power is unchanged at $17.61 since the sale proceeds haven't settled yet. $0 deployed of $17.61 available (0%)."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "HAL",
-      "largest_position_pct": 0.18837,
+      "largest_position_pct": 0.19147,
       "over_limit": [],
       "status": "green",
-      "note": "Largest (and only) position HAL is 18.8% of portfolio, within the 30% cap."
+      "note": "Largest (and only) position HAL is 19.1% of portfolio, within the 30% cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -343,7 +343,7 @@
       },
       {
         "date": "2026-07-31",
-        "total_value": 53.51,
+        "total_value": 53.63,
         "net_external_flow": 0
       }
     ],
@@ -567,7 +567,7 @@
       },
       {
         "date": "2026-07-31",
-        "close": 740.07
+        "close": 746.81
       }
     ]
   },
