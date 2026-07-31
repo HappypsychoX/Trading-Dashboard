@@ -1,70 +1,50 @@
 {
   "_demo_data": false,
-  "as_of": "2026-07-30T16:00:00-04:00",
+  "as_of": "2026-07-31T10:29:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 54.02,
-    "equity_value": 36.41,
-    "cash": 17.61,
+    "total_value": 53.51,
+    "equity_value": 10.07,
+    "cash": 43.44,
     "buying_power": 17.61,
-    "open_positions_count": 3
+    "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 1.0,
-    "realized": null,
-    "dollars": 1.0,
-    "percent": 0.01882,
-    "same_day_open_note": "HAL was opened today (filled 09:30 ET at $31.40), so its change is measured from its fill price. PLTR and ORCL are measured from yesterday's (2026-07-29) close."
+    "unrealized": 0.0,
+    "realized": 0.83,
+    "dollars": 0.83,
+    "percent": 0.01536,
+    "same_day_open_note": "PLTR and ORCL were both fully sold today (realized gains of -$0.15 and +$0.98 respectively), leaving HAL as the only position. HAL's price is unchanged from yesterday's close ($31.64), so today's P&L is entirely the realized gains from closing PLTR and ORCL."
   },
   "todays_trades": [
     {
-      "symbol": "HAL",
-      "side": "buy",
-      "quantity": 0.318471,
-      "dollar_based_amount": 10.0,
-      "fill_price": 31.4,
-      "value": 10.0,
+      "symbol": "ORCL",
+      "side": "sell",
+      "quantity": 0.102256,
+      "dollar_based_amount": null,
+      "fill_price": 126.9701,
+      "value": 12.98,
       "fees": 0.0,
       "source": "agentic",
-      "realized_gain": null,
+      "realized_gain": 0.98,
+      "state": "filled"
+    },
+    {
+      "symbol": "PLTR",
+      "side": "sell",
+      "quantity": 0.106899,
+      "dollar_based_amount": null,
+      "fill_price": 120.2401,
+      "value": 12.85,
+      "fees": 0.0,
+      "source": "agentic",
+      "realized_gain": -0.15,
       "state": "filled"
     }
   ],
   "open_orders": [],
   "positions": [
-    {
-      "symbol": "PLTR",
-      "quantity": 0.106899,
-      "avg_cost": 121.61,
-      "cost_basis": 13.0,
-      "current_price": 122.215,
-      "market_value": 13.06,
-      "unrealized_pl_dollars": 0.06,
-      "unrealized_pl_percent": 0.00497,
-      "today_change_dollars": -0.08,
-      "pct_of_portfolio": 0.24183,
-      "days_held": 27,
-      "protective_order": null,
-      "earnings_within_7d": true,
-      "sellable_quantity": 0.106899
-    },
-    {
-      "symbol": "ORCL",
-      "quantity": 0.102256,
-      "avg_cost": 117.35,
-      "cost_basis": 12.0,
-      "current_price": 127.575,
-      "market_value": 13.05,
-      "unrealized_pl_dollars": 1.05,
-      "unrealized_pl_percent": 0.08713,
-      "today_change_dollars": 1.01,
-      "pct_of_portfolio": 0.24147,
-      "days_held": 6,
-      "protective_order": null,
-      "earnings_within_7d": false,
-      "sellable_quantity": 0.102256
-    },
     {
       "symbol": "HAL",
       "quantity": 0.318471,
@@ -73,10 +53,10 @@
       "current_price": 31.64,
       "market_value": 10.08,
       "unrealized_pl_dollars": 0.08,
-      "unrealized_pl_percent": 0.00764,
-      "today_change_dollars": 0.08,
-      "pct_of_portfolio": 0.18652,
-      "days_held": 0,
+      "unrealized_pl_percent": 0.008,
+      "today_change_dollars": 0.0,
+      "pct_of_portfolio": 0.18837,
+      "days_held": 1,
       "protective_order": null,
       "earnings_within_7d": false,
       "sellable_quantity": 0.318471
@@ -85,57 +65,55 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.32596,
+      "current_pct": 0.8118,
       "status": "green",
-      "note": "Cash is 32.6% of account value, well above the 5% floor."
+      "note": "Cash is 81.2% of account value, well above the 5% floor. Elevated because today's PLTR and ORCL sale proceeds ($25.83) haven't settled yet (T+1) and are sitting in cash, not yet reflected in buying power."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.36219,
-      "deployed_dollars": 10.0,
-      "buying_power_at_session_start": 27.61,
+      "current_pct": 0.0,
+      "deployed_dollars": 0.0,
+      "buying_power_at_session_start": 17.61,
       "status": "green",
-      "note": "Spent $10.00 of the $27.61 buying power available at session start (36.2%), within the 50% per-session ceiling."
+      "note": "No buy orders today \u2014 only PLTR and ORCL were sold. Buying power is unchanged at $17.61 from yesterday since the sale proceeds haven't settled yet. $0 deployed of $17.61 available (0%)."
     },
     "position_size": {
       "max_pct": 0.3,
-      "largest_position": "PLTR",
-      "largest_position_pct": 0.24183,
+      "largest_position": "HAL",
+      "largest_position_pct": 0.18837,
       "over_limit": [],
       "status": "green",
-      "note": "Largest position (PLTR) is 24.2% of portfolio, within the 30% cap."
+      "note": "Largest (and only) position HAL is 18.8% of portfolio, within the 30% cap."
     },
     "new_positions_today": {
-      "count": 1,
+      "count": 0,
       "max_per_day": 3,
       "status": "green",
-      "note": "1 new position opened today (HAL), within the 3-per-session limit."
+      "note": "No new positions opened today; PLTR and ORCL were closed out."
     },
     "unprotected_positions": {
-      "count": 3,
+      "count": 1,
       "symbols": [
-        "PLTR",
-        "ORCL",
         "HAL"
       ],
       "status": "yellow",
-      "note": "No position carries a standing stop-loss or take-profit order. The PLTR and ORCL market sell orders placed after yesterday's close were cancelled (never filled), so those two positions are back to fully unprotected along with HAL."
+      "note": "HAL has no standing stop-loss or take-profit order."
     }
   },
   "trade_quality": {
-    "closed_trades": 9,
-    "win_rate": 0.44444,
-    "avg_win": 1.535,
-    "avg_loss": -0.708,
-    "profit_factor": 1.734,
+    "closed_trades": 11,
+    "win_rate": 0.45455,
+    "avg_win": 1.424,
+    "avg_loss": -0.615,
+    "profit_factor": 1.93,
     "largest_win": 2.51,
     "largest_loss": -1.46,
-    "total_realized": 2.6,
+    "total_realized": 3.43,
     "realized_vs_unrealized": {
-      "realized": 2.6,
-      "unrealized": 1.19
+      "realized": 3.43,
+      "unrealized": 0.08
     },
-    "avg_holding_period_days": 7.0,
+    "avg_holding_period_days": 9.55,
     "per_symbol": [
       {
         "symbol": "NVDA",
@@ -180,6 +158,16 @@
       {
         "symbol": "TQQQ",
         "realized_gain": -0.1,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "ORCL",
+        "realized_gain": 0.98,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "PLTR",
+        "realized_gain": -0.15,
         "closed_trades": 1
       }
     ],
@@ -352,6 +340,11 @@
         "date": "2026-07-30",
         "total_value": 54.02,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-07-31",
+        "total_value": 53.51,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -404,6 +397,11 @@
         "date": "2026-07-30",
         "realized_gain": null,
         "number_of_trades": 0
+      },
+      {
+        "date": "2026-07-31",
+        "realized_gain": 0.83,
+        "number_of_trades": 2
       }
     ],
     "benchmark_spy_close": [
@@ -566,12 +564,16 @@
       {
         "date": "2026-07-30",
         "close": 741.73
+      },
+      {
+        "date": "2026-07-31",
+        "close": 740.07
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-07-30",
-    "last_trading_day": "2026-07-30",
+    "latest_date": "2026-07-31",
+    "last_trading_day": "2026-07-31",
     "is_stale": false
   }
 }
