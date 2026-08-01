@@ -100,7 +100,6 @@ function el(tag, attrs = {}, children = []) {
 /* ---------------- Header + stat grid ---------------- */
 
 function renderHeader(data) {
-  document.getElementById("account-label").textContent = data.account.nickname;
   const asOf = new Date(data.as_of);
   document.getElementById("as-of").textContent =
     `As of ${asOf.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })} · quotes delayed`;
