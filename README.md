@@ -1,11 +1,11 @@
 # Trading-Agent
 
-An autonomous Claude trading agent that manages a real Robinhood brokerage account ("Agentic Account") and publishes a live performance dashboard via GitHub Pages.
+Shared state and live dashboard for an autonomous Claude trading agent that manages a real Robinhood brokerage account ("Agentic Account").
 
-The system is built as two [Claude Code / Cowork skills](https://docs.claude.com/en/docs/claude-code) that share one account and one repo:
+The agent itself is built as two [Claude Code / Cowork skills](https://docs.claude.com/en/docs/claude-code) — a **trading** skill that runs live sessions and a **reporting** skill that publishes account state. **Those skills now live in their own repository**; this repo holds only the pieces they read from and write to over the network:
 
-- **[Trading Agent](Trading%20Agent/Trading%20Agent%20v4/SKILL.md)** ([`trading-skill-v4`](Trading%20Agent/Trading%20Agent%20v4/SKILL.md)) — runs trading sessions: reads yesterday's reasoning, rebuilds live account state via the Robinhood MCP connector, decides whether to trade, executes within risk guardrails, manages standing stop-loss/take-profit orders, and writes a note for the next session. The superseded [`trading-skill-v3`](Trading%20Agent/Trading%20Agent%20v3/SKILL.md) is kept alongside it — see [Skill versions](#skill-versions).
-- **[Reporting Agent](Reporting%20Agent/SKILL.md)** ([`trading-report`](Reporting%20Agent/SKILL.md)) — pulls the current state of the Agentic Account (read-only), assembles it into [`docs/data/data.json`](docs/data/data.json), and publishes it to this repo through the GitHub REST Contents API so the GitHub Pages dashboard picks it up.
+- **[`config/risk-parameters.json`](config/risk-parameters.json)** — the live default risk guardrails the trading skill fetches at the start of every session.
+- **[`docs/`](docs/)** — the static performance dashboard served by GitHub Pages, driven by a single JSON file the reporting skill publishes here.
 
 > **This trades real money.** The agent has full discretion over strategy within the risk parameters below; there is no human in the loop approving individual trades. Nothing here is investment advice.
 
@@ -17,23 +17,14 @@ Portfolio state (equity, positions, today's trades, guardrail status, trade-qual
 python -m http.server 8080 --directory docs
 ```
 
-The dashboard reads a single JSON file, [`docs/data/data.json`](docs/data/data.json). Its schema is documented in two places that must be kept in sync:
-
-| Where | What it is |
-|---|---|
-| [`docs/assets/js/dashboard.js`](docs/assets/js/dashboard.js) (header comment) | the authoritative data contract |
-| [`Reporting Agent/SKILL.md`](Reporting%20Agent/SKILL.md) (§ Reference: JSON Schema Example) | a full example with representative values, kept inline so the skill is a self-contained single file |
+The dashboard reads a single JSON file, [`docs/data/data.json`](docs/data/data.json). Its schema is defined by the authoritative data-contract comment at the top of [`docs/assets/js/dashboard.js`](docs/assets/js/dashboard.js).
 
 If `data.json` is marked `_demo_data: true`, the page renders it normally but shows a banner saying the numbers are sample data. If `data.json` is missing or unparseable, the page shows a "Could not load data/data.json" error — it does **not** silently fall back to sample data.
 
 ## Repo layout
 
 ```
-Trading Agent/
-  Trading Agent v3/SKILL.md     trading-skill-v3 — superseded, kept for reference
-  Trading Agent v4/SKILL.md     trading-skill-v4 — the version that runs live sessions
-Reporting Agent/SKILL.md        trading-report — publishes account state to the dashboard
-config/risk-parameters.json     live default risk parameters, fetched by trading-skill-v4 each session
+config/risk-parameters.json     live default risk parameters, fetched by the trading skill each session
 docs/                           static dashboard (GitHub Pages root)
   index.html
   data/data.json                  the one file the reporting skill writes and the dashboard reads
@@ -41,30 +32,19 @@ docs/                           static dashboard (GitHub Pages root)
   assets/css/                     nocturne.css (design system) + dashboard.css
   assets/js/dashboard.js          renders data.json; holds the authoritative data contract
   assets/images/                  dashboard logo and favicons
-reporting/agent/                scratch space for reporting work in progress (not the skill itself)
 ```
 
-## How the two skills work together
+## How the agent uses this repo
 
-1. A scheduled or manual **trading session** runs the trading skill: it reads `position-notes.md` (its memory of prior reasoning), checks live account/position/order state, optionally trades, and rewrites the note for next time.
-2. A separate **reporting session** runs `trading-report`: strictly read-only against Robinhood, it reconstructs the day's activity from the API (never from the trading session's own narrative), builds `docs/data/data.json`, and writes it back through the GitHub Contents API as a single commit.
+The trading and reporting skills live in a separate repository and run in the Claude Code / Cowork skills environment. They touch this repo over the network only:
+
+1. A scheduled or manual **trading session** fetches [`config/risk-parameters.json`](config/risk-parameters.json) from this repo, checks live account/position/order state, optionally trades within those guardrails, and keeps its own cross-session memory outside this repo.
+2. A separate **reporting session**, strictly read-only against Robinhood, reconstructs the day's activity from the API, builds `docs/data/data.json`, and writes it back through the GitHub REST Contents API as a single commit (`Portfolio update - <YYYY-MM-DD>`).
 3. GitHub Pages serves the updated dashboard from the published `docs/` folder.
-
-The two skills never write to each other's state — the trading agent's memory is `position-notes.md` in its notes folder; the reporting agent's memory is the history already published in `data.json`.
-
-## Skill versions
-
-Both trading skill versions are checked into this repo under `Trading Agent/` as **backup copies** — the skills that actually run sessions are installed in the Claude Code / Cowork skills directory, so editing the copies here does not change live behaviour. The version running sessions is **`trading-skill-v4`**. Over v3 it adds:
-
-- **Live risk parameters.** V4 fetches [`config/risk-parameters.json`](config/risk-parameters.json) from this repo at the start of every session. Its own hardcoded values are only a fallback for when that fetch fails. **Editing that file changes real trading behaviour on the next live session** — treat it with the same care as changing skill logic.
-- **`HORIZON_BIAS`** — a tunable dial between short-term trading and longer-term holding.
-- **A leveraged/inverse ETF screen** — blocks new positions in instruments such as TQQQ, SQQQ, and SOXL.
-
-V3's risk parameters are fixed in [`Trading Agent v3/SKILL.md`](Trading%20Agent/Trading%20Agent%20v3/SKILL.md) and are not read from `config/`.
 
 ## Default risk parameters
 
-Current contents of [`config/risk-parameters.json`](config/risk-parameters.json), as consumed by `trading-skill-v4`:
+Current contents of [`config/risk-parameters.json`](config/risk-parameters.json), fetched live by the trading skill at the start of each session. Its own hardcoded values are only a fallback for when that fetch fails — **editing this file changes real trading behaviour on the next live session**, so treat it with the same care as changing skill logic.
 
 | Key | Value | Meaning |
 |---|---|---|
@@ -78,15 +58,12 @@ Current contents of [`config/risk-parameters.json`](config/risk-parameters.json)
 | `HORIZON_BIAS` | 2 | tilt between short-term trading and longer-term holding |
 | `LEVERAGED_INSTRUMENTS_BLOCKED` | `true` | no new leveraged or inverse ETF positions |
 
-Separately, both v3 and v4 allow **at most one standing protective order per position** — a stop-loss *or* a take-profit, never both at once.
-
-These are circuit breakers, not the strategy — see [`Trading Agent v4/SKILL.md`](Trading%20Agent/Trading%20Agent%20v4/SKILL.md) for the full decision framework.
+The trading skill also allows **at most one standing protective order per position** — a stop-loss *or* a take-profit, never both at once. These are circuit breakers, not the strategy.
 
 ## Requirements
 
-- [Claude Code](https://claude.com/claude-code) or Cowork with a Robinhood MCP connector authorized for the target account
-- A persistent notes location the trading skill can read/write `position-notes.md` to, for cross-session continuity
-- A GitHub personal access token with `repo` (contents read/write) scope on this repository, stored as JSON on the machine running the reporting skill. The skill reads the token from disk and calls the GitHub API directly — it does not need a local clone of this repo or configured git credentials.
+- [Claude Code](https://claude.com/claude-code) or Cowork with the trading and reporting skills installed, plus a Robinhood MCP connector authorized for the target account.
+- A GitHub personal access token with `repo` (contents read/write) scope on this repository, stored where the reporting skill can read it. The skill calls the GitHub API directly — it does not need a local clone of this repo or configured git credentials.
 
 ## License
 
