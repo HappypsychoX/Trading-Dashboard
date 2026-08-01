@@ -1,4 +1,4 @@
-# Trading-Agent
+# Trading-Dashboard
 
 Shared state and live dashboard for an autonomous Claude trading agent that manages a real Robinhood brokerage account ("Agentic Account").
 
