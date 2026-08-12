@@ -1,72 +1,107 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-07T16:08:00-04:00",
+  "as_of": "2026-08-12T18:41:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.85,
-    "equity_value": 0.0,
-    "cash": 52.85,
-    "buying_power": 44.77,
-    "open_positions_count": 0
+    "total_value": 52.83,
+    "equity_value": 13.3,
+    "cash": 39.53,
+    "buying_power": 39.53,
+    "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.0,
-    "realized": -0.24,
-    "dollars": -0.24,
-    "percent": -0.00453,
-    "same_day_open_note": "ITUB's standing stop-loss triggered today at $8.08, closing the position for a -$0.24 realized loss. The account is now fully in cash with no open positions."
+    "unrealized": -0.02,
+    "realized": null,
+    "dollars": -0.02,
+    "percent": -0.00038,
+    "same_day_open_note": "DV was opened today, so its change is measured from its fill price ($13.32) rather than yesterday's close."
   },
   "todays_trades": [
     {
-      "symbol": "ITUB",
-      "side": "sell",
+      "symbol": "DV",
+      "side": "buy",
       "quantity": 1,
       "dollar_based_amount": null,
-      "fill_price": 8.08,
-      "value": 8.08,
+      "fill_price": 13.32,
+      "value": 13.32,
       "fees": 0.0,
       "source": "agentic",
-      "realized_gain": -0.24,
+      "realized_gain": null,
       "state": "filled"
     }
   ],
-  "open_orders": [],
-  "positions": [],
+  "open_orders": [
+    {
+      "symbol": "DV",
+      "side": "sell",
+      "type": "stop_loss",
+      "quantity": 1,
+      "trigger_price": 13.09,
+      "limit_price": null,
+      "state": "confirmed",
+      "created_at": "2026-08-12T13:36:15-04:00",
+      "stale": false
+    }
+  ],
+  "positions": [
+    {
+      "symbol": "DV",
+      "quantity": 1,
+      "avg_cost": 13.32,
+      "cost_basis": 13.32,
+      "current_price": 13.3,
+      "market_value": 13.3,
+      "unrealized_pl_dollars": -0.02,
+      "unrealized_pl_percent": -0.0015,
+      "today_change_dollars": -0.02,
+      "pct_of_portfolio": 0.25175,
+      "days_held": 0,
+      "protective_order": {
+        "type": "stop_loss",
+        "trigger_price": 13.09,
+        "limit_price": null,
+        "quantity": 1,
+        "distance_percent": -0.01579
+      },
+      "earnings_within_7d": false,
+      "sellable_quantity": 0
+    }
+  ],
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 1.0,
+      "current_pct": 0.7484,
       "status": "green",
-      "note": "Account is 100% cash, well above the 5% floor."
+      "note": "Cash is well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.0,
-      "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 36.69,
+      "current_pct": 0.25203,
+      "deployed_dollars": 13.32,
+      "buying_power_at_session_start": 52.85,
       "status": "green",
-      "note": "No new buys today; only a stop-loss sale of ITUB executed. 0% of session-start buying power deployed."
+      "note": "Spent $13.32 of the $52.85 buying power available at session start (25.2%), within the 50% per-session ceiling."
     },
     "position_size": {
       "max_pct": 0.3,
-      "largest_position": null,
-      "largest_position_pct": 0.0,
+      "largest_position": "DV",
+      "largest_position_pct": 0.25175,
       "over_limit": [],
       "status": "green",
-      "note": "No open positions."
+      "note": "DV is at 25.2% of portfolio, under the 30% single-position cap."
     },
     "new_positions_today": {
-      "count": 0,
+      "count": 1,
       "max_per_day": 3,
       "status": "green",
-      "note": "No new positions opened today."
+      "note": "1 new position opened today (DV)."
     },
     "unprotected_positions": {
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "No open positions to protect."
+      "note": "DV has a standing stop-loss at $13.09."
     }
   },
   "trade_quality": {
@@ -80,7 +115,7 @@
     "total_realized": 2.84,
     "realized_vs_unrealized": {
       "realized": 2.84,
-      "unrealized": 0.0
+      "unrealized": -0.02
     },
     "avg_holding_period_days": 7.77,
     "per_symbol": [
@@ -354,6 +389,11 @@
         "date": "2026-08-07",
         "total_value": 52.85,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-08-12",
+        "total_value": 52.83,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -436,6 +476,11 @@
         "date": "2026-08-07",
         "realized_gain": -0.24,
         "number_of_trades": 1
+      },
+      {
+        "date": "2026-08-12",
+        "realized_gain": null,
+        "number_of_trades": 0
       }
     ],
     "benchmark_spy_close": [
@@ -622,12 +667,16 @@
       {
         "date": "2026-08-07",
         "close": 773.2
+      },
+      {
+        "date": "2026-08-12",
+        "close": 772.54
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-08-07",
-    "last_trading_day": "2026-08-07",
+    "latest_date": "2026-08-12",
+    "last_trading_day": "2026-08-12",
     "is_stale": false
   }
 }
