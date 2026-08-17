@@ -1,48 +1,37 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-14T16:07:51-04:00",
+  "as_of": "2026-08-17T16:05:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.86,
-    "equity_value": 20.45,
-    "cash": 32.41,
+    "total_value": 52.75,
+    "equity_value": 13.3,
+    "cash": 39.45,
     "buying_power": 32.41,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.03,
-    "realized": null,
-    "dollars": 0.03,
-    "percent": 0.00057,
-    "same_day_open_note": "OPFI was opened today, so its change is measured from its fill price ($7.1173) rather than yesterday's close. DV is measured from yesterday's official close ($13.30)."
+    "unrealized": 0.005,
+    "realized": -0.08,
+    "dollars": -0.075,
+    "percent": -0.00142,
+    "same_day_open_note": "No new positions were opened today. OPFI (opened 2026-08-14) was sold today for a realized loss of $0.08. DV is measured from Friday's official close ($13.29)."
   },
   "todays_trades": [
     {
       "symbol": "OPFI",
-      "side": "buy",
+      "side": "sell",
       "quantity": 1,
       "dollar_based_amount": null,
-      "fill_price": 7.1173,
-      "value": 7.1173,
+      "fill_price": 7.0401,
+      "value": 7.0401,
       "fees": 0.0,
       "source": "agentic",
-      "realized_gain": null,
+      "realized_gain": -0.08,
       "state": "filled"
     }
   ],
   "open_orders": [
-    {
-      "symbol": "OPFI",
-      "side": "sell",
-      "type": "stop_loss",
-      "quantity": 1,
-      "trigger_price": 6.55,
-      "limit_price": null,
-      "state": "confirmed",
-      "created_at": "2026-08-14T17:38:13-04:00",
-      "stale": false
-    },
     {
       "symbol": "DV",
       "side": "sell",
@@ -65,9 +54,9 @@
       "market_value": 13.295,
       "unrealized_pl_dollars": -0.025,
       "unrealized_pl_percent": -0.00188,
-      "today_change_dollars": -0.005,
-      "pct_of_portfolio": 0.25151,
-      "days_held": 2,
+      "today_change_dollars": 0.005,
+      "pct_of_portfolio": 0.25204,
+      "days_held": 5,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 13.09,
@@ -77,80 +66,58 @@
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
-    },
-    {
-      "symbol": "OPFI",
-      "quantity": 1,
-      "avg_cost": 7.12,
-      "cost_basis": 7.12,
-      "current_price": 7.15,
-      "market_value": 7.15,
-      "unrealized_pl_dollars": 0.03,
-      "unrealized_pl_percent": 0.00421,
-      "today_change_dollars": 0.0327,
-      "pct_of_portfolio": 0.13529,
-      "days_held": 0,
-      "protective_order": {
-        "type": "stop_loss",
-        "trigger_price": 6.55,
-        "limit_price": null,
-        "quantity": 1,
-        "distance_percent": -0.08392
-      },
-      "earnings_within_7d": false,
-      "sellable_quantity": 0
     }
   ],
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.61321,
+      "current_pct": 0.74786,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.18004,
-      "deployed_dollars": 7.1173,
-      "buying_power_at_session_start": 39.5273,
+      "current_pct": 0,
+      "deployed_dollars": 0,
+      "buying_power_at_session_start": 25.3699,
       "status": "green",
-      "note": "Spent $7.12 of the $39.53 buying power available at session start (18.0%), within the 50% per-session ceiling."
+      "note": "No buys today; sold OPFI for $7.04, adding to cash."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "DV",
-      "largest_position_pct": 0.25151,
+      "largest_position_pct": 0.25204,
       "over_limit": [],
       "status": "green",
       "note": "DV is at 25.2% of portfolio, under the 30% single-position cap."
     },
     "new_positions_today": {
-      "count": 1,
+      "count": 0,
       "max_per_day": 3,
       "status": "green",
-      "note": "1 new position opened today (OPFI)."
+      "note": "No new positions opened today; OPFI was closed."
     },
     "unprotected_positions": {
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "Both DV and OPFI have standing stop-loss orders (DV's stop order is stale \u2014 placed 2026-08-12 \u2014 but still active)."
+      "note": "DV has a standing stop-loss order (stale \u2014 placed 2026-08-12, still active)."
     }
   },
   "trade_quality": {
-    "closed_trades": 14,
-    "win_rate": 0.42857,
+    "closed_trades": 15,
+    "win_rate": 0.4,
     "avg_win": 1.2,
-    "avg_loss": -0.545,
-    "profit_factor": 1.65138,
+    "avg_loss": -0.49333,
+    "profit_factor": 1.62162,
     "largest_win": 2.51,
     "largest_loss": -1.46,
-    "total_realized": 2.84,
+    "total_realized": 2.76,
     "realized_vs_unrealized": {
-      "realized": 2.84,
-      "unrealized": 0.005
+      "realized": 2.76,
+      "unrealized": -0.025
     },
-    "avg_holding_period_days": 7.77,
+    "avg_holding_period_days": 7.45,
     "per_symbol": [
       {
         "symbol": "LCID",
@@ -180,6 +147,11 @@
       {
         "symbol": "HAL",
         "realized_gain": 0.08,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "OPFI",
+        "realized_gain": -0.08,
         "closed_trades": 1
       },
       {
@@ -437,6 +409,11 @@
         "date": "2026-08-14",
         "total_value": 52.86,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-08-17",
+        "total_value": 52.75,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -534,6 +511,11 @@
         "date": "2026-08-14",
         "realized_gain": null,
         "number_of_trades": 0
+      },
+      {
+        "date": "2026-08-17",
+        "realized_gain": -0.08,
+        "number_of_trades": 1
       }
     ],
     "benchmark_spy_close": [
@@ -732,12 +714,16 @@
       {
         "date": "2026-08-14",
         "close": 776.31
+      },
+      {
+        "date": "2026-08-17",
+        "close": 772.68
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-08-14",
-    "last_trading_day": "2026-08-14",
+    "latest_date": "2026-08-17",
+    "last_trading_day": "2026-08-17",
     "is_stale": false
   }
 }
