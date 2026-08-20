@@ -1,36 +1,23 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-19T16:07:19-04:00",
+  "as_of": "2026-08-20T16:07:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
     "total_value": 52.75,
     "equity_value": 0.0,
     "cash": 52.75,
-    "buying_power": 39.45,
+    "buying_power": 52.75,
     "open_positions_count": 0
   },
   "daily_pl": {
     "unrealized": 0.0,
-    "realized": -0.02,
-    "dollars": -0.02,
-    "percent": -0.00038,
-    "same_day_open_note": "DV (the only open position) was sold today at $13.3001, closing out for a realized loss of $0.02 versus its $13.32 cost basis. No new positions were opened; the account is now fully in cash."
+    "realized": null,
+    "dollars": 0.0,
+    "percent": 0.0,
+    "same_day_open_note": "No positions held and no trades today; account value unchanged from yesterday's close."
   },
-  "todays_trades": [
-    {
-      "symbol": "DV",
-      "side": "sell",
-      "quantity": 1,
-      "dollar_based_amount": null,
-      "fill_price": 13.3001,
-      "value": 13.3001,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": -0.02,
-      "state": "filled"
-    }
-  ],
+  "todays_trades": [],
   "open_orders": [],
   "positions": [],
   "guardrails": {
@@ -38,20 +25,20 @@
       "floor_pct": 0.05,
       "current_pct": 1.0,
       "status": "green",
-      "note": "Account is 100% cash after closing the only open position; well above the 5% floor."
+      "note": "Entire account is in cash; well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0,
-      "deployed_dollars": 0,
-      "buying_power_at_session_start": 26.15,
+      "current_pct": 0.0,
+      "deployed_dollars": 0.0,
+      "buying_power_at_session_start": 52.75,
       "status": "green",
-      "note": "No buys today; only a sell (DV). Buying power grew from proceeds."
+      "note": "No trades placed today."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": null,
-      "largest_position_pct": 0,
+      "largest_position_pct": 0.0,
       "over_limit": [],
       "status": "green",
       "note": "No open positions."
@@ -394,6 +381,11 @@
         "date": "2026-08-19",
         "total_value": 52.75,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-08-20",
+        "total_value": 52.75,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -506,6 +498,11 @@
         "date": "2026-08-19",
         "realized_gain": -0.02,
         "number_of_trades": 1
+      },
+      {
+        "date": "2026-08-20",
+        "realized_gain": null,
+        "number_of_trades": 0
       }
     ],
     "benchmark_spy_close": [
@@ -716,12 +713,16 @@
       {
         "date": "2026-08-19",
         "close": 769.06
+      },
+      {
+        "date": "2026-08-20",
+        "close": 762.65
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-08-19",
-    "last_trading_day": "2026-08-19",
+    "latest_date": "2026-08-20",
+    "last_trading_day": "2026-08-20",
     "is_stale": false
   }
 }
