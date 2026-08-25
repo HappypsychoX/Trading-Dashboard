@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-24T16:05:00-04:00",
+  "as_of": "2026-08-25T16:06:45-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.92,
-    "equity_value": 13.7,
+    "total_value": 52.8,
+    "equity_value": 13.58,
     "cash": 39.22,
     "buying_power": 39.22,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.54,
+    "unrealized": -0.13,
     "realized": null,
-    "dollars": 0.54,
-    "percent": 0.0102,
-    "same_day_open_note": "AVAH rose from Thursday 8/21's close ($13.16) to $13.70 at Monday 8/24's close. No trades placed today."
+    "dollars": -0.13,
+    "percent": -0.00246,
+    "same_day_open_note": "AVAH fell from Monday 8/24's close ($13.70) to $13.575 as of ~4:06pm ET today. No trades placed today; the only change was the standing stop-loss being raised from $12.55 to $12.85."
   },
   "todays_trades": [],
   "open_orders": [
@@ -24,10 +24,10 @@
       "side": "sell",
       "type": "stop_loss",
       "quantity": 1.0,
-      "trigger_price": 12.55,
+      "trigger_price": 12.85,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-08-21T13:38:01-04:00",
+      "created_at": "2026-08-25T13:37:30-04:00",
       "stale": false
     }
   ],
@@ -37,19 +37,19 @@
       "quantity": 1.0,
       "avg_cost": 13.53,
       "cost_basis": 13.53,
-      "current_price": 13.7,
-      "market_value": 13.7,
-      "unrealized_pl_dollars": 0.17,
-      "unrealized_pl_percent": 0.01256,
-      "today_change_dollars": 0.54,
-      "pct_of_portfolio": 0.25888,
-      "days_held": 3,
+      "current_price": 13.575,
+      "market_value": 13.575,
+      "unrealized_pl_dollars": 0.05,
+      "unrealized_pl_percent": 0.00333,
+      "today_change_dollars": -0.13,
+      "pct_of_portfolio": 0.25713,
+      "days_held": 4,
       "protective_order": {
         "type": "stop_loss",
-        "trigger_price": 12.55,
+        "trigger_price": 12.85,
         "limit_price": null,
         "quantity": 1.0,
-        "distance_percent": -0.08394
+        "distance_percent": -0.05341
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0.0
@@ -58,7 +58,7 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.74112,
+      "current_pct": 0.74287,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
@@ -73,10 +73,10 @@
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "AVAH",
-      "largest_position_pct": 0.25888,
+      "largest_position_pct": 0.25713,
       "over_limit": [],
       "status": "green",
-      "note": "AVAH is at 25.9% of portfolio, within the 30% single-position cap."
+      "note": "AVAH is at 25.7% of portfolio, within the 30% single-position cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -88,7 +88,7 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "AVAH has a standing stop-loss at $12.55."
+      "note": "AVAH has a standing stop-loss at $12.85 (raised from $12.55 today)."
     }
   },
   "trade_quality": {
@@ -431,6 +431,11 @@
         "date": "2026-08-24",
         "total_value": 52.92,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-08-25",
+        "total_value": 52.8,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -556,6 +561,11 @@
       },
       {
         "date": "2026-08-24",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-08-25",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -780,12 +790,16 @@
       {
         "date": "2026-08-24",
         "close": 763.47
+      },
+      {
+        "date": "2026-08-25",
+        "close": 765.85
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-08-24",
-    "last_trading_day": "2026-08-24",
+    "latest_date": "2026-08-25",
+    "last_trading_day": "2026-08-25",
     "is_stale": false
   }
 }
