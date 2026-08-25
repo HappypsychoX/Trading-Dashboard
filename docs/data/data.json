@@ -1,6 +1,6 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-25T08:15:00-04:00",
+  "as_of": "2026-08-24T16:05:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
@@ -11,11 +11,11 @@
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.0,
+    "unrealized": 0.54,
     "realized": null,
-    "dollars": 0.0,
-    "percent": 0.0,
-    "same_day_open_note": "No trades today. AVAH's price is unchanged from yesterday's close as of this premarket snapshot."
+    "dollars": 0.54,
+    "percent": 0.0102,
+    "same_day_open_note": "AVAH rose from Thursday 8/21's close ($13.16) to $13.70 at Monday 8/24's close. No trades placed today."
   },
   "todays_trades": [],
   "open_orders": [
@@ -41,9 +41,9 @@
       "market_value": 13.7,
       "unrealized_pl_dollars": 0.17,
       "unrealized_pl_percent": 0.01256,
-      "today_change_dollars": 0.0,
+      "today_change_dollars": 0.54,
       "pct_of_portfolio": 0.25888,
-      "days_held": 4,
+      "days_held": 3,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 12.55,
@@ -428,7 +428,7 @@
         "net_external_flow": 0
       },
       {
-        "date": "2026-08-25",
+        "date": "2026-08-24",
         "total_value": 52.92,
         "net_external_flow": 0
       }
@@ -555,7 +555,7 @@
         "number_of_trades": 0
       },
       {
-        "date": "2026-08-25",
+        "date": "2026-08-24",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -778,13 +778,13 @@
         "close": 765.69
       },
       {
-        "date": "2026-08-25",
-        "close": 767.02
+        "date": "2026-08-24",
+        "close": 763.47
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-08-25",
+    "latest_date": "2026-08-24",
     "last_trading_day": "2026-08-24",
     "is_stale": false
   }
