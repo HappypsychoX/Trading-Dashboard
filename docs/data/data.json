@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-25T16:06:45-04:00",
+  "as_of": "2026-08-26T16:08:34-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.8,
-    "equity_value": 13.58,
+    "total_value": 52.84,
+    "equity_value": 13.62,
     "cash": 39.22,
     "buying_power": 39.22,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": -0.13,
+    "unrealized": 0.03,
     "realized": null,
-    "dollars": -0.13,
-    "percent": -0.00246,
-    "same_day_open_note": "AVAH fell from Monday 8/24's close ($13.70) to $13.575 as of ~4:06pm ET today. No trades placed today; the only change was the standing stop-loss being raised from $12.55 to $12.85."
+    "dollars": 0.03,
+    "percent": 0.00057,
+    "same_day_open_note": "AVAH ticked up from yesterday's close ($13.59) to $13.62. No trades placed today; the only change was the standing stop-loss being raised from $12.85 to $13.25."
   },
   "todays_trades": [],
   "open_orders": [
@@ -23,11 +23,11 @@
       "symbol": "AVAH",
       "side": "sell",
       "type": "stop_loss",
-      "quantity": 1.0,
-      "trigger_price": 12.85,
+      "quantity": 1,
+      "trigger_price": 13.25,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-08-25T13:37:30-04:00",
+      "created_at": "2026-08-26T13:37:12-04:00",
       "stale": false
     }
   ],
@@ -37,19 +37,19 @@
       "quantity": 1.0,
       "avg_cost": 13.53,
       "cost_basis": 13.53,
-      "current_price": 13.575,
-      "market_value": 13.575,
-      "unrealized_pl_dollars": 0.05,
-      "unrealized_pl_percent": 0.00333,
-      "today_change_dollars": -0.13,
-      "pct_of_portfolio": 0.25713,
-      "days_held": 4,
+      "current_price": 13.62,
+      "market_value": 13.62,
+      "unrealized_pl_dollars": 0.09,
+      "unrealized_pl_percent": 0.00665,
+      "today_change_dollars": 0.03,
+      "pct_of_portfolio": 0.25776,
+      "days_held": 5,
       "protective_order": {
         "type": "stop_loss",
-        "trigger_price": 12.85,
+        "trigger_price": 13.25,
         "limit_price": null,
         "quantity": 1.0,
-        "distance_percent": -0.05341
+        "distance_percent": -0.02717
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0.0
@@ -58,7 +58,7 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.74287,
+      "current_pct": 0.74233,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
@@ -73,10 +73,10 @@
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "AVAH",
-      "largest_position_pct": 0.25713,
+      "largest_position_pct": 0.25776,
       "over_limit": [],
       "status": "green",
-      "note": "AVAH is at 25.7% of portfolio, within the 30% single-position cap."
+      "note": "AVAH is at 25.8% of portfolio, within the 30% single-position cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -88,7 +88,7 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "AVAH has a standing stop-loss at $12.85 (raised from $12.55 today)."
+      "note": "AVAH has a standing stop-loss at $13.25 (raised from $12.85 today)."
     }
   },
   "trade_quality": {
@@ -102,7 +102,7 @@
     "total_realized": 2.74,
     "realized_vs_unrealized": {
       "realized": 2.74,
-      "unrealized": 0.17
+      "unrealized": 0.09
     },
     "avg_holding_period_days": 7.42,
     "per_symbol": [
@@ -189,6 +189,11 @@
     ],
     "sample_size_warning": true,
     "sample_size_floor": 20
+  },
+  "snapshot_log": {
+    "latest_date": "2026-08-26",
+    "last_trading_day": "2026-08-26",
+    "is_stale": false
   },
   "charts": {
     "equity_curve": [
@@ -436,6 +441,11 @@
         "date": "2026-08-25",
         "total_value": 52.8,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-08-26",
+        "total_value": 52.84,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -566,6 +576,11 @@
       },
       {
         "date": "2026-08-25",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-08-26",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -794,12 +809,11 @@
       {
         "date": "2026-08-25",
         "close": 765.85
+      },
+      {
+        "date": "2026-08-26",
+        "close": 765.95
       }
     ]
-  },
-  "snapshot_log": {
-    "latest_date": "2026-08-25",
-    "last_trading_day": "2026-08-25",
-    "is_stale": false
   }
 }
