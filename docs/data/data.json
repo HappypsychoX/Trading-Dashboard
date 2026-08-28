@@ -1,82 +1,60 @@
 {
   "_demo_data": false,
-  "as_of": "2026-08-27T16:00:00-04:00",
+  "as_of": "2026-08-28T16:07:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 53.04,
-    "equity_value": 13.82,
-    "cash": 39.22,
+    "total_value": 52.51,
+    "equity_value": 0.0,
+    "cash": 52.51,
     "buying_power": 39.22,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "daily_pl": {
-    "unrealized": 0.2,
-    "realized": null,
-    "dollars": 0.2,
-    "percent": 0.00379,
-    "same_day_open_note": "AVAH was held from a previous day; today's change is measured from yesterday's close ($13.62)."
+    "unrealized": 0.0,
+    "realized": -0.24,
+    "dollars": -0.24,
+    "percent": -0.00452,
+    "same_day_open_note": "AVAH's standing stop-loss was triggered today, closing the account's only position; the account now holds 100% cash."
   },
-  "todays_trades": [],
-  "open_orders": [
+  "todays_trades": [
     {
       "symbol": "AVAH",
       "side": "sell",
-      "type": "stop_loss",
       "quantity": 1.0,
-      "trigger_price": 13.3,
-      "limit_price": null,
-      "state": "confirmed",
-      "created_at": "2026-08-27T17:36:06Z",
-      "stale": false
+      "dollar_based_amount": null,
+      "fill_price": 13.29,
+      "value": 13.29,
+      "fees": 0.0,
+      "source": "agentic",
+      "realized_gain": -0.24,
+      "state": "filled"
     }
   ],
-  "positions": [
-    {
-      "symbol": "AVAH",
-      "quantity": 1.0,
-      "avg_cost": 13.53,
-      "cost_basis": 13.53,
-      "current_price": 13.815,
-      "market_value": 13.815,
-      "unrealized_pl_dollars": 0.285,
-      "unrealized_pl_percent": 0.02106,
-      "today_change_dollars": 0.195,
-      "pct_of_portfolio": 0.26046,
-      "days_held": 6,
-      "protective_order": {
-        "type": "stop_loss",
-        "trigger_price": 13.3,
-        "limit_price": null,
-        "quantity": 1.0,
-        "distance_percent": -0.03728
-      },
-      "earnings_within_7d": false,
-      "sellable_quantity": 0.0
-    }
-  ],
+  "open_orders": [],
+  "positions": [],
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.73944,
+      "current_pct": 1.0,
       "status": "green",
-      "note": "Cash is well above the 5% floor."
+      "note": "Account is 100% cash after AVAH's stop-loss was triggered."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
       "current_pct": 0.0,
       "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 39.22,
+      "buying_power_at_session_start": 25.93,
       "status": "green",
-      "note": "No buys today; buying power unchanged at $39.22."
+      "note": "No buys today; only a stop-loss sell (AVAH) executed."
     },
     "position_size": {
       "max_pct": 0.3,
-      "largest_position": "AVAH",
-      "largest_position_pct": 0.26046,
+      "largest_position": null,
+      "largest_position_pct": 0.0,
       "over_limit": [],
       "status": "green",
-      "note": "AVAH is at 26.0% of portfolio, within the 30% single-position cap."
+      "note": "No open positions."
     },
     "new_positions_today": {
       "count": 0,
@@ -88,23 +66,23 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "AVAH's standing stop-loss was raised to $13.30 today (from $13.25)."
+      "note": "No open positions to protect; AVAH's stop-loss triggered and the position closed today."
     }
   },
   "trade_quality": {
-    "closed_trades": 16,
-    "win_rate": 0.375,
+    "closed_trades": 17,
+    "win_rate": 0.35294,
     "avg_win": 1.2,
-    "avg_loss": -0.446,
-    "profit_factor": 1.61435,
+    "avg_loss": -0.42727,
+    "profit_factor": 1.53191,
     "largest_win": 2.51,
     "largest_loss": -1.46,
-    "total_realized": 2.74,
+    "total_realized": 2.5,
     "realized_vs_unrealized": {
-      "realized": 2.74,
-      "unrealized": 0.285
+      "realized": 2.5,
+      "unrealized": 0.0
     },
-    "avg_holding_period_days": 7.42,
+    "avg_holding_period_days": 7.4,
     "per_symbol": [
       {
         "symbol": "LCID",
@@ -137,6 +115,11 @@
         "closed_trades": 1
       },
       {
+        "symbol": "DV",
+        "realized_gain": -0.02,
+        "closed_trades": 1
+      },
+      {
         "symbol": "OPFI",
         "realized_gain": -0.08,
         "closed_trades": 1
@@ -144,11 +127,6 @@
       {
         "symbol": "TQQQ",
         "realized_gain": -0.1,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "DV",
-        "realized_gain": -0.02,
         "closed_trades": 1
       },
       {
@@ -163,6 +141,11 @@
       },
       {
         "symbol": "ITUB",
+        "realized_gain": -0.24,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "AVAH",
         "realized_gain": -0.24,
         "closed_trades": 1
       },
@@ -446,6 +429,11 @@
         "date": "2026-08-27",
         "total_value": 53.04,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-08-28",
+        "total_value": 52.51,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -588,6 +576,11 @@
         "date": "2026-08-27",
         "realized_gain": null,
         "number_of_trades": 0
+      },
+      {
+        "date": "2026-08-28",
+        "realized_gain": -0.24,
+        "number_of_trades": 1
       }
     ],
     "benchmark_spy_close": [
@@ -822,12 +815,16 @@
       {
         "date": "2026-08-27",
         "close": 771.07
+      },
+      {
+        "date": "2026-08-28",
+        "close": 769.39
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-08-27",
-    "last_trading_day": "2026-08-27",
+    "latest_date": "2026-08-28",
+    "last_trading_day": "2026-08-28",
     "is_stale": false
   }
 }
