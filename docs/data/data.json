@@ -1,6 +1,6 @@
 {
   "_demo_data": false,
-  "as_of": "2026-09-01T16:05:00-04:00",
+  "as_of": "2026-09-01T16:08:44-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
@@ -127,12 +127,12 @@
         "closed_trades": 1
       },
       {
-        "symbol": "ITUB",
+        "symbol": "AVAH",
         "realized_gain": -0.24,
         "closed_trades": 1
       },
       {
-        "symbol": "AVAH",
+        "symbol": "ITUB",
         "realized_gain": -0.24,
         "closed_trades": 1
       },
