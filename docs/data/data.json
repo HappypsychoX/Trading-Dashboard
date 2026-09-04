@@ -1,59 +1,94 @@
 {
   "_demo_data": false,
-  "as_of": "2026-09-01T16:08:44-04:00",
+  "as_of": "2026-09-04T16:07:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.51,
-    "equity_value": 0.0,
-    "cash": 52.51,
-    "buying_power": 52.51,
-    "open_positions_count": 0
+    "total_value": 52.63,
+    "equity_value": 8.21,
+    "cash": 44.53,
+    "buying_power": 44.53,
+    "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.0,
+    "unrealized": 0.225,
     "realized": null,
-    "dollars": 0.0,
-    "percent": 0.0,
-    "same_day_open_note": "No positions open and no trades today; account value unchanged from yesterday's close (100% cash)."
+    "dollars": 0.225,
+    "percent": 0.004285,
+    "same_day_open_note": "VSTM was opened 2026-09-02 (not today); its change is measured from yesterday's close."
   },
   "todays_trades": [],
-  "open_orders": [],
-  "positions": [],
+  "open_orders": [
+    {
+      "symbol": "VSTM",
+      "side": "sell",
+      "type": "stop_loss",
+      "quantity": 1,
+      "trigger_price": 7.4,
+      "limit_price": null,
+      "state": "confirmed",
+      "created_at": "2026-09-04T17:36:34.739128Z",
+      "stale": false
+    }
+  ],
+  "positions": [
+    {
+      "symbol": "VSTM",
+      "quantity": 1,
+      "avg_cost": 7.9787,
+      "cost_basis": 7.9787,
+      "current_price": 8.205,
+      "market_value": 8.205,
+      "unrealized_pl_dollars": 0.2263,
+      "unrealized_pl_percent": 0.02836,
+      "today_change_dollars": 0.225,
+      "pct_of_portfolio": 0.15591,
+      "days_held": 2,
+      "protective_order": {
+        "type": "stop_loss",
+        "trigger_price": 7.4,
+        "limit_price": null,
+        "quantity": 1,
+        "distance_percent": -0.09811
+      },
+      "earnings_within_7d": false,
+      "sellable_quantity": 0
+    }
+  ],
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 1.0,
+      "current_pct": 0.84611,
       "status": "green",
-      "note": "Account remains 100% cash."
+      "note": "Cash is well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.0,
+      "current_pct": 0,
       "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 52.51,
+      "buying_power_at_session_start": 44.53,
       "status": "green",
-      "note": "No trades today."
+      "note": "No trades filled today (only a stop-loss order placed)."
     },
     "position_size": {
       "max_pct": 0.3,
-      "largest_position": null,
-      "largest_position_pct": 0.0,
+      "largest_position": "VSTM",
+      "largest_position_pct": 0.15591,
       "over_limit": [],
       "status": "green",
-      "note": "No open positions."
+      "note": "VSTM at 15.6% of portfolio, within the 30% cap."
     },
     "new_positions_today": {
       "count": 0,
       "max_per_day": 3,
       "status": "green",
-      "note": "No new positions opened today."
+      "note": "No new positions opened today (VSTM was opened 2026-09-02)."
     },
     "unprotected_positions": {
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "No open positions to protect."
+      "note": "VSTM has a standing stop-loss order."
     }
   },
   "trade_quality": {
@@ -426,6 +461,11 @@
         "date": "2026-09-01",
         "total_value": 52.51,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-09-04",
+        "total_value": 52.63,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -576,6 +616,11 @@
       },
       {
         "date": "2026-09-01",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-09-04",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -820,12 +865,16 @@
       {
         "date": "2026-09-01",
         "close": 761.65
+      },
+      {
+        "date": "2026-09-04",
+        "close": 770.23
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-09-01",
-    "last_trading_day": "2026-09-01",
+    "latest_date": "2026-09-04",
+    "last_trading_day": "2026-09-04",
     "is_stale": false
   }
 }
