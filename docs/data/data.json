@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-09-04T16:07:00-04:00",
+  "as_of": "2026-09-08T02:13:43-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.63,
-    "equity_value": 8.21,
+    "total_value": 52.36,
+    "equity_value": 7.83,
     "cash": 44.53,
     "buying_power": 44.53,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.225,
+    "unrealized": -0.37,
     "realized": null,
-    "dollars": 0.225,
-    "percent": 0.004285,
-    "same_day_open_note": "VSTM was opened 2026-09-02 (not today); its change is measured from yesterday's close."
+    "dollars": -0.37,
+    "percent": -0.007017,
+    "same_day_open_note": "VSTM was opened 2026-09-02 (not today); its change is measured from the last trading day's close (2026-09-04, market was closed 2026-09-05 through 2026-09-07)."
   },
   "todays_trades": [],
   "open_orders": [
@@ -28,7 +28,7 @@
       "limit_price": null,
       "state": "confirmed",
       "created_at": "2026-09-04T17:36:34.739128Z",
-      "stale": false
+      "stale": true
     }
   ],
   "positions": [
@@ -37,19 +37,19 @@
       "quantity": 1,
       "avg_cost": 7.9787,
       "cost_basis": 7.9787,
-      "current_price": 8.205,
-      "market_value": 8.205,
-      "unrealized_pl_dollars": 0.2263,
-      "unrealized_pl_percent": 0.02836,
-      "today_change_dollars": 0.225,
-      "pct_of_portfolio": 0.15591,
-      "days_held": 2,
+      "current_price": 7.83,
+      "market_value": 7.83,
+      "unrealized_pl_dollars": -0.1487,
+      "unrealized_pl_percent": -0.01864,
+      "today_change_dollars": -0.37,
+      "pct_of_portfolio": 0.14954,
+      "days_held": 6,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 7.4,
         "limit_price": null,
         "quantity": 1,
-        "distance_percent": -0.09811
+        "distance_percent": -0.05492
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -58,7 +58,7 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.84611,
+      "current_pct": 0.85049,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
@@ -68,21 +68,21 @@
       "deployed_dollars": 0.0,
       "buying_power_at_session_start": 44.53,
       "status": "green",
-      "note": "No trades filled today (only a stop-loss order placed)."
+      "note": "No trades filled today."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "VSTM",
-      "largest_position_pct": 0.15591,
+      "largest_position_pct": 0.14954,
       "over_limit": [],
       "status": "green",
-      "note": "VSTM at 15.6% of portfolio, within the 30% cap."
+      "note": "VSTM at 15.0% of portfolio, within the 30% cap."
     },
     "new_positions_today": {
       "count": 0,
       "max_per_day": 3,
       "status": "green",
-      "note": "No new positions opened today (VSTM was opened 2026-09-02)."
+      "note": "No new positions opened today."
     },
     "unprotected_positions": {
       "count": 0,
@@ -102,778 +102,190 @@
     "total_realized": 2.5,
     "realized_vs_unrealized": {
       "realized": 2.5,
-      "unrealized": 0.0
+      "unrealized": -0.1487
     },
     "avg_holding_period_days": 7.4,
     "per_symbol": [
-      {
-        "symbol": "LCID",
-        "realized_gain": 2.51,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "AMD",
-        "realized_gain": 1.71,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "KVUE",
-        "realized_gain": 1.55,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "ORCL",
-        "realized_gain": 0.98,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "MARA",
-        "realized_gain": 0.37,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "HAL",
-        "realized_gain": 0.08,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "DV",
-        "realized_gain": -0.02,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "OPFI",
-        "realized_gain": -0.08,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "TQQQ",
-        "realized_gain": -0.1,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "PLTR",
-        "realized_gain": -0.15,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "SNAP",
-        "realized_gain": -0.18,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "AVAH",
-        "realized_gain": -0.24,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "ITUB",
-        "realized_gain": -0.24,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "BXMT",
-        "realized_gain": -0.43,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "IONQ",
-        "realized_gain": -0.84,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "NVDA",
-        "realized_gain": -0.96,
-        "closed_trades": 1
-      },
-      {
-        "symbol": "SOFI",
-        "realized_gain": -1.46,
-        "closed_trades": 1
-      }
+      { "symbol": "LCID", "realized_gain": 2.51, "closed_trades": 1 },
+      { "symbol": "AMD", "realized_gain": 1.71, "closed_trades": 1 },
+      { "symbol": "KVUE", "realized_gain": 1.55, "closed_trades": 1 },
+      { "symbol": "ORCL", "realized_gain": 0.98, "closed_trades": 1 },
+      { "symbol": "MARA", "realized_gain": 0.37, "closed_trades": 1 },
+      { "symbol": "HAL", "realized_gain": 0.08, "closed_trades": 1 },
+      { "symbol": "DV", "realized_gain": -0.02, "closed_trades": 1 },
+      { "symbol": "OPFI", "realized_gain": -0.08, "closed_trades": 1 },
+      { "symbol": "TQQQ", "realized_gain": -0.1, "closed_trades": 1 },
+      { "symbol": "PLTR", "realized_gain": -0.15, "closed_trades": 1 },
+      { "symbol": "SNAP", "realized_gain": -0.18, "closed_trades": 1 },
+      { "symbol": "AVAH", "realized_gain": -0.24, "closed_trades": 1 },
+      { "symbol": "ITUB", "realized_gain": -0.24, "closed_trades": 1 },
+      { "symbol": "BXMT", "realized_gain": -0.43, "closed_trades": 1 },
+      { "symbol": "IONQ", "realized_gain": -0.84, "closed_trades": 1 },
+      { "symbol": "NVDA", "realized_gain": -0.96, "closed_trades": 1 },
+      { "symbol": "SOFI", "realized_gain": -1.46, "closed_trades": 1 }
     ],
     "sample_size_warning": true,
     "sample_size_floor": 20
   },
   "charts": {
     "equity_curve": [
-      {
-        "date": "2026-06-12",
-        "total_value": 51.23,
-        "net_external_flow": 50.0
-      },
-      {
-        "date": "2026-06-15",
-        "total_value": 54.45,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-16",
-        "total_value": 51.62,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-17",
-        "total_value": 49.82,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-18",
-        "total_value": 51.1,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-22",
-        "total_value": 50.53,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-23",
-        "total_value": 51.25,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-24",
-        "total_value": 52.09,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-25",
-        "total_value": 52.17,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-26",
-        "total_value": 53.91,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-29",
-        "total_value": 55.1,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-06-30",
-        "total_value": 55.06,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-01",
-        "total_value": 55.82,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-02",
-        "total_value": 57.05,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-06",
-        "total_value": 56.84,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-07",
-        "total_value": 57.24,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-08",
-        "total_value": 56.01,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-09",
-        "total_value": 55.43,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-10",
-        "total_value": 55.66,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-13",
-        "total_value": 55.24,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-14",
-        "total_value": 54.86,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-15",
-        "total_value": 54.86,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-16",
-        "total_value": 54.94,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-17",
-        "total_value": 54.72,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-20",
-        "total_value": 54.7,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-21",
-        "total_value": 54.75,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-22",
-        "total_value": 54.23,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-23",
-        "total_value": 53.87,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-24",
-        "total_value": 53.3798524703,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-27",
-        "total_value": 53.90844936,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-28",
-        "total_value": 53.02,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-29",
-        "total_value": 52.71,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-30",
-        "total_value": 54.02,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-07-31",
-        "total_value": 53.63,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-03",
-        "total_value": 53.66,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-04",
-        "total_value": 53.43,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-05",
-        "total_value": 53.09,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-06",
-        "total_value": 52.95,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-07",
-        "total_value": 52.85,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-12",
-        "total_value": 52.83,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-13",
-        "total_value": 52.82,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-14",
-        "total_value": 52.86,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-17",
-        "total_value": 52.75,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-18",
-        "total_value": 52.72,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-19",
-        "total_value": 52.75,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-20",
-        "total_value": 52.75,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-21",
-        "total_value": 52.39,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-24",
-        "total_value": 52.92,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-25",
-        "total_value": 52.8,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-26",
-        "total_value": 52.84,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-27",
-        "total_value": 53.04,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-08-28",
-        "total_value": 52.51,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-09-01",
-        "total_value": 52.51,
-        "net_external_flow": 0
-      },
-      {
-        "date": "2026-09-04",
-        "total_value": 52.63,
-        "net_external_flow": 0
-      }
+      { "date": "2026-06-12", "total_value": 51.23, "net_external_flow": 50.0 },
+      { "date": "2026-06-15", "total_value": 54.45, "net_external_flow": 0 },
+      { "date": "2026-06-16", "total_value": 51.62, "net_external_flow": 0 },
+      { "date": "2026-06-17", "total_value": 49.82, "net_external_flow": 0 },
+      { "date": "2026-06-18", "total_value": 51.1, "net_external_flow": 0 },
+      { "date": "2026-06-22", "total_value": 50.53, "net_external_flow": 0 },
+      { "date": "2026-06-23", "total_value": 51.25, "net_external_flow": 0 },
+      { "date": "2026-06-24", "total_value": 52.09, "net_external_flow": 0 },
+      { "date": "2026-06-25", "total_value": 52.17, "net_external_flow": 0 },
+      { "date": "2026-06-26", "total_value": 53.91, "net_external_flow": 0 },
+      { "date": "2026-06-29", "total_value": 55.1, "net_external_flow": 0 },
+      { "date": "2026-06-30", "total_value": 55.06, "net_external_flow": 0 },
+      { "date": "2026-07-01", "total_value": 55.82, "net_external_flow": 0 },
+      { "date": "2026-07-02", "total_value": 57.05, "net_external_flow": 0 },
+      { "date": "2026-07-06", "total_value": 56.84, "net_external_flow": 0 },
+      { "date": "2026-07-07", "total_value": 57.24, "net_external_flow": 0 },
+      { "date": "2026-07-08", "total_value": 56.01, "net_external_flow": 0 },
+      { "date": "2026-07-09", "total_value": 55.43, "net_external_flow": 0 },
+      { "date": "2026-07-10", "total_value": 55.66, "net_external_flow": 0 },
+      { "date": "2026-07-13", "total_value": 55.24, "net_external_flow": 0 },
+      { "date": "2026-07-14", "total_value": 54.86, "net_external_flow": 0 },
+      { "date": "2026-07-15", "total_value": 54.86, "net_external_flow": 0 },
+      { "date": "2026-07-16", "total_value": 54.94, "net_external_flow": 0 },
+      { "date": "2026-07-17", "total_value": 54.72, "net_external_flow": 0 },
+      { "date": "2026-07-20", "total_value": 54.7, "net_external_flow": 0 },
+      { "date": "2026-07-21", "total_value": 54.75, "net_external_flow": 0 },
+      { "date": "2026-07-22", "total_value": 54.23, "net_external_flow": 0 },
+      { "date": "2026-07-23", "total_value": 53.87, "net_external_flow": 0 },
+      { "date": "2026-07-24", "total_value": 53.3798524703, "net_external_flow": 0 },
+      { "date": "2026-07-27", "total_value": 53.90844936, "net_external_flow": 0 },
+      { "date": "2026-07-28", "total_value": 53.02, "net_external_flow": 0 },
+      { "date": "2026-07-29", "total_value": 52.71, "net_external_flow": 0 },
+      { "date": "2026-07-30", "total_value": 54.02, "net_external_flow": 0 },
+      { "date": "2026-07-31", "total_value": 53.63, "net_external_flow": 0 },
+      { "date": "2026-08-03", "total_value": 53.66, "net_external_flow": 0 },
+      { "date": "2026-08-04", "total_value": 53.43, "net_external_flow": 0 },
+      { "date": "2026-08-05", "total_value": 53.09, "net_external_flow": 0 },
+      { "date": "2026-08-06", "total_value": 52.95, "net_external_flow": 0 },
+      { "date": "2026-08-07", "total_value": 52.85, "net_external_flow": 0 },
+      { "date": "2026-08-12", "total_value": 52.83, "net_external_flow": 0 },
+      { "date": "2026-08-13", "total_value": 52.82, "net_external_flow": 0 },
+      { "date": "2026-08-14", "total_value": 52.86, "net_external_flow": 0 },
+      { "date": "2026-08-17", "total_value": 52.75, "net_external_flow": 0 },
+      { "date": "2026-08-18", "total_value": 52.72, "net_external_flow": 0 },
+      { "date": "2026-08-19", "total_value": 52.75, "net_external_flow": 0 },
+      { "date": "2026-08-20", "total_value": 52.75, "net_external_flow": 0 },
+      { "date": "2026-08-21", "total_value": 52.39, "net_external_flow": 0 },
+      { "date": "2026-08-24", "total_value": 52.92, "net_external_flow": 0 },
+      { "date": "2026-08-25", "total_value": 52.8, "net_external_flow": 0 },
+      { "date": "2026-08-26", "total_value": 52.84, "net_external_flow": 0 },
+      { "date": "2026-08-27", "total_value": 53.04, "net_external_flow": 0 },
+      { "date": "2026-08-28", "total_value": 52.51, "net_external_flow": 0 },
+      { "date": "2026-09-01", "total_value": 52.51, "net_external_flow": 0 },
+      { "date": "2026-09-04", "total_value": 52.63, "net_external_flow": 0 },
+      { "date": "2026-09-08", "total_value": 52.36, "net_external_flow": 0 }
     ],
     "realized_pnl_daily": [
-      {
-        "date": "2026-06-16",
-        "realized_gain": 1.61,
-        "number_of_trades": 2
-      },
-      {
-        "date": "2026-06-22",
-        "realized_gain": -1.09,
-        "number_of_trades": 2
-      },
-      {
-        "date": "2026-06-25",
-        "realized_gain": -0.18,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-06-30",
-        "realized_gain": 2.51,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-07-14",
-        "realized_gain": 0.71,
-        "number_of_trades": 2
-      },
-      {
-        "date": "2026-07-24",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-07-27",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-07-28",
-        "realized_gain": -0.96,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-07-29",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-07-30",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-07-31",
-        "realized_gain": 0.83,
-        "number_of_trades": 2
-      },
-      {
-        "date": "2026-08-03",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-04",
-        "realized_gain": 0.08,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-08-05",
-        "realized_gain": -0.43,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-08-06",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-07",
-        "realized_gain": -0.24,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-08-12",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-13",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-14",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-17",
-        "realized_gain": -0.08,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-08-18",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-19",
-        "realized_gain": -0.02,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-08-20",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-21",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-24",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-25",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-26",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-27",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-08-28",
-        "realized_gain": -0.24,
-        "number_of_trades": 1
-      },
-      {
-        "date": "2026-09-01",
-        "realized_gain": null,
-        "number_of_trades": 0
-      },
-      {
-        "date": "2026-09-04",
-        "realized_gain": null,
-        "number_of_trades": 0
-      }
+      { "date": "2026-06-16", "realized_gain": 1.61, "number_of_trades": 2 },
+      { "date": "2026-06-22", "realized_gain": -1.09, "number_of_trades": 2 },
+      { "date": "2026-06-25", "realized_gain": -0.18, "number_of_trades": 1 },
+      { "date": "2026-06-30", "realized_gain": 2.51, "number_of_trades": 1 },
+      { "date": "2026-07-14", "realized_gain": 0.71, "number_of_trades": 2 },
+      { "date": "2026-07-24", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-07-27", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-07-28", "realized_gain": -0.96, "number_of_trades": 1 },
+      { "date": "2026-07-29", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-07-30", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-07-31", "realized_gain": 0.83, "number_of_trades": 2 },
+      { "date": "2026-08-03", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-04", "realized_gain": 0.08, "number_of_trades": 1 },
+      { "date": "2026-08-05", "realized_gain": -0.43, "number_of_trades": 1 },
+      { "date": "2026-08-06", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-07", "realized_gain": -0.24, "number_of_trades": 1 },
+      { "date": "2026-08-12", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-13", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-14", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-17", "realized_gain": -0.08, "number_of_trades": 1 },
+      { "date": "2026-08-18", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-19", "realized_gain": -0.02, "number_of_trades": 1 },
+      { "date": "2026-08-20", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-21", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-24", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-25", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-26", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-27", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-08-28", "realized_gain": -0.24, "number_of_trades": 1 },
+      { "date": "2026-09-01", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-09-04", "realized_gain": null, "number_of_trades": 0 },
+      { "date": "2026-09-08", "realized_gain": null, "number_of_trades": 0 }
     ],
     "benchmark_spy_close": [
-      {
-        "date": "2026-06-03",
-        "close": 754.24
-      },
-      {
-        "date": "2026-06-04",
-        "close": 757.09
-      },
-      {
-        "date": "2026-06-05",
-        "close": 737.55
-      },
-      {
-        "date": "2026-06-08",
-        "close": 739.22
-      },
-      {
-        "date": "2026-06-09",
-        "close": 737.05
-      },
-      {
-        "date": "2026-06-10",
-        "close": 725.43
-      },
-      {
-        "date": "2026-06-11",
-        "close": 737.76
-      },
-      {
-        "date": "2026-06-12",
-        "close": 741.75
-      },
-      {
-        "date": "2026-06-15",
-        "close": 754.83
-      },
-      {
-        "date": "2026-06-16",
-        "close": 750.33
-      },
-      {
-        "date": "2026-06-17",
-        "close": 740.96
-      },
-      {
-        "date": "2026-06-18",
-        "close": 746.74
-      },
-      {
-        "date": "2026-06-22",
-        "close": 744.39
-      },
-      {
-        "date": "2026-06-23",
-        "close": 733.58
-      },
-      {
-        "date": "2026-06-24",
-        "close": 733.24
-      },
-      {
-        "date": "2026-06-25",
-        "close": 734.3
-      },
-      {
-        "date": "2026-06-26",
-        "close": 728.99
-      },
-      {
-        "date": "2026-06-29",
-        "close": 741.0
-      },
-      {
-        "date": "2026-06-30",
-        "close": 746.77
-      },
-      {
-        "date": "2026-07-01",
-        "close": 745.76
-      },
-      {
-        "date": "2026-07-02",
-        "close": 744.78
-      },
-      {
-        "date": "2026-07-06",
-        "close": 751.28
-      },
-      {
-        "date": "2026-07-07",
-        "close": 747.71
-      },
-      {
-        "date": "2026-07-08",
-        "close": 745.4
-      },
-      {
-        "date": "2026-07-09",
-        "close": 751.71
-      },
-      {
-        "date": "2026-07-10",
-        "close": 754.95
-      },
-      {
-        "date": "2026-07-13",
-        "close": 749.17
-      },
-      {
-        "date": "2026-07-14",
-        "close": 751.83
-      },
-      {
-        "date": "2026-07-15",
-        "close": 754.81
-      },
-      {
-        "date": "2026-07-16",
-        "close": 750.72
-      },
-      {
-        "date": "2026-07-17",
-        "close": 743.29
-      },
-      {
-        "date": "2026-07-20",
-        "close": 742.09
-      },
-      {
-        "date": "2026-07-21",
-        "close": 748.28
-      },
-      {
-        "date": "2026-07-22",
-        "close": 747.41
-      },
-      {
-        "date": "2026-07-23",
-        "close": 738.18
-      },
-      {
-        "date": "2026-07-24",
-        "close": 738.85
-      },
-      {
-        "date": "2026-07-27",
-        "close": 738.35
-      },
-      {
-        "date": "2026-07-28",
-        "close": 740.76
-      },
-      {
-        "date": "2026-07-29",
-        "close": 729.54
-      },
-      {
-        "date": "2026-07-30",
-        "close": 741.73
-      },
-      {
-        "date": "2026-07-31",
-        "close": 746.81
-      },
-      {
-        "date": "2026-08-03",
-        "close": 757.63
-      },
-      {
-        "date": "2026-08-04",
-        "close": 771.28
-      },
-      {
-        "date": "2026-08-05",
-        "close": 769.74
-      },
-      {
-        "date": "2026-08-06",
-        "close": 768.56
-      },
-      {
-        "date": "2026-08-07",
-        "close": 773.2
-      },
-      {
-        "date": "2026-08-12",
-        "close": 772.54
-      },
-      {
-        "date": "2026-08-13",
-        "close": 777.77
-      },
-      {
-        "date": "2026-08-14",
-        "close": 776.31
-      },
-      {
-        "date": "2026-08-17",
-        "close": 772.68
-      },
-      {
-        "date": "2026-08-18",
-        "close": 767.42
-      },
-      {
-        "date": "2026-08-19",
-        "close": 769.06
-      },
-      {
-        "date": "2026-08-20",
-        "close": 762.65
-      },
-      {
-        "date": "2026-08-21",
-        "close": 765.69
-      },
-      {
-        "date": "2026-08-24",
-        "close": 763.47
-      },
-      {
-        "date": "2026-08-25",
-        "close": 765.85
-      },
-      {
-        "date": "2026-08-26",
-        "close": 765.95
-      },
-      {
-        "date": "2026-08-27",
-        "close": 771.07
-      },
-      {
-        "date": "2026-08-28",
-        "close": 769.39
-      },
-      {
-        "date": "2026-09-01",
-        "close": 761.65
-      },
-      {
-        "date": "2026-09-04",
-        "close": 770.23
-      }
+      { "date": "2026-06-03", "close": 754.24 },
+      { "date": "2026-06-04", "close": 757.09 },
+      { "date": "2026-06-05", "close": 737.55 },
+      { "date": "2026-06-08", "close": 739.22 },
+      { "date": "2026-06-09", "close": 737.05 },
+      { "date": "2026-06-10", "close": 725.43 },
+      { "date": "2026-06-11", "close": 737.76 },
+      { "date": "2026-06-12", "close": 741.75 },
+      { "date": "2026-06-15", "close": 754.83 },
+      { "date": "2026-06-16", "close": 750.33 },
+      { "date": "2026-06-17", "close": 740.96 },
+      { "date": "2026-06-18", "close": 746.74 },
+      { "date": "2026-06-22", "close": 744.39 },
+      { "date": "2026-06-23", "close": 733.58 },
+      { "date": "2026-06-24", "close": 733.24 },
+      { "date": "2026-06-25", "close": 734.3 },
+      { "date": "2026-06-26", "close": 728.99 },
+      { "date": "2026-06-29", "close": 741.0 },
+      { "date": "2026-06-30", "close": 746.77 },
+      { "date": "2026-07-01", "close": 745.76 },
+      { "date": "2026-07-02", "close": 744.78 },
+      { "date": "2026-07-06", "close": 751.28 },
+      { "date": "2026-07-07", "close": 747.71 },
+      { "date": "2026-07-08", "close": 745.4 },
+      { "date": "2026-07-09", "close": 751.71 },
+      { "date": "2026-07-10", "close": 754.95 },
+      { "date": "2026-07-13", "close": 749.17 },
+      { "date": "2026-07-14", "close": 751.83 },
+      { "date": "2026-07-15", "close": 754.81 },
+      { "date": "2026-07-16", "close": 750.72 },
+      { "date": "2026-07-17", "close": 743.29 },
+      { "date": "2026-07-20", "close": 742.09 },
+      { "date": "2026-07-21", "close": 748.28 },
+      { "date": "2026-07-22", "close": 747.41 },
+      { "date": "2026-07-23", "close": 738.18 },
+      { "date": "2026-07-24", "close": 738.85 },
+      { "date": "2026-07-27", "close": 738.35 },
+      { "date": "2026-07-28", "close": 740.76 },
+      { "date": "2026-07-29", "close": 729.54 },
+      { "date": "2026-07-30", "close": 741.73 },
+      { "date": "2026-07-31", "close": 746.81 },
+      { "date": "2026-08-03", "close": 757.63 },
+      { "date": "2026-08-04", "close": 771.28 },
+      { "date": "2026-08-05", "close": 769.74 },
+      { "date": "2026-08-06", "close": 768.56 },
+      { "date": "2026-08-07", "close": 773.2 },
+      { "date": "2026-08-12", "close": 772.54 },
+      { "date": "2026-08-13", "close": 777.77 },
+      { "date": "2026-08-14", "close": 776.31 },
+      { "date": "2026-08-17", "close": 772.68 },
+      { "date": "2026-08-18", "close": 767.42 },
+      { "date": "2026-08-19", "close": 769.06 },
+      { "date": "2026-08-20", "close": 762.65 },
+      { "date": "2026-08-21", "close": 765.69 },
+      { "date": "2026-08-24", "close": 763.47 },
+      { "date": "2026-08-25", "close": 765.85 },
+      { "date": "2026-08-26", "close": 765.95 },
+      { "date": "2026-08-27", "close": 771.07 },
+      { "date": "2026-08-28", "close": 769.39 },
+      { "date": "2026-09-01", "close": 761.65 },
+      { "date": "2026-09-04", "close": 770.23 },
+      { "date": "2026-09-08", "close": 770.19 }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-09-04",
+    "latest_date": "2026-09-08",
     "last_trading_day": "2026-09-04",
     "is_stale": false
   }
