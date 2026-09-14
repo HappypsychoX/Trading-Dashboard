@@ -1,55 +1,55 @@
 {
   "_demo_data": false,
-  "as_of": "2026-09-08T17:06:39-04:00",
+  "as_of": "2026-09-14T16:07:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 52.61,
-    "equity_value": 8.08,
-    "cash": 44.53,
-    "buying_power": 44.53,
+    "total_value": 51.6,
+    "equity_value": 12.49,
+    "cash": 39.11,
+    "buying_power": 39.11,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": -0.12,
+    "unrealized": -0.46,
     "realized": null,
-    "dollars": -0.12,
-    "percent": -0.00228,
-    "same_day_open_note": "VSTM was opened 2026-09-02 (not today); its change is measured from the last trading day's close (2026-09-04, market was closed 2026-09-05 through 2026-09-07)."
+    "dollars": -0.46,
+    "percent": -0.00884,
+    "same_day_open_note": "No new positions opened today; OBE's change is measured from Friday 2026-09-11's close, the last trading session (Sat/Sun no market)."
   },
   "todays_trades": [],
   "open_orders": [
     {
-      "symbol": "VSTM",
+      "symbol": "OBE",
       "side": "sell",
       "type": "stop_loss",
       "quantity": 1,
-      "trigger_price": 7.55,
+      "trigger_price": 12.2,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-09-08T06:14:35.757188Z",
-      "stale": false
+      "created_at": "2026-09-10T17:36:30.907402Z",
+      "stale": true
     }
   ],
   "positions": [
     {
-      "symbol": "VSTM",
+      "symbol": "OBE",
       "quantity": 1,
-      "avg_cost": 7.98,
-      "cost_basis": 7.98,
-      "current_price": 8.08,
-      "market_value": 8.08,
-      "unrealized_pl_dollars": 0.1,
-      "unrealized_pl_percent": 0.01253,
-      "today_change_dollars": -0.12,
-      "pct_of_portfolio": 0.15359,
-      "days_held": 6,
+      "avg_cost": 12.96,
+      "cost_basis": 12.96,
+      "current_price": 12.51,
+      "market_value": 12.51,
+      "unrealized_pl_dollars": -0.45,
+      "unrealized_pl_percent": -0.03472,
+      "today_change_dollars": -0.46,
+      "pct_of_portfolio": 0.24244,
+      "days_held": 4,
       "protective_order": {
         "type": "stop_loss",
-        "trigger_price": 7.55,
+        "trigger_price": 12.2,
         "limit_price": null,
         "quantity": 1,
-        "distance_percent": -0.06559
+        "distance_percent": -0.02478
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -58,7 +58,7 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.84642,
+      "current_pct": 0.75795,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
@@ -66,17 +66,17 @@
       "max_pct": 0.5,
       "current_pct": 0,
       "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 44.53,
+      "buying_power_at_session_start": 39.11,
       "status": "green",
       "note": "No trades filled today."
     },
     "position_size": {
       "max_pct": 0.3,
-      "largest_position": "VSTM",
-      "largest_position_pct": 0.15359,
+      "largest_position": "OBE",
+      "largest_position_pct": 0.24244,
       "over_limit": [],
       "status": "green",
-      "note": "VSTM at 15.4% of portfolio, within the 30% cap."
+      "note": "OBE at 24.2% of portfolio, within the 30% cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -88,23 +88,23 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "VSTM has a standing stop-loss order."
+      "note": "OBE has a standing stop-loss order."
     }
   },
   "trade_quality": {
-    "closed_trades": 17,
-    "win_rate": 0.35294,
+    "closed_trades": 18,
+    "win_rate": 0.33333,
     "avg_win": 1.2,
-    "avg_loss": -0.42727,
-    "profit_factor": 1.53191,
+    "avg_loss": -0.4283,
+    "profit_factor": 1.4008,
     "largest_win": 2.51,
     "largest_loss": -1.46,
-    "total_realized": 2.5,
+    "total_realized": 2.06,
     "realized_vs_unrealized": {
-      "realized": 2.5,
-      "unrealized": 0.1
+      "realized": 2.06,
+      "unrealized": -0.45
     },
-    "avg_holding_period_days": 7.4,
+    "avg_holding_period_days": 7.43,
     "per_symbol": [
       {
         "symbol": "LCID",
@@ -174,6 +174,11 @@
       {
         "symbol": "BXMT",
         "realized_gain": -0.43,
+        "closed_trades": 1
+      },
+      {
+        "symbol": "VSTM",
+        "realized_gain": -0.44,
         "closed_trades": 1
       },
       {
@@ -471,6 +476,11 @@
         "date": "2026-09-08",
         "total_value": 52.61,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-09-14",
+        "total_value": 51.6,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -631,6 +641,11 @@
       },
       {
         "date": "2026-09-08",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-09-14",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -883,12 +898,16 @@
       {
         "date": "2026-09-08",
         "close": 765.96
+      },
+      {
+        "date": "2026-09-14",
+        "close": 760.77
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-09-08",
-    "last_trading_day": "2026-09-08",
+    "latest_date": "2026-09-14",
+    "last_trading_day": "2026-09-14",
     "is_stale": false
   }
 }
