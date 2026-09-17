@@ -12,6 +12,6 @@
   "INSTRUMENTS": "equities_only",
   "DEFAULT_ORDER_TYPE": "limit_day",
   "LIQUIDITY_RULE_MAX_PCT_ADV": 1,
-  "HORIZON_BIAS": 2,
+  "HORIZON_BIAS": 3,
   "LEVERAGED_INSTRUMENTS_BLOCKED": true
 }
