@@ -1,48 +1,23 @@
 {
   "_demo_data": false,
-  "as_of": "2026-09-16T16:08:40-04:00",
+  "as_of": "2026-09-17T16:09:09-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 51.25,
-    "equity_value": 10.9,
+    "total_value": 51.03,
+    "equity_value": 10.68,
     "cash": 40.35,
-    "buying_power": 28.17,
+    "buying_power": 40.35,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": -0.04,
-    "realized": -0.78,
-    "dollars": -0.82,
-    "percent": -0.01578,
-    "same_day_open_note": "ALVO was opened today, so its change is measured from its fill price rather than yesterday's close. OBE's stop-loss triggered today, realizing a $0.78 loss on a position opened 2026-09-10."
+    "unrealized": 0.48,
+    "realized": null,
+    "dollars": 0.48,
+    "percent": 0.00937,
+    "same_day_open_note": "ALVO was opened yesterday (2026-09-16); today's change is measured from yesterday's official close ($5.10), not from the fill price. No trades were closed today."
   },
-  "todays_trades": [
-    {
-      "symbol": "ALVO",
-      "side": "buy",
-      "quantity": 2.0,
-      "dollar_based_amount": null,
-      "fill_price": 5.4699,
-      "value": 10.9398,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": null,
-      "state": "filled"
-    },
-    {
-      "symbol": "OBE",
-      "side": "sell",
-      "quantity": 1.0,
-      "dollar_based_amount": null,
-      "fill_price": 12.18,
-      "value": 12.18,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": -0.78,
-      "state": "filled"
-    }
-  ],
+  "todays_trades": [],
   "open_orders": [
     {
       "symbol": "ALVO",
@@ -53,7 +28,7 @@
       "limit_price": null,
       "state": "confirmed",
       "created_at": "2026-09-16T17:37:16.892Z",
-      "stale": false
+      "stale": true
     }
   ],
   "positions": [
@@ -62,19 +37,19 @@
       "quantity": 2,
       "avg_cost": 5.47,
       "cost_basis": 10.94,
-      "current_price": 5.45,
-      "market_value": 10.9,
-      "unrealized_pl_dollars": -0.04,
-      "unrealized_pl_percent": -0.00366,
-      "today_change_dollars": -0.04,
-      "pct_of_portfolio": 0.21268,
-      "days_held": 0,
+      "current_price": 5.34,
+      "market_value": 10.68,
+      "unrealized_pl_dollars": -0.26,
+      "unrealized_pl_percent": -0.02338,
+      "today_change_dollars": 0.48,
+      "pct_of_portfolio": 0.20937,
+      "days_held": 1,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 4.85,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.11009
+        "distance_percent": -0.0921
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -83,31 +58,31 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.15,
-      "current_pct": 0.78732,
+      "current_pct": 0.79071,
       "status": "green",
       "note": "Cash is well above the 15% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.85,
-      "current_pct": 0.40623,
-      "deployed_dollars": 10.9398,
-      "buying_power_at_session_start": 26.9298,
+      "current_pct": 0.0,
+      "deployed_dollars": 0.0,
+      "buying_power_at_session_start": 40.35,
       "status": "green",
-      "note": "Spent $10.94 of the $26.93 buying power available at session start (40.6%), within the 85% per-session ceiling."
+      "note": "No trades executed today; $0 deployed of the $40.35 buying power available at session start."
     },
     "position_size": {
       "max_pct": 0.35,
       "largest_position": "ALVO",
-      "largest_position_pct": 0.21268,
+      "largest_position_pct": 0.20937,
       "over_limit": [],
       "status": "green",
-      "note": "ALVO is the only open position at 21.3% of account value, under the 35% single-position cap."
+      "note": "ALVO is the only open position at ~20.9% of account value, under the 35% single-position cap."
     },
     "new_positions_today": {
-      "count": 1,
+      "count": 0,
       "max_per_day": 3,
       "status": "green",
-      "note": "1 new position opened today (ALVO)."
+      "note": "No new positions opened today."
     },
     "unprotected_positions": {
       "count": 0,
@@ -521,6 +496,11 @@
         "date": "2026-09-16",
         "total_value": 51.25,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-09-17",
+        "total_value": 51.03,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -698,6 +678,11 @@
         "date": "2026-09-16",
         "realized_gain": -0.78,
         "number_of_trades": 1
+      },
+      {
+        "date": "2026-09-17",
+        "realized_gain": null,
+        "number_of_trades": 0
       }
     ],
     "benchmark_spy_close": [
@@ -960,12 +945,16 @@
       {
         "date": "2026-09-16",
         "close": 754.09
+      },
+      {
+        "date": "2026-09-17",
+        "close": 762.64
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-09-16",
-    "last_trading_day": "2026-09-16",
+    "latest_date": "2026-09-17",
+    "last_trading_day": "2026-09-17",
     "is_stale": false
   }
 }
