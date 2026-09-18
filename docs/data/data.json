@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-09-17T16:09:09-04:00",
+  "as_of": "2026-09-18T16:07:46-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 51.03,
-    "equity_value": 10.68,
+    "total_value": 52.05,
+    "equity_value": 11.73,
     "cash": 40.35,
     "buying_power": 40.35,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.48,
+    "unrealized": 1.02,
     "realized": null,
-    "dollars": 0.48,
-    "percent": 0.00937,
-    "same_day_open_note": "ALVO was opened yesterday (2026-09-16); today's change is measured from yesterday's official close ($5.10), not from the fill price. No trades were closed today."
+    "dollars": 1.02,
+    "percent": 0.01999,
+    "same_day_open_note": "No positions were opened today; ALVO's change is measured from yesterday's close."
   },
   "todays_trades": [],
   "open_orders": [
@@ -24,11 +24,11 @@
       "side": "sell",
       "type": "stop_loss",
       "quantity": 2,
-      "trigger_price": 4.85,
+      "trigger_price": 5.05,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-09-16T17:37:16.892Z",
-      "stale": true
+      "created_at": "2026-09-18T17:36:55Z",
+      "stale": false
     }
   ],
   "positions": [
@@ -37,19 +37,19 @@
       "quantity": 2,
       "avg_cost": 5.47,
       "cost_basis": 10.94,
-      "current_price": 5.34,
-      "market_value": 10.68,
-      "unrealized_pl_dollars": -0.26,
-      "unrealized_pl_percent": -0.02338,
-      "today_change_dollars": 0.48,
-      "pct_of_portfolio": 0.20937,
-      "days_held": 1,
+      "current_price": 5.87,
+      "market_value": 11.73,
+      "unrealized_pl_dollars": 0.79,
+      "unrealized_pl_percent": 0.07222,
+      "today_change_dollars": 1.05,
+      "pct_of_portfolio": 0.22536,
+      "days_held": 2,
       "protective_order": {
         "type": "stop_loss",
-        "trigger_price": 4.85,
+        "trigger_price": 5.05,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.0921
+        "distance_percent": -0.13895
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -58,7 +58,7 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.15,
-      "current_pct": 0.79071,
+      "current_pct": 0.77521,
       "status": "green",
       "note": "Cash is well above the 15% floor."
     },
@@ -73,10 +73,10 @@
     "position_size": {
       "max_pct": 0.35,
       "largest_position": "ALVO",
-      "largest_position_pct": 0.20937,
+      "largest_position_pct": 0.22536,
       "over_limit": [],
       "status": "green",
-      "note": "ALVO is the only open position at ~20.9% of account value, under the 35% single-position cap."
+      "note": "ALVO is the only open position at ~22.5% of account value, under the 35% single-position cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -88,7 +88,7 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "All open positions have a standing protective order."
+      "note": "ALVO has a standing stop-loss order (replaced today, trigger raised from $4.85 to $5.05)."
     }
   },
   "trade_quality": {
@@ -102,7 +102,7 @@
     "total_realized": 1.28,
     "realized_vs_unrealized": {
       "realized": 1.28,
-      "unrealized": -0.04
+      "unrealized": 0.79
     },
     "avg_holding_period_days": 7.35,
     "per_symbol": [
@@ -501,6 +501,11 @@
         "date": "2026-09-17",
         "total_value": 51.03,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-09-18",
+        "total_value": 52.05,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -681,6 +686,11 @@
       },
       {
         "date": "2026-09-17",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-09-18",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -949,12 +959,16 @@
       {
         "date": "2026-09-17",
         "close": 762.64
+      },
+      {
+        "date": "2026-09-18",
+        "close": 761.64
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-09-17",
-    "last_trading_day": "2026-09-17",
+    "latest_date": "2026-09-18",
+    "last_trading_day": "2026-09-18",
     "is_stale": false
   }
 }
