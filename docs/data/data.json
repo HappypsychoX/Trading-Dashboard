@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-10-05T16:11:01-04:00",
+  "as_of": "2026-10-09T16:11:33-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 51.86,
-    "equity_value": 14.76,
+    "total_value": 50.74,
+    "equity_value": 13.64,
     "cash": 37.1,
     "buying_power": 37.1,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.66,
+    "unrealized": -0.34,
     "realized": null,
-    "dollars": 0.66,
-    "percent": 0.01289,
-    "same_day_open_note": "No positions were opened today; TDAY's change is measured from Friday 10/2's close ($7.05)."
+    "dollars": -0.34,
+    "percent": -0.00666,
+    "same_day_open_note": "TDAY was opened on 2026-10-02 (not today); today's change is measured from yesterday's close ($6.99)."
   },
   "todays_trades": [],
   "open_orders": [
@@ -27,7 +27,7 @@
       "trigger_price": 6.45,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-10-02T13:50:06-04:00",
+      "created_at": "2026-10-02T17:50:06.453167Z",
       "stale": true
     }
   ],
@@ -35,21 +35,21 @@
     {
       "symbol": "TDAY",
       "quantity": 2,
-      "avg_cost": 7.07,
-      "cost_basis": 14.14,
-      "current_price": 7.38,
-      "market_value": 14.76,
-      "unrealized_pl_dollars": 0.62,
-      "unrealized_pl_percent": 0.04385,
-      "today_change_dollars": 0.66,
-      "pct_of_portfolio": 0.28461,
-      "days_held": 3,
+      "avg_cost": 7.0685,
+      "cost_basis": 14.137,
+      "current_price": 6.82,
+      "market_value": 13.64,
+      "unrealized_pl_dollars": -0.497,
+      "unrealized_pl_percent": -0.03516,
+      "today_change_dollars": -0.34,
+      "pct_of_portfolio": 0.26882,
+      "days_held": 7,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 6.45,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.12602
+        "distance_percent": -0.05425
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -58,9 +58,9 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.71539,
+      "current_pct": 0.73118,
       "status": "green",
-      "note": "Cash is well above the 5% floor."
+      "note": "Cash is 73.1% of account value, well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
@@ -68,15 +68,15 @@
       "deployed_dollars": 0.0,
       "buying_power_at_session_start": 37.1,
       "status": "green",
-      "note": "No buy orders filled today (0.0% of the $37.10 buying power available at session start)."
+      "note": "No buy or sell orders filled today. Nothing deployed."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "TDAY",
-      "largest_position_pct": 0.28461,
+      "largest_position_pct": 0.26882,
       "over_limit": [],
       "status": "yellow",
-      "note": "TDAY is at 28.5% of portfolio, approaching the 30% single-position cap."
+      "note": "TDAY is 26.9% of the account, approaching the 30% single-position cap (a 3rd share would exceed it)."
     },
     "new_positions_today": {
       "count": 0,
@@ -88,23 +88,23 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "TDAY has a standing stop-loss order; all positions are protected."
+      "note": "TDAY has a standing stop-loss order (trigger $6.45, ~5.4% below current price)."
     }
   },
   "trade_quality": {
     "closed_trades": 20,
     "win_rate": 0.3,
     "avg_win": 1.2,
-    "avg_loss": -0.42643,
-    "profit_factor": 1.20603,
+    "avg_loss": -0.4264,
+    "profit_factor": 1.206,
     "largest_win": 2.51,
     "largest_loss": -1.46,
     "total_realized": 1.23,
     "realized_vs_unrealized": {
       "realized": 1.23,
-      "unrealized": 0.62
+      "unrealized": -0.497
     },
-    "avg_holding_period_days": 7.78,
+    "avg_holding_period_days": null,
     "per_symbol": [
       {
         "symbol": "LCID",
@@ -209,11 +209,6 @@
     ],
     "sample_size_warning": false,
     "sample_size_floor": 20
-  },
-  "snapshot_log": {
-    "latest_date": "2026-10-05",
-    "last_trading_day": "2026-10-05",
-    "is_stale": false
   },
   "charts": {
     "equity_curve": [
@@ -551,6 +546,11 @@
         "date": "2026-10-05",
         "total_value": 51.86,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-10-09",
+        "total_value": 50.74,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -771,6 +771,11 @@
       },
       {
         "date": "2026-10-05",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-10-09",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -1071,7 +1076,16 @@
       {
         "date": "2026-10-05",
         "close": 774.94
+      },
+      {
+        "date": "2026-10-09",
+        "close": 778.53
       }
     ]
+  },
+  "snapshot_log": {
+    "latest_date": "2026-10-09",
+    "last_trading_day": "2026-10-09",
+    "is_stale": false
   }
 }
