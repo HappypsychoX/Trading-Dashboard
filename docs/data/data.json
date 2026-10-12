@@ -1,24 +1,48 @@
 {
   "_demo_data": false,
-  "as_of": "2026-10-09T16:11:33-04:00",
+  "as_of": "2026-10-12T16:14:54-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 50.74,
-    "equity_value": 13.64,
-    "cash": 37.1,
-    "buying_power": 37.1,
-    "open_positions_count": 1
+    "total_value": 50.87,
+    "equity_value": 23.82,
+    "cash": 27.05,
+    "buying_power": 27.05,
+    "open_positions_count": 2
   },
   "daily_pl": {
-    "unrealized": -0.34,
+    "unrealized": 0.1051,
     "realized": null,
-    "dollars": -0.34,
-    "percent": -0.00666,
-    "same_day_open_note": "TDAY was opened on 2026-10-02 (not today); today's change is measured from yesterday's close ($6.99)."
+    "dollars": 0.1051,
+    "percent": 0.00207,
+    "same_day_open_note": "ITUB was opened today, so its change is measured from its fill price rather than yesterday's close. TDAY is measured from yesterday's close."
   },
-  "todays_trades": [],
+  "todays_trades": [
+    {
+      "symbol": "ITUB",
+      "side": "buy",
+      "quantity": 1,
+      "dollar_based_amount": null,
+      "fill_price": 10.0499,
+      "value": 10.0499,
+      "fees": 0.0,
+      "source": "agentic",
+      "realized_gain": null,
+      "state": "filled"
+    }
+  ],
   "open_orders": [
+    {
+      "symbol": "ITUB",
+      "side": "sell",
+      "type": "stop_loss",
+      "quantity": 1,
+      "trigger_price": 9.45,
+      "limit_price": null,
+      "state": "confirmed",
+      "created_at": "2026-10-12T17:49:58.653462Z",
+      "stale": false
+    },
     {
       "symbol": "TDAY",
       "side": "sell",
@@ -33,23 +57,45 @@
   ],
   "positions": [
     {
+      "symbol": "ITUB",
+      "quantity": 1,
+      "avg_cost": 10.05,
+      "cost_basis": 10.05,
+      "current_price": 10.055,
+      "market_value": 10.055,
+      "unrealized_pl_dollars": 0.005,
+      "unrealized_pl_percent": 0.0005,
+      "today_change_dollars": 0.0051,
+      "pct_of_portfolio": 0.19766,
+      "days_held": 0,
+      "protective_order": {
+        "type": "stop_loss",
+        "trigger_price": 9.45,
+        "limit_price": null,
+        "quantity": 1,
+        "distance_percent": -0.06017
+      },
+      "earnings_within_7d": false,
+      "sellable_quantity": 0
+    },
+    {
       "symbol": "TDAY",
       "quantity": 2,
       "avg_cost": 7.0685,
-      "cost_basis": 14.137,
-      "current_price": 6.82,
-      "market_value": 13.64,
-      "unrealized_pl_dollars": -0.497,
-      "unrealized_pl_percent": -0.03516,
-      "today_change_dollars": -0.34,
-      "pct_of_portfolio": 0.26882,
-      "days_held": 7,
+      "cost_basis": 14.14,
+      "current_price": 6.87,
+      "market_value": 13.74,
+      "unrealized_pl_dollars": -0.4,
+      "unrealized_pl_percent": -0.02829,
+      "today_change_dollars": 0.1,
+      "pct_of_portfolio": 0.2701,
+      "days_held": 10,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 6.45,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.05425
+        "distance_percent": -0.06114
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -58,37 +104,37 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.73118,
+      "current_pct": 0.53175,
       "status": "green",
-      "note": "Cash is 73.1% of account value, well above the 5% floor."
+      "note": "Cash is 53.2% of account value, well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.0,
-      "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 37.1,
+      "current_pct": 0.27089,
+      "deployed_dollars": 10.05,
+      "buying_power_at_session_start": 37.0999,
       "status": "green",
-      "note": "No buy or sell orders filled today. Nothing deployed."
+      "note": "Spent $10.05 of the $37.10 buying power available at session start (27.1%), within the 50% per-session ceiling."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "TDAY",
-      "largest_position_pct": 0.26882,
+      "largest_position_pct": 0.2701,
       "over_limit": [],
       "status": "yellow",
-      "note": "TDAY is 26.9% of the account, approaching the 30% single-position cap (a 3rd share would exceed it)."
+      "note": "TDAY is 27.0% of the account, approaching the 30% single-position cap."
     },
     "new_positions_today": {
-      "count": 0,
+      "count": 1,
       "max_per_day": 3,
       "status": "green",
-      "note": "No new positions opened today."
+      "note": "1 new position opened today (ITUB)."
     },
     "unprotected_positions": {
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "TDAY has a standing stop-loss order (trigger $6.45, ~5.4% below current price)."
+      "note": "Both ITUB and TDAY have standing stop-loss orders."
     }
   },
   "trade_quality": {
@@ -102,7 +148,7 @@
     "total_realized": 1.23,
     "realized_vs_unrealized": {
       "realized": 1.23,
-      "unrealized": -0.497
+      "unrealized": -0.395
     },
     "avg_holding_period_days": null,
     "per_symbol": [
@@ -551,6 +597,11 @@
         "date": "2026-10-09",
         "total_value": 50.74,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-10-12",
+        "total_value": 50.87,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -776,6 +827,11 @@
       },
       {
         "date": "2026-10-09",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-10-12",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -1080,12 +1136,16 @@
       {
         "date": "2026-10-09",
         "close": 778.53
+      },
+      {
+        "date": "2026-10-12",
+        "close": 778.07
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-10-09",
-    "last_trading_day": "2026-10-09",
+    "latest_date": "2026-10-12",
+    "last_trading_day": "2026-10-12",
     "is_stale": false
   }
 }
