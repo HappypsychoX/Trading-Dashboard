@@ -1,36 +1,23 @@
 {
   "_demo_data": false,
-  "as_of": "2026-10-15T16:10:00-04:00",
+  "as_of": "2026-10-16T16:10:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 50.86,
-    "equity_value": 14.36,
+    "total_value": 50.44,
+    "equity_value": 13.94,
     "cash": 36.5,
-    "buying_power": 27.05,
+    "buying_power": 36.5,
     "open_positions_count": 1
   },
   "daily_pl": {
-    "unrealized": 0.22,
-    "realized": -0.6,
-    "dollars": -0.38,
-    "percent": -0.00742,
-    "same_day_open_note": "No new positions were opened today. ITUB's standing stop-loss triggered and closed that position (realized -$0.60); TDAY's unrealized change is measured from yesterday's close."
+    "unrealized": -0.42,
+    "realized": null,
+    "dollars": -0.42,
+    "percent": -0.00833,
+    "same_day_open_note": "TDAY was opened on 2026-10-02 (not today); its change is measured from yesterday's close. No new positions were opened today."
   },
-  "todays_trades": [
-    {
-      "symbol": "ITUB",
-      "side": "sell",
-      "quantity": 1,
-      "dollar_based_amount": null,
-      "fill_price": 9.45,
-      "value": 9.45,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": -0.6,
-      "state": "filled"
-    }
-  ],
+  "todays_trades": [],
   "open_orders": [
     {
       "symbol": "TDAY",
@@ -47,22 +34,22 @@
   "positions": [
     {
       "symbol": "TDAY",
-      "quantity": 2,
+      "quantity": 2.0,
       "avg_cost": 7.07,
       "cost_basis": 14.14,
-      "current_price": 7.18,
-      "market_value": 14.36,
-      "unrealized_pl_dollars": 0.22,
-      "unrealized_pl_percent": 0.01556,
-      "today_change_dollars": 0.06,
-      "pct_of_portfolio": 0.28234,
-      "days_held": 13,
+      "current_price": 6.97,
+      "market_value": 13.94,
+      "unrealized_pl_dollars": -0.2,
+      "unrealized_pl_percent": -0.01414,
+      "today_change_dollars": -0.42,
+      "pct_of_portfolio": 0.27637,
+      "days_held": 14,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 6.45,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.10167
+        "distance_percent": -0.07461
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -71,25 +58,25 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.71766,
+      "current_pct": 0.72363,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.0,
-      "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 17.6,
+      "current_pct": 0,
+      "deployed_dollars": 0,
+      "buying_power_at_session_start": 36.5,
       "status": "green",
-      "note": "No buy orders filled today; 0% of session buying power deployed. (Buying power rose today only because ITUB's stop-loss sold for $9.45.)"
+      "note": "No buy orders filled today; buying power untouched."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "TDAY",
-      "largest_position_pct": 0.28234,
+      "largest_position_pct": 0.27637,
       "over_limit": [],
       "status": "yellow",
-      "note": "TDAY is at 28.2% of portfolio, approaching the 30% single-position cap."
+      "note": "TDAY is at 27.6% of portfolio, approaching the 30% single-position cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -101,7 +88,7 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "TDAY, the only open position, has a standing stop-loss order."
+      "note": "TDAY has a standing stop-loss order; no unprotected positions."
     }
   },
   "trade_quality": {
@@ -115,7 +102,7 @@
     "total_realized": 0.63,
     "realized_vs_unrealized": {
       "realized": 0.63,
-      "unrealized": 0.22
+      "unrealized": -0.2
     },
     "avg_holding_period_days": 7.5,
     "per_symbol": [
@@ -579,6 +566,11 @@
         "date": "2026-10-15",
         "total_value": 50.86,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-10-16",
+        "total_value": 50.44,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -821,6 +813,11 @@
         "date": "2026-10-15",
         "realized_gain": -0.6,
         "number_of_trades": 1
+      },
+      {
+        "date": "2026-10-16",
+        "realized_gain": null,
+        "number_of_trades": 0
       }
     ],
     "benchmark_spy_close": [
@@ -1135,12 +1132,16 @@
       {
         "date": "2026-10-15",
         "close": 771.74
+      },
+      {
+        "date": "2026-10-16",
+        "close": 763.3
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-10-15",
-    "last_trading_day": "2026-10-15",
+    "latest_date": "2026-10-16",
+    "last_trading_day": "2026-10-16",
     "is_stale": false
   }
 }
