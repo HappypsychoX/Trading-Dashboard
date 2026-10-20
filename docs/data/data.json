@@ -1,30 +1,30 @@
 {
   "_demo_data": false,
-  "as_of": "2026-10-19T16:10:00-04:00",
+  "as_of": "2026-10-20T16:07:00-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 50.39,
-    "equity_value": 24.19,
-    "cash": 26.2,
-    "buying_power": 26.2,
-    "open_positions_count": 2
+    "total_value": 50.48,
+    "equity_value": 33.8,
+    "cash": 16.68,
+    "buying_power": 16.68,
+    "open_positions_count": 3
   },
   "daily_pl": {
-    "unrealized": -0.05,
+    "unrealized": 0.09,
     "realized": null,
-    "dollars": -0.05,
-    "percent": -0.00099,
-    "same_day_open_note": "CX was opened today, so its change is measured from its fill price rather than yesterday's close. TDAY is measured from yesterday's close."
+    "dollars": 0.09,
+    "percent": 0.00178,
+    "same_day_open_note": "BRBR was opened today, so its change is measured from its fill price rather than yesterday's close. TDAY and CX are measured from yesterday's close."
   },
   "todays_trades": [
     {
-      "symbol": "CX",
+      "symbol": "BRBR",
       "side": "buy",
-      "quantity": 1.0,
+      "quantity": 1,
       "dollar_based_amount": null,
-      "fill_price": 10.2999,
-      "value": 10.2999,
+      "fill_price": 9.5199,
+      "value": 9.52,
       "fees": 0.0,
       "source": "agentic",
       "realized_gain": null,
@@ -33,6 +33,17 @@
   ],
   "open_orders": [
     {
+      "symbol": "BRBR",
+      "side": "sell",
+      "type": "stop_loss",
+      "quantity": 1,
+      "trigger_price": 8.6,
+      "limit_price": null,
+      "state": "confirmed",
+      "created_at": "2026-10-20T18:23:23.889904Z",
+      "stale": false
+    },
+    {
       "symbol": "CX",
       "side": "sell",
       "type": "stop_loss",
@@ -40,8 +51,8 @@
       "trigger_price": 9.25,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-10-19T13:50:04-04:00",
-      "stale": false
+      "created_at": "2026-10-19T17:50:04.296089Z",
+      "stale": true
     },
     {
       "symbol": "TDAY",
@@ -51,90 +62,112 @@
       "trigger_price": 6.45,
       "limit_price": null,
       "state": "confirmed",
-      "created_at": "2026-10-02T13:50:06-04:00",
+      "created_at": "2026-10-02T17:50:06.453167Z",
       "stale": true
     }
   ],
   "positions": [
     {
       "symbol": "TDAY",
-      "quantity": 2.0,
+      "quantity": 2,
       "avg_cost": 7.07,
       "cost_basis": 14.14,
-      "current_price": 6.95,
-      "market_value": 13.9,
-      "unrealized_pl_dollars": -0.24,
-      "unrealized_pl_percent": -0.01697,
-      "today_change_dollars": -0.04,
-      "pct_of_portfolio": 0.27585,
-      "days_held": 17,
+      "current_price": 7.01,
+      "market_value": 14.02,
+      "unrealized_pl_dollars": -0.12,
+      "unrealized_pl_percent": -0.00849,
+      "today_change_dollars": 0.12,
+      "pct_of_portfolio": 0.27774,
+      "days_held": 18,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 6.45,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.07194
+        "distance_percent": -0.07989
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
     },
     {
       "symbol": "CX",
-      "quantity": 1.0,
+      "quantity": 1,
       "avg_cost": 10.3,
       "cost_basis": 10.3,
-      "current_price": 10.29,
-      "market_value": 10.29,
-      "unrealized_pl_dollars": -0.01,
-      "unrealized_pl_percent": -0.00097,
-      "today_change_dollars": -0.01,
-      "pct_of_portfolio": 0.20421,
-      "days_held": 0,
+      "current_price": 10.27,
+      "market_value": 10.27,
+      "unrealized_pl_dollars": -0.03,
+      "unrealized_pl_percent": -0.00291,
+      "today_change_dollars": -0.02,
+      "pct_of_portfolio": 0.20342,
+      "days_held": 1,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 9.25,
         "limit_price": null,
         "quantity": 1,
-        "distance_percent": -0.10107
+        "distance_percent": -0.09932
       },
       "earnings_within_7d": true,
+      "sellable_quantity": 0
+    },
+    {
+      "symbol": "BRBR",
+      "quantity": 1,
+      "avg_cost": 9.52,
+      "cost_basis": 9.52,
+      "current_price": 9.51,
+      "market_value": 9.51,
+      "unrealized_pl_dollars": -0.01,
+      "unrealized_pl_percent": -0.00105,
+      "today_change_dollars": -0.01,
+      "pct_of_portfolio": 0.1884,
+      "days_held": 0,
+      "protective_order": {
+        "type": "stop_loss",
+        "trigger_price": 8.6,
+        "limit_price": null,
+        "quantity": 1,
+        "distance_percent": -0.09569
+      },
+      "earnings_within_7d": false,
       "sellable_quantity": 0
     }
   ],
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.51994,
+      "current_pct": 0.33044,
       "status": "green",
       "note": "Cash is well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
-      "current_pct": 0.28219,
-      "deployed_dollars": 10.3,
-      "buying_power_at_session_start": 36.5,
+      "current_pct": 0.36336,
+      "deployed_dollars": 9.52,
+      "buying_power_at_session_start": 26.2,
       "status": "green",
-      "note": "Spent $10.30 of the $36.50 buying power available at session start (28.2%), within the 50% per-session ceiling."
+      "note": "Spent $9.52 of the $26.20 buying power available at session start (36.3%), within the 50% per-session ceiling."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "TDAY",
-      "largest_position_pct": 0.27585,
+      "largest_position_pct": 0.27774,
       "over_limit": [],
       "status": "yellow",
-      "note": "TDAY is at 27.6% of portfolio, approaching the 30% single-position cap."
+      "note": "TDAY is at 27.8% of portfolio, approaching the 30% single-position cap."
     },
     "new_positions_today": {
       "count": 1,
       "max_per_day": 3,
       "status": "green",
-      "note": "1 new position opened today (CX)."
+      "note": "1 new position opened today (BRBR)."
     },
     "unprotected_positions": {
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "Both TDAY and CX have standing stop-loss orders; no unprotected positions."
+      "note": "All open positions have a standing stop-loss order."
     }
   },
   "trade_quality": {
@@ -148,7 +181,7 @@
     "total_realized": 0.63,
     "realized_vs_unrealized": {
       "realized": 0.63,
-      "unrealized": -0.25
+      "unrealized": -0.16
     },
     "avg_holding_period_days": 7.5,
     "per_symbol": [
@@ -622,6 +655,11 @@
         "date": "2026-10-19",
         "total_value": 50.39,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-10-20",
+        "total_value": 50.48,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -872,6 +910,11 @@
       },
       {
         "date": "2026-10-19",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-10-20",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -1196,12 +1239,16 @@
       {
         "date": "2026-10-19",
         "close": 767.0
+      },
+      {
+        "date": "2026-10-20",
+        "close": 769.01
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-10-19",
-    "last_trading_day": "2026-10-19",
+    "latest_date": "2026-10-20",
+    "last_trading_day": "2026-10-20",
     "is_stale": false
   }
 }
