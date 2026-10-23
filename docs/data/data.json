@@ -1,36 +1,23 @@
 {
   "_demo_data": false,
-  "as_of": "2026-10-22T16:10:48-04:00",
+  "as_of": "2026-10-23T16:08:38-04:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 50.61,
-    "equity_value": 23.81,
+    "total_value": 50.07,
+    "equity_value": 23.27,
     "cash": 26.8,
-    "buying_power": 16.68,
+    "buying_power": 26.8,
     "open_positions_count": 2
   },
   "daily_pl": {
-    "unrealized": 0.83,
-    "realized": -0.18,
-    "dollars": 0.65,
-    "percent": 0.01284,
-    "same_day_open_note": "No new positions were opened today. TDAY and BRBR are both measured from yesterday's close; CX was fully closed today (opened 2026-10-19)."
+    "unrealized": -0.54,
+    "realized": null,
+    "dollars": -0.54,
+    "percent": -0.01069,
+    "same_day_open_note": "No new positions were opened today. TDAY and BRBR are both measured from yesterday's close."
   },
-  "todays_trades": [
-    {
-      "symbol": "CX",
-      "side": "sell",
-      "quantity": 1,
-      "dollar_based_amount": null,
-      "fill_price": 10.1215,
-      "value": 10.1215,
-      "fees": 0.0,
-      "source": "agentic",
-      "realized_gain": -0.18,
-      "state": "filled"
-    }
-  ],
+  "todays_trades": [],
   "open_orders": [
     {
       "symbol": "BRBR",
@@ -61,19 +48,19 @@
       "quantity": 2,
       "avg_cost": 7.07,
       "cost_basis": 14.14,
-      "current_price": 7.04,
-      "market_value": 14.08,
-      "unrealized_pl_dollars": -0.06,
-      "unrealized_pl_percent": -0.00424,
-      "today_change_dollars": 0.24,
-      "pct_of_portfolio": 0.27821,
-      "days_held": 20,
+      "current_price": 6.865,
+      "market_value": 13.73,
+      "unrealized_pl_dollars": -0.41,
+      "unrealized_pl_percent": -0.029,
+      "today_change_dollars": -0.35,
+      "pct_of_portfolio": 0.27422,
+      "days_held": 21,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 6.45,
         "limit_price": null,
         "quantity": 2,
-        "distance_percent": -0.08381
+        "distance_percent": -0.06045
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -83,19 +70,19 @@
       "quantity": 1,
       "avg_cost": 9.52,
       "cost_basis": 9.52,
-      "current_price": 9.73,
-      "market_value": 9.73,
-      "unrealized_pl_dollars": 0.21,
-      "unrealized_pl_percent": 0.02206,
-      "today_change_dollars": 0.59,
-      "pct_of_portfolio": 0.19225,
-      "days_held": 2,
+      "current_price": 9.545,
+      "market_value": 9.545,
+      "unrealized_pl_dollars": 0.03,
+      "unrealized_pl_percent": 0.00263,
+      "today_change_dollars": -0.185,
+      "pct_of_portfolio": 0.19063,
+      "days_held": 3,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 8.6,
         "limit_price": null,
         "quantity": 1,
-        "distance_percent": -0.11614
+        "distance_percent": -0.099
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0
@@ -104,25 +91,25 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.52954,
+      "current_pct": 0.53525,
       "status": "green",
-      "note": "Cash is 53.0% of account value, well above the 5% floor."
+      "note": "Cash is 53.5% of account value, well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
       "current_pct": 0.0,
       "deployed_dollars": 0.0,
-      "buying_power_at_session_start": 6.56,
+      "buying_power_at_session_start": 26.8,
       "status": "green",
-      "note": "No buys executed today. The only activity was selling CX, which returned $10.12 to buying power."
+      "note": "No buys or sells executed today."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "TDAY",
-      "largest_position_pct": 0.27821,
+      "largest_position_pct": 0.27422,
       "over_limit": [],
       "status": "yellow",
-      "note": "TDAY is at 27.8% of portfolio, approaching the 30% single-position cap."
+      "note": "TDAY is at 27.4% of portfolio, approaching the 30% single-position cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -148,7 +135,7 @@
     "total_realized": 0.45,
     "realized_vs_unrealized": {
       "realized": 0.45,
-      "unrealized": 0.15
+      "unrealized": -0.39
     },
     "avg_holding_period_days": 7.33,
     "per_symbol": [
@@ -642,6 +629,11 @@
         "date": "2026-10-22",
         "total_value": 50.61,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-10-23",
+        "total_value": 50.07,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -909,6 +901,11 @@
         "date": "2026-10-22",
         "realized_gain": -0.18,
         "number_of_trades": 1
+      },
+      {
+        "date": "2026-10-23",
+        "realized_gain": null,
+        "number_of_trades": 0
       }
     ],
     "benchmark_spy_close": [
@@ -1243,12 +1240,16 @@
       {
         "date": "2026-10-22",
         "close": 763.97
+      },
+      {
+        "date": "2026-10-23",
+        "close": 759.85
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-10-22",
-    "last_trading_day": "2026-10-22",
+    "latest_date": "2026-10-23",
+    "last_trading_day": "2026-10-23",
     "is_stale": false
   }
 }
