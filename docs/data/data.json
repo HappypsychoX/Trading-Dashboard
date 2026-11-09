@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-11-06T16:09:10-05:00",
+  "as_of": "2026-11-09T16:08:36-05:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 49.16,
-    "equity_value": 19.94,
+    "total_value": 49.91,
+    "equity_value": 20.69,
     "cash": 29.22,
     "buying_power": 29.22,
     "open_positions_count": 2
   },
   "daily_pl": {
-    "unrealized": -0.65,
+    "unrealized": 0.75,
     "realized": null,
-    "dollars": -0.65,
-    "percent": -0.01322,
-    "same_day_open_note": "No new positions were opened today; both CX and BRBR are measured from yesterday's close."
+    "dollars": 0.75,
+    "percent": 0.01526,
+    "same_day_open_note": "No new positions were opened today; both CX and BRBR are measured from Friday's (2026-11-06) close."
   },
   "todays_trades": [],
   "open_orders": [
@@ -48,19 +48,19 @@
       "quantity": 1.0,
       "avg_cost": 10.76,
       "cost_basis": 10.76,
-      "current_price": 10.72,
-      "market_value": 10.72,
-      "unrealized_pl_dollars": -0.04,
-      "unrealized_pl_percent": -0.00372,
-      "today_change_dollars": 0.01,
-      "pct_of_portfolio": 0.21806,
-      "days_held": 8,
+      "current_price": 11.085,
+      "market_value": 11.085,
+      "unrealized_pl_dollars": 0.325,
+      "unrealized_pl_percent": 0.0302,
+      "today_change_dollars": 0.365,
+      "pct_of_portfolio": 0.2221,
+      "days_held": 11,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 9.85,
         "limit_price": null,
         "quantity": 1.0,
-        "distance_percent": -0.08116
+        "distance_percent": -0.11141
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0.0
@@ -70,19 +70,19 @@
       "quantity": 1.0,
       "avg_cost": 9.52,
       "cost_basis": 9.52,
-      "current_price": 9.15,
-      "market_value": 9.15,
-      "unrealized_pl_dollars": -0.37,
-      "unrealized_pl_percent": -0.03887,
-      "today_change_dollars": -0.66,
-      "pct_of_portfolio": 0.18613,
-      "days_held": 17,
+      "current_price": 9.63,
+      "market_value": 9.63,
+      "unrealized_pl_dollars": 0.11,
+      "unrealized_pl_percent": 0.01155,
+      "today_change_dollars": 0.47,
+      "pct_of_portfolio": 0.19295,
+      "days_held": 20,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 8.6,
         "limit_price": null,
         "quantity": 1.0,
-        "distance_percent": -0.06011
+        "distance_percent": -0.10696
       },
       "earnings_within_7d": false,
       "sellable_quantity": 0.0
@@ -91,9 +91,9 @@
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.59439,
+      "current_pct": 0.58545,
       "status": "green",
-      "note": "Cash ($29.22) is 59.4% of account value, well above the 5% floor."
+      "note": "Cash ($29.22) is 58.5% of account value, well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
@@ -106,10 +106,10 @@
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "CX",
-      "largest_position_pct": 0.21806,
+      "largest_position_pct": 0.2221,
       "over_limit": [],
       "status": "green",
-      "note": "CX is the largest position at 21.8% of portfolio, within the 30% single-position cap."
+      "note": "CX is the largest position at 22.2% of portfolio, within the 30% single-position cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -135,7 +135,7 @@
     "total_realized": -0.51,
     "realized_vs_unrealized": {
       "realized": -0.51,
-      "unrealized": -0.41
+      "unrealized": 0.435
     },
     "avg_holding_period_days": 8.09,
     "per_symbol": [
@@ -684,6 +684,11 @@
         "date": "2026-11-06",
         "total_value": 49.16,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-11-09",
+        "total_value": 49.91,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -999,6 +1004,11 @@
       },
       {
         "date": "2026-11-06",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-11-09",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -1375,12 +1385,16 @@
       {
         "date": "2026-11-06",
         "close": 735.44
+      },
+      {
+        "date": "2026-11-09",
+        "close": 752.64
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-11-06",
-    "last_trading_day": "2026-11-06",
+    "latest_date": "2026-11-09",
+    "last_trading_day": "2026-11-09",
     "is_stale": false
   }
 }
