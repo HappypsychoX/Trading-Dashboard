@@ -1,21 +1,21 @@
 {
   "_demo_data": false,
-  "as_of": "2026-11-11T16:05:00-05:00",
+  "as_of": "2026-11-12T16:08:44-05:00",
   "timezone_note": "All times ET. Quotes are delayed.",
   "account": {
     "nickname": "Agentic",
-    "total_value": 49.97,
-    "equity_value": 20.75,
+    "total_value": 49.93,
+    "equity_value": 20.72,
     "cash": 29.22,
     "buying_power": 29.22,
     "open_positions_count": 2
   },
   "daily_pl": {
-    "unrealized": -0.3,
+    "unrealized": 0.065,
     "realized": null,
-    "dollars": -0.3,
-    "percent": -0.00598,
-    "same_day_open_note": "No new positions were opened today; CX and BRBR are both measured from yesterday's close."
+    "dollars": 0.065,
+    "percent": 0.001304,
+    "same_day_open_note": "No new positions were opened today; both CX and BRBR are measured from yesterday's close."
   },
   "todays_trades": [],
   "open_orders": [
@@ -23,7 +23,7 @@
       "symbol": "CX",
       "side": "sell",
       "type": "stop_loss",
-      "quantity": 1.0,
+      "quantity": 1,
       "trigger_price": 9.85,
       "limit_price": null,
       "state": "confirmed",
@@ -34,7 +34,7 @@
       "symbol": "BRBR",
       "side": "sell",
       "type": "stop_loss",
-      "quantity": 1.0,
+      "quantity": 1,
       "trigger_price": 8.6,
       "limit_price": null,
       "state": "confirmed",
@@ -45,55 +45,55 @@
   "positions": [
     {
       "symbol": "CX",
-      "quantity": 1.0,
+      "quantity": 1,
       "avg_cost": 10.76,
       "cost_basis": 10.76,
-      "current_price": 10.645,
-      "market_value": 10.645,
-      "unrealized_pl_dollars": -0.115,
-      "unrealized_pl_percent": -0.01069,
-      "today_change_dollars": -0.135,
-      "pct_of_portfolio": 0.21303,
-      "days_held": 13,
+      "current_price": 10.47,
+      "market_value": 10.47,
+      "unrealized_pl_dollars": -0.29,
+      "unrealized_pl_percent": -0.02695,
+      "today_change_dollars": -0.17,
+      "pct_of_portfolio": 0.20969,
+      "days_held": 14,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 9.85,
         "limit_price": null,
-        "quantity": 1.0,
-        "distance_percent": -0.07468
+        "quantity": 1,
+        "distance_percent": -0.05922
       },
       "earnings_within_7d": false,
-      "sellable_quantity": 0.0
+      "sellable_quantity": 0
     },
     {
       "symbol": "BRBR",
-      "quantity": 1.0,
+      "quantity": 1,
       "avg_cost": 9.52,
       "cost_basis": 9.52,
-      "current_price": 10.005,
-      "market_value": 10.005,
-      "unrealized_pl_dollars": 0.485,
-      "unrealized_pl_percent": 0.05095,
-      "today_change_dollars": -0.165,
-      "pct_of_portfolio": 0.20022,
-      "days_held": 22,
+      "current_price": 10.245,
+      "market_value": 10.245,
+      "unrealized_pl_dollars": 0.725,
+      "unrealized_pl_percent": 0.07616,
+      "today_change_dollars": 0.235,
+      "pct_of_portfolio": 0.20519,
+      "days_held": 23,
       "protective_order": {
         "type": "stop_loss",
         "trigger_price": 8.6,
         "limit_price": null,
-        "quantity": 1.0,
-        "distance_percent": -0.14043
+        "quantity": 1,
+        "distance_percent": -0.16057
       },
       "earnings_within_7d": true,
-      "sellable_quantity": 0.0
+      "sellable_quantity": 0
     }
   ],
   "guardrails": {
     "cash_reserve_floor": {
       "floor_pct": 0.05,
-      "current_pct": 0.58475,
+      "current_pct": 0.58522,
       "status": "green",
-      "note": "Cash ($29.22) is 58.5% of account value, well above the 5% floor."
+      "note": "Cash is well above the 5% floor."
     },
     "buying_power_deployed_today": {
       "max_pct": 0.5,
@@ -101,15 +101,15 @@
       "deployed_dollars": 0.0,
       "buying_power_at_session_start": 29.22,
       "status": "green",
-      "note": "No buying power spent today (0% of the $29.22 available at session start), within the 50% per-session ceiling."
+      "note": "No buys today; nothing deployed."
     },
     "position_size": {
       "max_pct": 0.3,
       "largest_position": "CX",
-      "largest_position_pct": 0.21303,
+      "largest_position_pct": 0.20969,
       "over_limit": [],
       "status": "green",
-      "note": "CX is the largest position at 21.3% of portfolio, within the 30% single-position cap."
+      "note": "Largest position (CX) is ~21% of the account, under the 30% cap."
     },
     "new_positions_today": {
       "count": 0,
@@ -121,7 +121,7 @@
       "count": 0,
       "symbols": [],
       "status": "green",
-      "note": "Both open positions (CX, BRBR) have standing stop-loss orders."
+      "note": "Both CX and BRBR carry standing stop-loss orders."
     }
   },
   "trade_quality": {
@@ -135,7 +135,7 @@
     "total_realized": -0.51,
     "realized_vs_unrealized": {
       "realized": -0.51,
-      "unrealized": 0.37
+      "unrealized": 0.435
     },
     "avg_holding_period_days": 8.09,
     "per_symbol": [
@@ -699,6 +699,11 @@
         "date": "2026-11-11",
         "total_value": 49.97,
         "net_external_flow": 0
+      },
+      {
+        "date": "2026-11-12",
+        "total_value": 49.93,
+        "net_external_flow": 0
       }
     ],
     "realized_pnl_daily": [
@@ -1029,6 +1034,11 @@
       },
       {
         "date": "2026-11-11",
+        "realized_gain": null,
+        "number_of_trades": 0
+      },
+      {
+        "date": "2026-11-12",
         "realized_gain": null,
         "number_of_trades": 0
       }
@@ -1417,12 +1427,16 @@
       {
         "date": "2026-11-11",
         "close": 759.79
+      },
+      {
+        "date": "2026-11-12",
+        "close": 757.2
       }
     ]
   },
   "snapshot_log": {
-    "latest_date": "2026-11-11",
-    "last_trading_day": "2026-11-11",
+    "latest_date": "2026-11-12",
+    "last_trading_day": "2026-11-12",
     "is_stale": false
   }
 }
